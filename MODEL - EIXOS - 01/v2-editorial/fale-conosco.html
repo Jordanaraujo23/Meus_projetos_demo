@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Conosco - Instituto Eixos</title>
+    
+    <!-- Fonts: Cinzel & Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Editorial Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/instituto-eixos-logo.png" alt="Instituto Eixos" style="height: 35px; filter: grayscale(100%) contrast(120%);">
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="quem-somos.html" class="nav-link">Quem Somos</a>
+                <a href="projetos.html" class="nav-link">Projetos</a>
+                <a href="galeria.html" class="nav-link">Galeria</a>
+                <a href="editais.html" class="nav-link">Editais</a>
+                <a href="noticias.html" class="nav-link">Notícias</a>
+                <a href="doe-aqui.html" class="btn btn-primary" style="padding: 0.6rem 1.5rem;">DOE AGORA</a>
+            </nav>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div style="background: var(--secondary); color: white; padding: 8rem 0 4rem;">
+        <div class="container text-center">
+            <h1 class="section-title" style="color: white;">Fale Conosco</h1>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Estamos prontos para ouvir você. Entre em contato.</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section style="padding: 6rem 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 4rem;">
+                
+                <!-- Helper Info Column -->
+                <div>
+                    <h2 class="section-title">Informações de Contato</h2>
+                    <p style="margin-bottom: 2rem;">Venha nos visitar ou envie uma mensagem através de nossos canais oficiais.</p>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> Endereço</h4>
+                        <p style="color: var(--text-light);">Taguatinga Norte, Brasília/DF<br>Q CNC 3, Bloco B, Sala 611</p>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 0.5rem;"><i class="fab fa-whatsapp" style="color: var(--accent-green); margin-right: 10px;"></i> WhatsApp / Telefone</h4>
+                        <p style="color: var(--text-light);"><a href="https://wa.me/5561981030472" target="_blank" style="color: inherit;">(61) 98103-0472</a></p>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> E-mail</h4>
+                        <p style="color: var(--text-light);">contato@institutoeixos.org.br</p>
+                    </div>
+
+                    <div style="margin-top: 3rem;">
+                        <h4 style="margin-bottom: 1rem;">Siga-nos nas Redes</h4>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="#" class="btn btn-outline" style="display: flex; align-items: center; gap: 10px; padding: 0.5rem 1.5rem; border-radius: var(--radius-full);">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="#" class="btn btn-outline" style="display: flex; align-items: center; gap: 10px; padding: 0.5rem 1.5rem; border-radius: var(--radius-full);">
+                                <i class="fab fa-facebook-f"></i> Facebook
+                            </a>
+                            <a href="#" class="btn btn-outline" style="display: flex; align-items: center; gap: 10px; padding: 0.5rem 1.5rem; border-radius: var(--radius-full);">
+                                <i class="fab fa-youtube"></i> YouTube
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Column -->
+                <div style="background: var(--surface); padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+                    <h3 style="margin-bottom: 1.5rem;">Preencha seus dados</h3>
+                    <form>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Nome Completo</label>
+                            <input type="text" placeholder="Seu nome" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: var(--radius-sm);" required>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">WhatsApp / Telefone</label>
+                            <input type="text" placeholder="(DD) 00000-0000" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: var(--radius-sm);" required>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">E-mail</label>
+                            <input type="email" placeholder="seu@email.com" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: var(--radius-sm);" required>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Assunto</label>
+                            <select style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: var(--radius-sm);">
+                                <option>Dúvidas Gerais</option>
+                                <option>Quero ser Voluntário</option>
+                                <option>Quero Doar</option>
+                                <option>Parcerias</option>
+                                <option>Imprensa</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Mensagem</label>
+                            <textarea rows="5" placeholder="Como podemos ajudar?" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); font-family: inherit;" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Whatsapp</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section style="height: 400px; background: #e2e8f0; display: flex; align-items: center; justify-content: center;">
+        <!-- Placeholder for Google Maps Embed -->
+         <div style="text-align: center; color: var(--text-light);">
+             <i class="fas fa-map-marked-alt" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+             <p>Mapa de Localização (Placeholder)</p>
+         </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="editorial-footer">
+        <a href="index.html" class="footer-logo">INSTITUTO EIXOS</a>
+        
+        <nav class="footer-nav">
+            <a href="quem-somos.html">Quem Somos</a>
+            <a href="projetos.html">Projetos</a>
+            <a href="editais.html">Editais</a>
+            <a href="fale-conosco.html">Fale Conosco</a>
+            <a href="doe-aqui.html">Doe Agora</a>
+        </nav>
+        
+        <div style="font-size: 0.8rem; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px;">
+            &copy; 2026 Instituto Eixos. Todos os direitos reservados.
+        </div>
+        
+        <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
+             <a href="#"><i class="fab fa-instagram"></i></a>
+             <a href="#"><i class="fab fa-facebook-f"></i></a>
+             <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

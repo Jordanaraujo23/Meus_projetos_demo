@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos - Instituto Eixos</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/instituto-eixos-logo.png" alt="Instituto Eixos">
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="quem-somos.html" class="nav-link">Quem Somos</a>
+                <a href="projetos.html" class="nav-link active">Projetos</a>
+                <a href="galeria.html" class="nav-link">Galeria</a>
+                <a href="editais.html" class="nav-link">Editais</a>
+                <a href="noticias.html" class="nav-link">Notícias</a>
+                <a href="doe-aqui.html" class="nav-link btn btn-outline" style="padding: 0.5rem 1rem;">Doe Aqui</a>
+                <a href="fale-conosco.html" class="nav-link btn btn-primary" style="color: white; padding: 0.5rem 1rem;">Fale Conosco</a>
+            </nav>
+            
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-bg"></div>
+        <div class="container page-header-content">
+            <h1>Nossos Projetos</h1>
+            <p>Iniciativas que transformam a realidade de milhares de pessoas.</p>
+        </div>
+    </header>
+
+    <!-- Projects Grid -->
+    <section style="padding: 6rem 0;">
+        <div class="container">
+            <div class="page-grid">
+                
+                <!-- Project 1 -->
+                <div class="article-card reveal delay-100" 
+                     onclick="openProjectModal(this)"
+                     data-title="Brasília 2025"
+                     data-category="Em Andamento"
+                     data-description="O Projeto Brasília 2025 é nossa iniciativa capitânia. Atuamos em mais de 15 regiões administrativas do DF, levando segurança alimentar e vestuário para quem mais precisa. Nossa meta é erradicar a fome nas regiões mais vulneráveis."
+                     data-stats="2.500+ Famílias | 15 Regiões"
+                     data-images='["assets/img/projeto-brasilia-2025-1.webp", "assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp", "assets/img/ong-instituto-eixos-1024x682.webp"]'>
+                    <div class="article-image">
+                        <span class="tag tag-primary" style="position: absolute; top: 1rem; right: 1rem;">Em Andamento</span>
+                        <img src="assets/img/projeto-brasilia-2025-1.webp" alt="Brasília 2025">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Brasília 2025</h3>
+                        <p class="article-excerpt">O Projeto Brasília 2025 tem como objetivo oferecer alimentos e roupas para os mais necessitados, criando uma rede de solidariedade.</p>
+                        <button class="btn btn-outline btn-sm" style="margin-top: auto;">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="article-card reveal delay-200"
+                     onclick="openProjectModal(this)"
+                     data-title="Mutirão da Saúde Integral"
+                     data-category="Saúde"
+                     data-description="Levamos saúde de qualidade para onde o governo não chega. Nossos mutirões oferecem check-ups gratuitos, encaminhamentos e doação de óculos. Um trabalho preventivo que salva vidas."
+                     data-stats="1.200+ Atendimentos | 50 Médicos"
+                     data-images='["assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp", "assets/img/projeto-brasilia-2025-1.webp", "assets/img/ong-instituto-eixos-1024x682.webp"]'>
+                    <div class="article-image">
+                        <span class="tag tag-green" style="position: absolute; top: 1rem; right: 1rem;">Saúde</span>
+                        <img src="assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp" alt="Mutirão da Saúde">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Mutirão da Saúde Integral</h3>
+                        <p class="article-excerpt">Ações itinerantes que levam atendimento médico básico, odontológico e oftalmológico para comunidades carentes.</p>
+                        <button class="btn btn-outline btn-sm" style="margin-top: auto;">Ver Detalhes</button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="article-card reveal delay-300"
+                     onclick="openProjectModal(this)"
+                     data-title="Futuro Brilhante"
+                     data-category="Educação"
+                     data-description="Educação é a chave para a liberdade. Oferecemos cursos de alfabetização digital, artesanato e empreendedorismo para jovens e mães solo, garantindo renda e autonomia."
+                     data-stats="350+ Formados | 100% Gratuito"
+                     data-images='["assets/img/transparencia-r1nd963knjn162rxn2pkyjz13h5jrnehl7vw5i3j68.webp", "assets/img/ong-instituto-eixos-1024x682.webp", "assets/img/projeto-brasilia-2025-1.webp"]'>
+                    <div class="article-image">
+                        <span class="tag tag-red" style="position: absolute; top: 1rem; right: 1rem;">Educação</span>
+                        <img src="assets/img/transparencia-r1nd963knjn162rxn2pkyjz13h5jrnehl7vw5i3j68.webp" alt="Futuro Brilhante">
+                    </div>
+                    <div class="article-content">
+                        <h3 class="article-title">Futuro Brilhante</h3>
+                        <p class="article-excerpt">Cursos profissionalizantes gratuitos para jovens e adultos, focados em inclusão digital e geração de renda.</p>
+                        <button class="btn btn-outline btn-sm" style="margin-top: auto;">Ver Detalhes</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Project Modal (Hidden by default) -->
+        <div id="project-modal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+                
+                <div class="modal-grid">
+                    <!-- Carousel -->
+                    <div class="modal-carousel-container">
+                        <div class="modal-carousel" id="modal-carousel-track">
+                            <!-- Images injected via JS -->
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+                        <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+                        <div class="carousel-dots" id="carousel-dots">
+                            <!-- Dots injected via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Info -->
+                    <div class="modal-info">
+                        <span class="tag tag-primary" id="modal-category">Categoria</span>
+                        <h2 id="modal-title" style="margin: 1rem 0; font-size: 2rem;">Título do Projeto</h2>
+                        <div id="modal-stats" class="modal-stats-bar">Stats</div>
+                        <p id="modal-description" style="color: var(--text-light); margin-bottom: 2rem;">Descrição completa do projeto.</p>
+                        
+                        <div style="margin-top: auto;">
+                            <h4 style="margin-bottom: 1rem;">Como Ajudar?</h4>
+                            <div class="d-flex gap-1" style="flex-wrap: wrap;">
+                                <a href="doe-aqui.html" class="btn btn-primary">Doar Agora</a>
+                                <a href="fale-conosco.html" class="btn btn-outline">Ser Voluntário</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="background: var(--background); padding: 4rem 0;">
+        <div class="container text-center">
+            <h2 class="section-title">Quer apoiar nossos projetos?</h2>
+            <p class="section-subtitle">Sua contribuição faz toda a diferença.</p>
+            <a href="quem-somos.html#contato" class="btn btn-primary">Entre em Contato</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="assets/img/instituto-eixos-logo.png" alt="Logo" style="height: 40px; margin-bottom: 1rem; filter: grayscale(1);">
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Transformando vidas com solidariedade e inovação para um futuro melhor.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Mapa do Site</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="noticias.html">Notícias</a></li>
+                        <li><a href="projetos.html">Projetos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="quem-somos.html#transparencia">Transparência</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul class="footer-links">
+                        <li><i class="fab fa-whatsapp"></i> (61) 98103-0472</li>
+                        <li><i class="far fa-envelope"></i> contato@institutoeixos.org.br</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Instituto Eixos. Todos os direitos reservados.</p>
+                <div class="social-links" style="margin: 0;">
+                    <a href="#" class="social-link" style="color: var(--text-light);"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" style="color: var(--text-light);"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

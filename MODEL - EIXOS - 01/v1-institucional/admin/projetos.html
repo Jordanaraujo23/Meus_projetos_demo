@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos - Painel Admin | Instituto Eixos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <style>
+        /* Page-specific styles */
+        .featured-project {
+            border: 3px solid #f59e0b;
+            background: #fffbeb;
+        }
+
+        .project-card-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../assets/img/instituto-eixos-logo.png" alt="Instituto Eixos" class="sidebar-logo-img">
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-item"><a href="dashboard.html" class="menu-link"><i class="fas fa-chart-pie"></i> Visão
+                    Geral</a></li>
+            <li class="menu-item"><a href="projetos.html" class="menu-link active"><i
+                        class="fas fa-project-diagram"></i> Projetos</a></li>
+            <li class="menu-item"><a href="galeria.html" class="menu-link"><i class="fas fa-images"></i> Galeria</a>
+            </li>
+            <li class="menu-item"><a href="transparencia.html" class="menu-link"><i
+                        class="fas fa-file-invoice-dollar"></i> Transparência</a></li>
+            <li class="menu-item"><a href="noticias.html" class="menu-link"><i class="fas fa-newspaper"></i>
+                    Notícias</a></li>
+            <li class="menu-item"><a href="mensagens.html" class="menu-link"><i class="fas fa-envelope"></i>
+                    Mensagens</a></li>
+            <li class="menu-item"><a href="usuarios.html" class="menu-link"><i class="fas fa-users-cog"></i>
+                    Usuários</a></li>
+            <li class="menu-item"><a href="configuracoes.html" class="menu-link"><i class="fas fa-cog"></i>
+                    Configurações</a></li>
+        </ul>
+        <div class="user-profile">
+            <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff"
+                    alt="Admin"></div>
+            <div style="flex: 1;">
+                <h4 style="font-size: 0.9rem; color: white;">Administrador</h4>
+                <p style="font-size: 0.8rem; color: #94a3b8;">admin@eixos.org</p>
+            </div>
+            <a href="../site/index.html" title="Voltar ao Site" style="color: #94a3b8;"><i class="fas fa-home"></i></a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="top-bar">
+            <h1 class="page-title">Gerenciar Projetos</h1>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <input type="text" placeholder="Buscar projetos..." class="form-input" style="width: 250px;">
+                <button class="btn-sm btn-primary"><i class="fas fa-plus"></i> Novo Projeto</button>
+            </div>
+        </header>
+
+        <!-- Featured Project -->
+        <div class="content-card featured-project" style="margin-bottom: 2rem;">
+            <div class="card-header">
+                <h3 style="display: flex; align-items: center; gap: 0.5rem; color: #b45309;">
+                    <i class="fas fa-star"></i> Projeto em Destaque (Home)
+                </h3>
+            </div>
+            <div style="padding: 1.5rem; display: flex; gap: 1.5rem; align-items: center;">
+                <div style="width: 200px; height: 120px; border-radius: 0.75rem; overflow: hidden;">
+                    <img src="../assets/img/projeto-brasilia-2025-1.webp"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="flex: 1;">
+                    <h3 style="font-size: 1.25rem; color: #1e293b; margin-bottom: 0.5rem;">Brasília 2025</h3>
+                    <p style="color: #64748b; margin-bottom: 1rem;">Projeto de inclusão social na região administrativa
+                        de Brasília.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <span class="status-badge active">Exibido na Home</span>
+                        <button class="btn-sm btn-outline"><i class="fas fa-edit"></i> Editar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="content-card">
+            <div class="card-header">
+                <h3>Galeria de Projetos</h3>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="../assets/img/projeto-brasilia-2025-1.webp" alt="Projeto">
+                        <span class="project-card-tag">Em Andamento</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Ação Solidária Natal</h3>
+                        <p>Distribuição de cestas básicas para famílias carentes no período natalino.</p>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="status-badge active">Ativo</span>
+                        <div class="project-card-actions">
+                            <button class="btn-action" title="Destacar"><i class="far fa-star"></i></button>
+                            <button class="btn-action" title="Editar"><i class="fas fa-edit"></i></button>
+                            <button class="btn-action btn-delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="../assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp"
+                            alt="Projeto">
+                        <span class="project-card-tag">Saúde</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Saúde na Comunidade</h3>
+                        <p>Atendimento médico gratuito para comunidades carentes.</p>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="status-badge active">Ativo</span>
+                        <div class="project-card-actions">
+                            <button class="btn-action" title="Destacar"><i class="far fa-star"></i></button>
+                            <button class="btn-action" title="Editar"><i class="fas fa-edit"></i></button>
+                            <button class="btn-action btn-delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-card-image">
+                        <img src="../assets/img/projeto-brasilia-2025-1.webp" alt="Projeto">
+                        <span class="project-card-tag">Educação</span>
+                    </div>
+                    <div class="project-card-content">
+                        <h3>Educação para Todos</h3>
+                        <p>Reforço escolar e apoio educacional para crianças e adolescentes.</p>
+                    </div>
+                    <div class="project-card-footer">
+                        <span class="status-badge active">Ativo</span>
+                        <div class="project-card-actions">
+                            <button class="btn-action" title="Destacar"><i class="far fa-star"></i></button>
+                            <button class="btn-action" title="Editar"><i class="fas fa-edit"></i></button>
+                            <button class="btn-action btn-delete" title="Excluir"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add New Card -->
+                <div class="project-card"
+                    style="border: 2px dashed #cbd5e1; background: transparent; display: flex; align-items: center; justify-content: center; min-height: 300px; cursor: pointer;"
+                    onclick="alert('Novo Projeto')">
+                    <div style="text-align: center; color: #94a3b8;">
+                        <i class="fas fa-plus-circle" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+                        <p style="font-weight: 500;">Adicionar Projeto</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="assets/js/admin.js"></script>
+</body>
+
+</html>

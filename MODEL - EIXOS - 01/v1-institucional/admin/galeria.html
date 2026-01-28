@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria - Painel Admin | Instituto Eixos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background: #f1f5f9;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 260px;
+            background: #0f172a;
+            color: white;
+            padding: 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+        }
+
+        .sidebar-brand {
+            padding: 0 1.5rem 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar-logo-img {
+            max-width: 150px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 1rem 0.5rem;
+            flex: 1;
+        }
+
+        .menu-item {
+            margin: 0.25rem 0;
+        }
+
+        .menu-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.85rem 1.25rem;
+            color: #94a3b8;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .menu-link:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+
+        .menu-link.active {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+        }
+
+        .menu-link i {
+            width: 20px;
+            text-align: center;
+        }
+
+        .user-profile {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .user-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .main-content {
+            margin-left: 260px;
+            padding: 2rem;
+            flex: 1;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .page-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.5rem;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+        }
+
+        .btn-action {
+            width: 32px;
+            height: 32px;
+            border-radius: 0.5rem;
+            border: none;
+            background: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            transition: all 0.2s;
+        }
+
+        .btn-action:hover {
+            background: white;
+        }
+
+        .btn-action.btn-delete:hover {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .upload-zone {
+            border: 2px dashed #cbd5e1;
+            border-radius: 0.75rem;
+            padding: 3rem;
+            text-align: center;
+            color: #94a3b8;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .upload-zone:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../assets/img/instituto-eixos-logo.png" alt="Instituto Eixos" class="sidebar-logo-img">
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-item"><a href="dashboard.html" class="menu-link"><i class="fas fa-chart-pie"></i> Visão
+                    Geral</a></li>
+            <li class="menu-item"><a href="projetos.html" class="menu-link"><i class="fas fa-project-diagram"></i>
+                    Projetos</a></li>
+            <li class="menu-item"><a href="galeria.html" class="menu-link active"><i class="fas fa-images"></i>
+                    Galeria</a></li>
+            <li class="menu-item"><a href="transparencia.html" class="menu-link"><i
+                        class="fas fa-file-invoice-dollar"></i> Transparência</a></li>
+            <li class="menu-item"><a href="noticias.html" class="menu-link"><i class="fas fa-newspaper"></i>
+                    Notícias</a></li>
+            <li class="menu-item"><a href="mensagens.html" class="menu-link"><i class="fas fa-envelope"></i>
+                    Mensagens</a></li>
+            <li class="menu-item"><a href="usuarios.html" class="menu-link"><i class="fas fa-users-cog"></i>
+                    Usuários</a></li>
+            <li class="menu-item"><a href="configuracoes.html" class="menu-link"><i class="fas fa-cog"></i>
+                    Configurações</a></li>
+        </ul>
+        <div class="user-profile">
+            <div class="user-avatar"><img src="https://ui-avatars.com/api/?name=Admin&background=2563eb&color=fff"
+                    alt="Admin"></div>
+            <div style="flex: 1;">
+                <h4 style="font-size: 0.9rem; color: white;">Administrador</h4>
+                <p style="font-size: 0.8rem; color: #94a3b8;">admin@eixos.org</p>
+            </div>
+            <a href="../site/index.html" title="Voltar ao Site" style="color: #94a3b8;"><i class="fas fa-home"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <h1 class="page-title">Galeria de Fotos</h1>
+            <button class="btn-sm btn-primary" onclick="document.getElementById('file-upload').click()">
+                <i class="fas fa-cloud-upload-alt"></i> Upload de Fotos
+            </button>
+            <input type="file" id="file-upload" multiple accept="image/*" style="display: none;">
+        </header>
+
+        <div class="content-card">
+            <div class="card-header">
+                <h3>Todas as Imagens</h3>
+                <span style="color: #64748b; font-size: 0.875rem;">12 fotos</span>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../assets/img/projeto-brasilia-2025-1.webp" alt="Foto 1">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-actions">
+                            <button class="btn-action btn-delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp" alt="Foto 2">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-actions">
+                            <button class="btn-action btn-delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../assets/img/projeto-brasilia-2025-1.webp" alt="Foto 3">
+                    <div class="gallery-item-overlay">
+                        <div class="gallery-item-actions">
+                            <button class="btn-action btn-delete"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="upload-zone" onclick="document.getElementById('file-upload').click()">
+                    <i class="fas fa-plus" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                    <p>Adicionar Fotos</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="assets/js/admin.js"></script>
+</body>
+
+</html>

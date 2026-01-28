@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visão Geral - Painel Admin | Instituto Eixos</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <style>
+        /* Page-specific styles only */
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../assets/img/instituto-eixos-logo.png" alt="Instituto Eixos" class="sidebar-logo-img">
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-item"><a href="dashboard.html" class="menu-link active"><i class="fas fa-chart-pie"></i>
+                    Visão
+                    Geral</a></li>
+            <li class="menu-item"><a href="projetos.html" class="menu-link"><i class="fas fa-project-diagram"></i>
+                    Projetos</a></li>
+            <li class="menu-item"><a href="galeria.html" class="menu-link"><i class="fas fa-images"></i>
+                    Galeria</a></li>
+            <li class="menu-item"><a href="transparencia.html" class="menu-link"><i
+                        class="fas fa-file-invoice-dollar"></i> Transparência</a></li>
+            <li class="menu-item"><a href="noticias.html" class="menu-link"><i class="fas fa-newspaper"></i>
+                    Notícias</a></li>
+            <li class="menu-item"><a href="mensagens.html" class="menu-link"><i class="fas fa-envelope"></i>
+                    Mensagens</a></li>
+            <li class="menu-item"><a href="usuarios.html" class="menu-link"><i class="fas fa-users-cog"></i>
+                    Usuários</a></li>
+            <li class="menu-item"><a href="configuracoes.html" class="menu-link"><i class="fas fa-cog"></i>
+                    Configurações</a></li>
+        </ul>
+
+        <div class="user-profile">
+            <div class="user-avatar">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=2563eb&color=fff" alt="Admin">
+            </div>
+            <div style="flex: 1;">
+                <h4 style="font-size: 0.9rem; color: white;">Administrador</h4>
+                <p style="font-size: 0.8rem; color: #94a3b8;">admin@eixos.org</p>
+            </div>
+            <a href="#" id="logout-btn" title="Sair" style="color: #94a3b8; padding: 0.5rem; transition: color 0.2s;">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="top-bar">
+            <h1 class="page-title">Visão Geral</h1>
+            <div style="display: flex; gap: 1rem;">
+                <a href="projetos.html" class="btn-sm btn-primary"><i class="fas fa-plus"></i> Novo Projeto</a>
+            </div>
+        </header>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-value">12.5k</div>
+                        <div class="stat-label">Visitas no Site (Mês)</div>
+                    </div>
+                    <div class="stat-icon blue"><i class="fas fa-chart-line"></i></div>
+                </div>
+                <span class="status-badge active"><i class="fas fa-arrow-up"></i> 18% vs mês anterior</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-value">2,540</div>
+                        <div class="stat-label">Famílias Impactadas</div>
+                    </div>
+                    <div class="stat-icon green"><i class="fas fa-users"></i></div>
+                </div>
+                <span class="status-badge active"><i class="fas fa-plus"></i> 120 esta semana</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-value">R$ 15k</div>
+                        <div class="stat-label">Doações (Janeiro)</div>
+                    </div>
+                    <div class="stat-icon yellow"><i class="fas fa-hand-holding-heart"></i></div>
+                </div>
+                <span class="status-badge active"><i class="fas fa-arrow-up"></i> 5% vs meta</span>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div>
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Fale Conosco</div>
+                    </div>
+                    <div class="stat-icon" style="background: #f1f5f9; color: #64748b;"><i
+                            class="fas fa-comment-alt"></i></div>
+                </div>
+                <span class="status-badge" style="background: #fee2e2; color: #b91c1c;">3 Não Lidas</span>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+            <div class="content-card" style="margin-bottom: 0;">
+                <div class="card-header" style="border-bottom: none;">
+                    <h3>Ações Rápidas</h3>
+                </div>
+                <div style="padding: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="projetos.html" class="btn-sm btn-outline">
+                        <i class="fas fa-plus-circle" style="color: #3b82f6;"></i> Novo Projeto
+                    </a>
+                    <a href="noticias.html" class="btn-sm btn-outline">
+                        <i class="fas fa-pen" style="color: #f59e0b;"></i> Escrever Notícia
+                    </a>
+                    <a href="transparencia.html" class="btn-sm btn-outline">
+                        <i class="fas fa-file-upload" style="color: #22c55e;"></i> Publicar Edital
+                    </a>
+                </div>
+            </div>
+
+            <div class="stat-card"
+                style="display: flex; flex-direction: column; justify-content: center; background: linear-gradient(135deg, #1e293b, #0f172a); color: white;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <h4 style="color: white; margin: 0; font-size: 1rem;">Status do Sistema</h4>
+                    <span
+                        style="width: 10px; height: 10px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 10px #22c55e;"></span>
+                </div>
+                <div style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0.5rem;">
+                    <i class="fas fa-server"></i> Servidor: <strong>Online</strong>
+                </div>
+                <div style="font-size: 0.85rem; opacity: 0.8;">
+                    <i class="fas fa-database"></i> Backup: <strong>Hoje, 03:00</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="content-card">
+            <div class="card-header">
+                <h3>Atividades Recentes</h3>
+                <button class="btn-sm btn-outline">Ver Tudo</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>Ação</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ana Souza</td>
+                        <td>Publicou notícia "Nova Sede"</td>
+                        <td>Hoje, 10:30</td>
+                        <td><span class="status-badge active">Concluído</span></td>
+                    </tr>
+                    <tr>
+                        <td>Carlos M.</td>
+                        <td>Editou Projeto "Brasília 2025"</td>
+                        <td>Ontem, 16:45</td>
+                        <td><span class="status-badge active">Concluído</span></td>
+                    </tr>
+                    <tr>
+                        <td>Sistema</td>
+                        <td>Backup Automático</td>
+                        <td>Ontem, 00:00</td>
+                        <td><span class="status-badge active">Sucesso</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script type="module" src="assets/js/admin.js"></script>
+</body>
+
+</html>

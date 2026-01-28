@@ -52,88 +52,122 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="page-header-bg"></div>
+    <!-- Page Header (Hero) -->
+    <header class="page-header" style="padding: 12rem 0 8rem;">
+        <div class="page-header-bg" style="background-image: url('assets/img/contact-hero.png'); opacity: 0.3;"></div>
         <div class="container page-header-content">
-            <h1>Fale Conosco</h1>
-            <p>Estamos prontos para ouvir você. Entre em contato.</p>
+            <h1 class="reveal delay-100" style="font-size: 3.5rem; margin-top: 1rem;">Fale Conosco</h1>
+            <p class="reveal delay-200">Dúvidas, sugestões ou parcerias? Nossa equipe está pronta para te atender.</p>
         </div>
     </header>
 
-    <!-- Contact Section -->
-    <section style="padding: 6rem 0;">
+    <!-- Contact Cards Section -->
+    <section style="padding: 6rem 0 3rem;">
         <div class="container">
-            <div class="split-grid">
+            <div class="page-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 
-                <!-- Helper Info Column -->
-                <div class="split-text">
-                    <h2 class="section-title">Informações de Contato</h2>
-                    <p style="margin-bottom: 2rem;">Venha nos visitar ou envie uma mensagem através de nossos canais oficiais.</p>
+                <!-- Card: WhatsApp -->
+                <div class="article-card reveal delay-300" style="text-align: center; padding: 3rem 2rem;">
+                    <div style="width: 70px; height: 70px; background: rgba(16,185,129,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fab fa-whatsapp" style="font-size: 2rem; color: var(--accent-green);"></i>
+                    </div>
+                    <h4>WhatsApp</h4>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Atendimento rápido e direto para suas dúvidas.</p>
+                    <a href="https://wa.me/5561981030472" target="_blank" class="btn btn-outline btn-sm">(61) 98103-0472</a>
+                </div>
+
+                <!-- Card: E-mail -->
+                <div class="article-card reveal delay-400" style="text-align: center; padding: 3rem 2rem;">
+                    <div style="width: 70px; height: 70px; background: rgba(37,99,235,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-envelope" style="font-size: 1.8rem; color: var(--primary);"></i>
+                    </div>
+                    <h4>E-mail</h4>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Para assuntos formais, editais ou parcerias corporativas.</p>
+                    <a href="mailto:contato@institutoeixos.org.br" class="btn btn-outline btn-sm">Enviar E-mail</a>
+                </div>
+
+                <!-- Card: Endereço -->
+                <div class="article-card reveal delay-500" style="text-align: center; padding: 3rem 2rem;">
+                    <div style="width: 70px; height: 70px; background: rgba(239,68,68,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                        <i class="fas fa-map-marker-alt" style="font-size: 1.8rem; color: var(--accent-red);"></i>
+                    </div>
+                    <h4>Presencial</h4>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-light);">Taguatinga Norte, Brasília/DF<br>Q CNC 3, Bloco B, Sala 611</p>
+                    <a href="#mapa" class="btn btn-outline btn-sm">Ver no Mapa</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Area -->
+    <section id="contato" style="padding: 4rem 0 8rem;">
+        <div class="container">
+            <div class="split-grid" style="align-items: center; gap: 4rem;">
+                
+                <div class="split-text reveal delay-200">
+                    <h2 class="section-title">Envie uma mensagem</h2>
+                    <p style="margin-bottom: 2.5rem; font-size: 1.1rem; line-height: 1.7;">
+                        Utilize o formulário ao lado para nos enviar uma mensagem detalhada. 
+                        Nossa equipe retornará seu contato em até 24 horas úteis.
+                    </p>
                     
-                    <div style="margin-bottom: 2rem;">
-                        <h4 style="margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> Endereço</h4>
-                        <p style="color: var(--text-light);">Taguatinga Norte, Brasília/DF<br>Q CNC 3, Bloco B, Sala 611</p>
-                    </div>
-
-                    <div style="margin-bottom: 2rem;">
-                        <h4 style="margin-bottom: 0.5rem;"><i class="fab fa-whatsapp" style="color: var(--accent-green); margin-right: 10px;"></i> WhatsApp / Telefone</h4>
-                        <p style="color: var(--text-light);"><a href="https://wa.me/5561981030472" target="_blank" style="color: inherit;">(61) 98103-0472</a></p>
-                    </div>
-
-                    <div style="margin-bottom: 2rem;">
-                        <h4 style="margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> E-mail</h4>
-                        <p style="color: var(--text-light);">contato@institutoeixos.org.br</p>
+                    <div style="background: var(--surface); padding: 2rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary); box-shadow: var(--shadow-sm);">
+                        <p style="font-style: italic; color: var(--text-light);">"Sua opinião é fundamental para que possamos continuar transformando vidas com excelência e transparência."</p>
+                        <p style="margin-top: 1rem; font-weight: 600;">— Equipe Instituto Eixos</p>
                     </div>
 
                     <div style="margin-top: 3rem;">
-                        <h4 style="margin-bottom: 1rem;">Siga-nos nas Redes</h4>
-                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                            <a href="#" class="btn btn-outline" style="display: flex; align-items: center; gap: 10px; padding: 0.5rem 1.5rem; border-radius: var(--radius-full);">
-                                <i class="fab fa-instagram"></i> Instagram
-                            </a>
-                            <a href="#" class="btn btn-outline" style="display: flex; align-items: center; gap: 10px; padding: 0.5rem 1.5rem; border-radius: var(--radius-full);">
-                                <i class="fab fa-facebook-f"></i> Facebook
-                            </a>
-                            <a href="#" class="btn btn-outline" style="display: flex; align-items: center; gap: 10px; padding: 0.5rem 1.5rem; border-radius: var(--radius-full);">
-                                <i class="fab fa-youtube"></i> YouTube
-                            </a>
+                        <h4 style="margin-bottom: 1rem;">Nossas Redes</h4>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="https://www.instagram.com/institutoeixos/" class="social-icon-lg instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon-lg facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon-lg youtube"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Form Column -->
-                <div class="split-image" style="background: var(--surface); padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
-                    <h3 style="margin-bottom: 1.5rem;">Preencha seus dados</h3>
-                    <form>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Nome Completo</label>
-                            <input type="text" placeholder="Seu nome" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: var(--radius-sm);" required>
-                        </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">WhatsApp / Telefone</label>
-                            <input type="text" placeholder="(DD) 00000-0000" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: var(--radius-sm);" required>
-                        </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">E-mail</label>
-                            <input type="email" placeholder="seu@email.com" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: var(--radius-sm);" required>
-                        </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Assunto</label>
-                            <select style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: var(--radius-sm);">
-                                <option>Dúvidas Gerais</option>
-                                <option>Quero ser Voluntário</option>
-                                <option>Quero Doar</option>
-                                <option>Parcerias</option>
-                                <option>Imprensa</option>
-                            </select>
-                        </div>
-                        <div style="margin-bottom: 1.5rem;">
-                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Mensagem</label>
-                            <textarea rows="5" placeholder="Como podemos ajudar?" style="width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: var(--radius-sm); font-family: inherit;" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Whatsapp</button>
-                    </form>
+                <div class="reveal delay-400">
+                    <div style="background: white; padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); border: 1px solid #f1f5f9; position: relative; z-index: 10;">
+                        <h3 style="margin-bottom: 2rem;">Formulário de Contato</h3>
+                        <form action="#" method="POST" class="contact-form">
+                            <div class="page-grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                                <div>
+                                    <label style="display: block; margin-bottom: 0.6rem; font-weight: 600; font-size: 0.9rem;">Seu Nome</label>
+                                    <input type="text" name="senderName" placeholder="Ex: João Silva" style="width: 100%; padding: 0.9rem; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); outline-color: var(--primary);" required>
+                                </div>
+                                <div>
+                                    <label style="display: block; margin-bottom: 0.6rem; font-weight: 600; font-size: 0.9rem;">E-mail</label>
+                                    <input type="email" name="email" placeholder="nome@email.com" style="width: 100%; padding: 0.9rem; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); outline-color: var(--primary);" required>
+                                </div>
+                            </div>
+                            
+                            <div class="page-grid" style="grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                                <div>
+                                    <label style="display: block; margin-bottom: 0.6rem; font-weight: 600; font-size: 0.9rem;">WhatsApp</label>
+                                    <input type="text" name="whatsapp" placeholder="(61) 99999-9999" style="width: 100%; padding: 0.9rem; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); outline-color: var(--primary);" required>
+                                </div>
+                                <div>
+                                    <label style="display: block; margin-bottom: 0.6rem; font-weight: 600; font-size: 0.9rem;">Assunto</label>
+                                    <select name="subject" style="width: 100%; padding: 0.9rem; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); outline-color: var(--primary); background: white;">
+                                        <option>Dúvidas Gerais</option>
+                                        <option>Voluntariado</option>
+                                        <option>Doações</option>
+                                        <option>Parcerias</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 2rem;">
+                                <label style="display: block; margin-bottom: 0.6rem; font-weight: 600; font-size: 0.9rem;">Mensagem</label>
+                                <textarea name="message" rows="4" placeholder="Como podemos te ajudar hoje?" style="width: 100%; padding: 0.9rem; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); outline-color: var(--primary); font-family: inherit; resize: vertical;" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; text-transform: none; letter-spacing: 0;">
+                                <i class="fas fa-paper-plane" style="margin-right: 10px;"></i> Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
                 </div>
 
             </div>
@@ -141,12 +175,31 @@
     </section>
 
     <!-- Map Section -->
-    <section style="height: 400px; background: #e2e8f0; position: relative;">
-        <img src="assets/img/map-location.png" alt="Localização Instituto Eixos" style="width: 100%; height: 100%; object-fit: cover;">
-         <a href="https://maps.google.com" target="_blank" class="btn btn-primary" style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); box-shadow: var(--shadow-md);">
-             <i class="fas fa-map-marker-alt"></i> Ver no Google Maps
-         </a>
+    <section id="mapa" style="position: relative; margin-top: 2rem;">
+        <div style="height: 500px; background: #f1f5f9; overflow: hidden; position: relative;">
+            <!-- Interactive Google Map -->
+            <iframe 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                style="border:0; filter: grayscale(20%) Contrast(90%);" 
+                src="https://maps.google.com/maps?width=100%25&amp;height=500&amp;hl=pt-BR&amp;q=Q%20CNC%203,%20Bloco%20B,%20Sala%20611%20-%20Taguatinga%20Norte,%20Bras%C3%ADlia/DF+(Instituto%20Eixos)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                allowfullscreen>
+            </iframe>
+            
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 60px; background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent); pointer-events: none;"></div>
+        </div>
+        
+        <div class="container" style="margin-top: -5rem; position: relative; z-index: 20;">
+            <div style="max-width: 500px; padding: 2.5rem; background: var(--secondary); color: white; border-radius: var(--radius-md); box-shadow: var(--shadow-xl); border-bottom: 5px solid var(--primary);">
+                <h4 style="color: white; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-clock" style="opacity: 0.8;"></i> Horário de Atendimento
+                </h4>
+                <p style="opacity: 0.9; line-height: 1.6;"><strong>Segunda a Sexta:</strong> 08h às 18h<br><strong>Sábados:</strong> 09h às 13h (Apenas com agendamento)</p>
+            </div>
+        </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -156,9 +209,9 @@
                     <img src="assets/img/instituto-eixos-logo.png" alt="Logo" class="footer-logo">
                     <p style="opacity: 0.7;">Transformando a realidade de milhares de brasileiros através da solidariedade e ação social.</p>
                     <div class="social-links-gap">
-                        <a href="https://www.instagram.com/institutoeixos/" class="social-icon-lg" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon-lg"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-icon-lg"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/institutoeixos/" class="social-icon-lg instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon-lg facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon-lg youtube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -174,7 +227,7 @@
                 <div class="footer-col">
                     <h4>Contato</h4>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> <span>Taguatinga Norte, Brasília/DF<br>Q CNC 3, Bloco B, Sala 611</span></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <span>Taguatinga Norte, Brasília/DF,<br>Q CNC 3, Bloco B, Sala 611</span></li>
                         <li><i class="fas fa-envelope"></i> <span>contato@institutoeixos.org.br</span></li>
                         <li><i class="fab fa-whatsapp"></i> <span>(61) 98103-0472</span></li>
                     </ul>
@@ -188,5 +241,46 @@
 
     <!-- Scripts -->
     <script src="assets/js/script.js"></script>
+    <!-- Firebase & Form Logic -->
+    <script type="module" src="../admin/assets/js/firebase-config.js" id="firebase-init"></script>
+    <script type="module">
+        import { db } from '../admin/assets/js/firebase-config.js';
+        import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = contactForm.querySelector('button');
+                const originalText = btn.innerHTML;
+                
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                btn.disabled = true;
+
+                const formData = new FormData(contactForm);
+                const messageData = {
+                    senderName: formData.get('senderName'),
+                    email: formData.get('email'),
+                    whatsapp: formData.get('whatsapp'),
+                    subject: formData.get('subject'),
+                    message: formData.get('message'),
+                    createdAt: serverTimestamp(),
+                    status: 'unread'
+                };
+
+                try {
+                    await addDoc(collection(db, "fale-conosco"), messageData);
+                    alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+                    contactForm.reset();
+                } catch (error) {
+                    console.error("Erro ao enviar mensagem:", error);
+                    alert("Ocorreu um erro ao enviar sua mensagem. Tente novamente mais tarde.");
+                } finally {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }
+            });
+        }
+    </script>
 </body>
 </html>

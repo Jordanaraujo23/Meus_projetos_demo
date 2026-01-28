@@ -52,99 +52,131 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <header class="page-header">
-        <div class="page-header-bg"></div>
+    <!-- Page Header (Hero) -->
+    <header class="page-header" style="padding: 12rem 0 8rem;">
+        <div class="page-header-bg" style="background-image: url('assets/img/donation-hero.png'); opacity: 0.4;"></div>
         <div class="container page-header-content">
-            <h1>Faça sua Doação</h1>
-            <p>Sua contribuição ajuda a manter nossos projetos vivos.</p>
+            <span class="tag tag-primary reveal">Sua ajuda é fundamental</span>
+            <h1 class="reveal delay-100" style="font-size: 3.5rem; margin-top: 1rem;">Transforme vidas hoje</h1>
+            <p class="reveal delay-200">Cada doação cria um impacto real na vida de quem mais precisa.</p>
         </div>
     </header>
 
-    <!-- Donation Options -->
+    <!-- Donation Section (Hybrid Layout) -->
     <section style="padding: 6rem 0;">
         <div class="container">
-            <div class="page-grid" style="align-items: start;">
+            
+            <div class="page-grid" style="align-items: start; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
                 
-                <!-- Option 1: PIX -->
-                <div class="article-card" style="padding: 2rem; text-align: center;">
-                    <div style="width: 80px; height: 80px; background: rgba(37,99,235,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                        <i class="fas fa-qrcode" style="font-size: 2rem; color: var(--primary);"></i>
+                <!-- Card 1: PIX (Enhanced) -->
+                <div class="article-card reveal delay-300" style="padding: 2.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 50px; height: 50px; background: rgba(37,99,235,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-qrcode" style="font-size: 1.5rem; color: var(--primary);"></i>
+                        </div>
+                        <h3>Doação via PIX</h3>
                     </div>
-                    <h3>Doação via PIX</h3>
-                    <p style="margin-bottom: 2rem;">A maneira mais rápida e fácil de ajudar.</p>
+
+                    <p style="margin-bottom: 1.5rem;">A maneira mais rápida e fácil de ajudar.</p>
                     
-                    <div style="background: #f8fafc; padding: 1.5rem; border: 1px dashed #cbd5e1; border-radius: var(--radius-sm); margin-bottom: 1.5rem;">
-                        <p style="font-weight: 700; margin-bottom: 0.5rem;">Chave PIX (CNPJ)</p>
-                        <p style="font-family: monospace; font-size: 1.2rem; color: var(--secondary);">00.000.000/0001-00</p>
+                    <div class="amount-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="amount-btn" data-amount="30">R$ 30</div>
+                        <div class="amount-btn active" data-amount="50">R$ 50</div>
+                        <div class="amount-btn" data-amount="100">R$ 100</div>
+                    </div>
+
+                    <input type="number" class="custom-amount-input" placeholder="Outro valor (R$)" style="margin-bottom: 1.5rem;">
+
+                    <div class="pix-box" style="padding: 1.5rem;">
+                        <img src="assets/img/pix-qr.png" alt="QR Code PIX" class="pix-qr-img" style="max-width: 150px;">
+                        <div class="copy-box">
+                            <code>00020126580014BR.GOV.BCB.PIX013600000000-0000-0000-0000-000000000000520400005303986540550.005802BR5915INSTITUTO EIXOS6008BRASILIA62070503***6304E1B1</code>
+                            <button class="btn btn-primary btn-sm" onclick="copyPix()" style="text-transform: none; padding: 0.5rem 1rem;">Copia e Cola</button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Option 2: Bank Transfer -->
-                <div class="article-card" style="padding: 2rem; text-align: center;">
-                    <div style="width: 80px; height: 80px; background: rgba(16,185,129,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
-                        <i class="fas fa-university" style="font-size: 2rem; color: var(--accent-green);"></i>
+                <!-- Card 2: Transfer & Details -->
+                <div class="article-card reveal delay-400" style="padding: 2.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div style="width: 50px; height: 50px; background: rgba(16,185,129,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <i class="fas fa-university" style="font-size: 1.5rem; color: var(--accent-green);"></i>
+                        </div>
+                        <h3>Transferência Bancária</h3>
                     </div>
-                    <h3>Transferência Bancária</h3>
-                    <p style="margin-bottom: 2rem;">Faça uma transferência DOC ou TED.</p>
+
+                    <p style="margin-bottom: 1.5rem;">Faça uma transferência DOC ou TED direta.</p>
                     
-                    <div style="text-align: left; background: #f8fafc; padding: 1.5rem; border-radius: var(--radius-sm);">
-                        <p><strong>Banco:</strong> Banco do Brasil (001)</p>
-                        <p><strong>Agência:</strong> 1234-5</p>
-                        <p><strong>Conta:</strong> 12345-6</p>
-                        <p><strong>Favorecido:</strong> Instituto Eixos</p>
+                    <div style="background: #f8fafc; padding: 1.5rem; border-radius: var(--radius-sm); border: 1px solid #e2e8f0; margin-bottom: 2rem;">
+                        <p style="margin-bottom: 0.5rem;"><strong>Banco:</strong> Banco do Brasil (001)</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>Agência:</strong> 1234-5</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>Conta:</strong> 12345-6</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>Favorecido:</strong> Instituto Eixos</p>
                         <p><strong>CNPJ:</strong> 00.000.000/0001-00</p>
                     </div>
+
+                    <div style="text-align: center; padding: 1.5rem; border: 1px dashed #cbd5e1; border-radius: var(--radius-sm);">
+                        <i class="fas fa-credit-card" style="color: var(--text-light); margin-bottom: 0.5rem;"></i>
+                        <p style="font-size: 0.9rem; font-weight: 600;">Cartão de Crédito</p>
+                        <p style="font-size: 0.8rem; color: var(--text-light);">Em breve disponível no site.</p>
+                    </div>
+
+                    <div style="margin-top: 2rem; text-align: center;">
+                        <a href="https://wa.me/5561981030472" class="btn btn-outline btn-sm" style="width: 100%;">
+                            <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> Comunicar Doação
+                        </a>
+                    </div>
                 </div>
 
             </div>
-            
-            <!-- Transparency Section (New) -->
-            <div class="reveal delay-200" style="margin-top: 6rem; text-align: center;">
-                <h2 class="section-title center">Como investimos sua doação</h2>
-                <div class="page-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 3rem;">
-                    <div style="padding: 1.5rem;">
-                        <i class="fas fa-utensils" style="font-size: 2.5rem; color: var(--accent-red); margin-bottom: 1rem;"></i>
-                        <h4>Alimentação</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-light);">Cestas básicas para famílias em insegurança alimentar.</p>
+
+            <!-- Transparency & Impact Grid -->
+            <div class="reveal delay-500" style="margin-top: 8rem; text-align: center;">
+                <h2 class="section-title center">Transparência e Impacto</h2>
+                <p style="max-width: 600px; margin: 1rem auto 4rem;">Veja como sua contribuição se transforma em mudança real.</p>
+                
+                <div class="page-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="pillar-card" style="background: white;">
+                        <i class="fas fa-utensils" style="color: var(--accent-red);"></i>
+                        <h3>Alimentação</h3>
+                        <p>R$ 30,00 garante cestas básicas e alimentação para uma criança por uma semana.</p>
                     </div>
-                    <div style="padding: 1.5rem;">
-                         <i class="fas fa-book" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
-                        <h4>Educação</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-light);">Materiais didáticos e bolsas para cursos profissionalizantes.</p>
+                    <div class="pillar-card" style="background: white;">
+                        <i class="fas fa-book" style="color: var(--primary);"></i>
+                        <h3>Educação</h3>
+                        <p>R$ 100,00 financia kits escolares e material didático para um aluno do semestre.</p>
                     </div>
-                    <div style="padding: 1.5rem;">
-                        <i class="fas fa-first-aid" style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 1rem;"></i>
-                        <h4>Saúde</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-light);">Medicamentos e insumos para os mutirões de saúde.</p>
+                    <div class="pillar-card" style="background: white;">
+                        <i class="fas fa-briefcase" style="color: var(--accent-green);"></i>
+                        <h3>Capacitação</h3>
+                        <p>R$ 200,00 ajuda no fundo de bolsas para cursos profissionalizantes de jovens.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- FAQ Section (New) -->
-            <div class="reveal delay-300" style="margin-top: 6rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                <h2 class="section-title center">Perguntas Frequentes</h2>
-                <div style="margin-top: 2rem;">
-                    <details style="padding: 1rem; border-bottom: 1px solid #e2e8f0; cursor: pointer;">
-                        <summary style="font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">Posso deduzir do Imposto de Renda? <i class="fas fa-angle-down"></i></summary>
-                        <p style="margin-top: 1rem; color: var(--text-light);">Sim! Como OSCIP, as doações para o Instituto Eixos podem ser deduzidas do IR até o limite de 6% do imposto devido para pessoas físicas.</p>
+            <!-- FAQ Redux -->
+            <div class="reveal delay-500" style="margin-top: 8rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <h2 class="section-title center">Tire suas dúvidas</h2>
+                <div style="margin-top: 3rem;">
+                    <details style="padding: 1.2rem; border-bottom: 1px solid #e2e8f0; cursor: pointer;">
+                        <summary style="font-weight: 600; display: flex; justify-content: space-between; align-items: center; list-style: none;">
+                            Gera recibo para o Imposto de Renda? <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i>
+                        </summary>
+                        <p style="margin-top: 1rem; color: var(--text-light);">Sim. O Instituto Eixos fornece recibos para dedução fiscal. Entre em contato após doar.</p>
                     </details>
-                    <details style="padding: 1rem; border-bottom: 1px solid #e2e8f0; cursor: pointer;">
-                        <summary style="font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">Como recebo o comprovante? <i class="fas fa-angle-down"></i></summary>
-                        <p style="margin-top: 1rem; color: var(--text-light);">Basta enviar o comprovante da transação para nosso WhatsApp ou E-mail, e nossa equipe emitirá o recibo oficial em até 48 horas.</p>
-                    </details>
-                    <details style="padding: 1rem; border-bottom: 1px solid #e2e8f0; cursor: pointer;">
-                        <summary style="font-weight: 600; font-size: 1.1rem; list-style: none; display: flex; justify-content: space-between; align-items: center;">aceitam doações de materiais? <i class="fas fa-angle-down"></i></summary>
-                        <p style="margin-top: 1rem; color: var(--text-light);">Com certeza! Recebemos roupas, alimentos não perecíveis, brinquedos e equipamentos eletrônicos em bom estado. Entre em contato para agendar a entrega.</p>
+                    <details style="padding: 1.2rem; border-bottom: 1px solid #e2e8f0; cursor: pointer;">
+                        <summary style="font-weight: 600; display: flex; justify-content: space-between; align-items: center; list-style: none;">
+                            Posso doar materiais físicos? <i class="fas fa-chevron-down" style="font-size: 0.8rem;"></i>
+                        </summary>
+                        <p style="margin-top: 1rem; color: var(--text-light);">Com certeza! Aceitamos roupas, alimentos e equipamentos. Fale conosco no WhatsApp.</p>
                     </details>
                 </div>
             </div>
-            
-            <div style="text-align: center; margin-top: 4rem;">
-                <p>Precisa de recibo? <a href="quem-somos.html#contato" style="color: var(--primary); font-weight: 600;">Entre em contato conosco</a> após realizar sua doação.</p>
-            </div>
+
         </div>
     </section>
+
+
 
     <!-- Footer -->
     <footer class="footer">

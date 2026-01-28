@@ -77,114 +77,75 @@
             </div>
 
             <!-- Projects Grid (All Projects) -->
-            <div class="page-grid">
-                
-                <!-- Project 1: Brasília 2025 -->
-                <div class="article-card reveal delay-100" 
-                     onclick="openProjectModal(this)"
-                     data-title="Brasília 2025"
-                     data-category="Segurança Alimentar"
-                     data-description="Nossa iniciativa capitânia no combate à fome. Atuamos em mais de 15 regiões."
-                     data-stats="2.500+ Famílias | 15 Regiões"
-                     data-full-description="O Projeto Brasília 2025 é a nossa principal frente de atuação no combate à fome e à desigualdade no Distrito Federal. <br><br> Com uma gestão logística eficiente e parcerias estratégicas, atuamos em mais de 15 regiões administrativas, garantindo que alimentos frescos, cestas básicas e itens de vestuário cheguem a quem realmente precisa. <br><br> Além da distribuição de recursos, realizamos um trabalho de triagem social para identificar as famílias em situação de maior vulnerabilidade."
-                     data-images='["assets/img/projeto-brasilia-2025-1.png", "assets/img/quem-somos-team.png", "assets/img/ong-instituto-eixos.png"]'>
-                    <div class="article-image">
-                        <span class="tag tag-primary card-tag">Em Andamento</span>
-                        <img src="assets/img/projeto-brasilia-2025-1.png" alt="Brasília 2025" loading="lazy">
-                    </div>
-                    <div class="article-content">
-                        <h3 class="article-title">Brasília 2025</h3>
-                        <div class="card-stats-preview">
-                            <span><i class="fas fa-home"></i> 2.500+ Famílias</span>
-                        </div>
-                        <p class="article-excerpt">Iniciativa capitânia no combate à fome e segurança alimentar.</p>
-                        <button class="btn btn-outline btn-sm mt-auto">Ver Detalhes</button>
-                    </div>
+            <div class="page-grid" id="all-projects-grid">
+                <!-- Data will be injected here -->
+                <div class="col-12 text-center py-5">
+                    <p class="lead text-muted">Carregando projetos...</p>
                 </div>
-
-                <!-- Project 2: Saúde -->
-                <div class="article-card reveal delay-200"
-                     onclick="openProjectModal(this)"
-                     data-title="Mutirão da Saúde Integral"
-                     data-category="Saúde"
-                     data-description="Levamos saúde de qualidade para onde o governo não chega. Check-ups, encaminhamentos e doação de óculos."
-                     data-stats="1.200+ Atendimentos | 50 Médicos"
-                     data-full-description="A saúde é um direito básico, mas muitas vezes inacessível. O Mutirão da Saúde Integral leva atendimento médico humanizado diretamente às comunidades carentes. <br><br> Nossas ações itinerantes contam com uma equipe voluntária de médicos, dentistas, oftalmologistas e enfermeiros."
-                     data-images='["assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp", "assets/img/projeto-brasilia-2025-1.webp"]'>
-                    <div class="article-image">
-                        <span class="tag tag-green card-tag">Saúde</span>
-                        <img src="assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp" alt="Mutirão da Saúde" loading="lazy">
-                    </div>
-                    <div class="article-content">
-                        <h3 class="article-title">Mutirão da Saúde Integral</h3>
-                        <div class="card-stats-preview">
-                            <span><i class="fas fa-user-md"></i> 1.200+ Atendimentos</span>
-                        </div>
-                        <p class="article-excerpt">Ações itinerantes que levam atendimento médico básico e oftalmológico.</p>
-                        <button class="btn btn-outline btn-sm mt-auto">Ver Detalhes</button>
-                    </div>
-                </div>
-
-                <!-- Project 2.5: Campanha Sorriso -->
-                <div class="article-card reveal delay-250"
-                     onclick="openProjectModal(this)"
-                     data-title="Campanha Sorriso"
-                     data-category="Saúde"
-                     data-description="Atendimento odontológico gratuito para crianças em idade escolar."
-                     data-stats="500+ Crianças | 20 Dentistas"
-                     data-full-description="A saúde bucal é fundamental. Com a Campanha Sorriso, levamos kits de higiene e tratamento dentário completo para escolas públicas das regiões administrativas."
-                     data-images='["assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp", "assets/img/projeto-brasilia-2025-1.webp"]'>
-                    <div class="article-image">
-                        <span class="tag tag-green card-tag">Saúde</span>
-                        <img src="assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp" alt="Campanha Sorriso" loading="lazy">
-                    </div>
-                    <div class="article-content">
-                        <h3 class="article-title">Campanha Sorriso</h3>
-                        <div class="card-stats-preview">
-                            <span><i class="fas fa-smile"></i> 500+ Crianças</span>
-                        </div>
-                        <p class="article-excerpt">Atendimento odontológico e kits de higiene para escolas.</p>
-                        <button class="btn btn-outline btn-sm mt-auto">Ver Detalhes</button>
-                    </div>
-                </div>
-
-                <!-- Project 3: Educação -->
-                <div class="article-card reveal delay-300"
-                     onclick="openProjectModal(this)"
-                     data-title="Futuro Brilhante"
-                     data-category="Educação"
-                     data-description="Cursos de alfabetização digital e empreendedorismo para jovens e mães solo."
-                     data-stats="350+ Formados | 100% Gratuito"
-                     data-full-description="Acreditamos que a educação transforma destinos. O Projeto Futuro Brilhante oferece capacitação profissional gratuita focada nas demandas do mercado atual. <br><br> Oferecemos cursos de alfabetização digital, programação básica e artesanato sustentável."
-                     data-images='["assets/img/transparencia-r1nd963knjn162rxn2pkyjz13h5jrnehl7vw5i3j68.webp", "assets/img/ong-instituto-eixos-1024x682.webp"]'>
-                    <div class="article-image">
-                        <span class="tag tag-red card-tag">Educação</span>
-                        <img src="assets/img/transparencia-r1nd963knjn162rxn2pkyjz13h5jrnehl7vw5i3j68.webp" alt="Futuro Brilhante" loading="lazy">
-                    </div>
-                    <div class="article-content">
-                        <h3 class="article-title">Futuro Brilhante</h3>
-                        <div class="card-stats-preview">
-                            <span><i class="fas fa-graduation-cap"></i> 350+ Formados</span>
-                        </div>
-                        <p class="article-excerpt">Cursos profissionalizantes gratuitos focados em inclusão digital.</p>
-                        <button class="btn btn-outline btn-sm mt-auto">Ver Detalhes</button>
-                    </div>
-                </div>
-
-                <!-- Placeholder Project -->
-                <div class="article-card reveal delay-400"
-                     data-category="Geral"
-                     style="opacity: 0.7; cursor: default;">
-                     <div class="article-image" style="background: #f1f5f9; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-plus-circle" style="font-size: 3rem; color: #cbd5e1;"></i>
-                     </div>
-                     <div class="article-content">
-                        <h3 class="article-title">Em Breve</h3>
-                        <p class="article-excerpt">Novos projetos estão sendo desenvolvidos. Aguarde novidades!</p>
-                     </div>
-                </div>
-
             </div>
+        </div>
+
+        <!-- Firebase & Dynamic Content -->
+        <script type="module" src="../admin/assets/js/firebase-config.js" id="firebase-init"></script>
+        <script type="module">
+            import { db } from '../admin/assets/js/firebase-config.js';
+            import { collection, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+            const allProjectsGrid = document.getElementById('all-projects-grid');
+            let loadedProjects = [];
+
+            if (allProjectsGrid) {
+                const q = query(collection(db, "projetos"), orderBy("createdAt", "desc"));
+                onSnapshot(q, (snapshot) => {
+                    allProjectsGrid.innerHTML = '';
+                    
+                    if (snapshot.empty) {
+                        allProjectsGrid.innerHTML = '<div class="col-12 text-center py-5"><p class="lead text-muted">Aguardando novos projetos serem cadastrados...</p></div>';
+                        return;
+                    }
+
+                    loadedProjects = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+
+                    loadedProjects.forEach((proj) => {
+                        const card = `
+                            <div class="article-card reveal" style="cursor: pointer" onclick="openProjectFromId('${proj.id}')">
+                                <div class="article-image">
+                                    <span class="tag tag-primary card-tag">${proj.category || 'Geral'}</span>
+                                    <img src="${(proj.imageUrl || 'assets/img/projeto-brasilia-2025-1.png').replace('../', '')}" alt="${proj.title}" loading="lazy">
+                                </div>
+                                <div class="article-content">
+                                    <h3 class="article-title">${proj.title}</h3>
+                                    <div class="card-stats-preview">
+                                        <span><i class="fas fa-chart-line"></i> ${proj.stat_main || ''}</span>
+                                    </div>
+                                    <p class="article-excerpt">${proj.excerpt || ''}</p>
+                                    <button class="btn btn-outline btn-sm mt-auto">Ver Detalhes</button>
+                                </div>
+                            </div>
+                        `;
+                        allProjectsGrid.insertAdjacentHTML('beforeend', card);
+                    });
+                });
+            }
+
+            window.openProjectFromId = (id) => {
+                const project = loadedProjects.find(p => p.id === id);
+                if (project && typeof openProjectModal === 'function') {
+                    const mockElement = {
+                        getAttribute: (attr) => {
+                            if (attr === 'data-title') return project.title;
+                            if (attr === 'data-category') return project.category;
+                            if (attr === 'data-description') return project.excerpt;
+                            if (attr === 'data-stats') return `${project.stat_main} | ${project.stat_sec}`;
+                            if (attr === 'data-full-description') return project.full_description;
+                            if (attr === 'data-images') return JSON.stringify([project.imageUrl.replace('../', '')]);
+                            return '';
+                        }
+                    };
+                    openProjectModal(mockElement);
+                }
+            };
+        </script>
         </div>
 
 

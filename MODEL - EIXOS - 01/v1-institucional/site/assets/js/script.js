@@ -588,13 +588,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// === LIGHTBOX LOGIC (Global) ===
+// === LIGHTBOX LOGIC (Gallery Carousel) ===
 document.addEventListener("DOMContentLoaded", () => {
-    // Inject Lightbox HTML if not exists
+    // Inject Lightbox HTML with Navigation Arrows
     if (!document.getElementById("lightbox")) {
         const lightboxHTML = `
             <div id="lightbox" class="lightbox">
                 <button class="lightbox-close">&times;</button>
+                <button class="lightbox-prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
                 <div class="lightbox-container">
                     <img id="lightbox-img" class="lightbox-content" src="" alt="Zoom">
                     <div class="lightbox-footer">
@@ -602,7 +603,38 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p id="lightbox-caption"></p>
                     </div>
                 </div>
+                <button class="lightbox-next" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
             </div>
+            <style>
+                .lightbox-prev, .lightbox-next {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: rgba(255, 255, 255, 0.1);
+                    color: white;
+                    border: none;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    z-index: 1001;
+                    transition: all 0.3s ease;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .lightbox-prev:hover, .lightbox-next:hover {
+                    background: rgba(255, 255, 255, 0.3);
+                    transform: translateY(-50%) scale(1.1);
+                }
+                .lightbox-prev { left: 20px; }
+                .lightbox-next { right: 20px; }
+                @media (max-width: 768px) {
+                    .lightbox-prev { left: 10px; width: 40px; height: 40px; font-size: 1.2rem; }
+                    .lightbox-next { right: 10px; width: 40px; height: 40px; font-size: 1.2rem; }
+                }
+            </style>
         `;
         document.body.insertAdjacentHTML("beforeend", lightboxHTML);
     }
@@ -612,36 +644,87 @@ document.addEventListener("DOMContentLoaded", () => {
     const lightboxTitle = document.getElementById("lightbox-title");
     const lightboxCaption = document.getElementById("lightbox-caption");
     const lightboxClose = document.querySelector(".lightbox-close");
+    const btnPrev = document.querySelector(".lightbox-prev");
+    const btnNext = document.querySelector(".lightbox-next");
 
-    // Close Functions
+    let galleryItems = [];
+    let currentIndex = 0;
+
+    const updateLightbox = () => {
+        if (galleryItems.length === 0) return;
+        const item = galleryItems[currentIndex];
+        
+        // Fade effect
+        lightboxImg.style.opacity = '0.5';
+        setTimeout(() => {
+            lightboxImg.src = item.src;
+            lightboxTitle.innerText = item.title || "";
+            lightboxCaption.innerText = item.caption || "";
+            lightboxImg.style.opacity = '1';
+        }, 150);
+    };
+
+    // Close
     const closeLightbox = () => {
         lightbox.classList.remove("active");
         setTimeout(() => {
             lightboxImg.src = "";
-            lightboxTitle.innerText = "";
-            lightboxCaption.innerText = "";
+            galleryItems = []; // Clear
         }, 300); 
     };
 
-    lightboxClose.addEventListener("click", closeLightbox);
+    // Navigation
+    const showNext = (e) => {
+        if(e) e.stopPropagation();
+        currentIndex = (currentIndex + 1) % galleryItems.length;
+        updateLightbox();
+    };
+
+    const showPrev = (e) => {
+        if(e) e.stopPropagation();
+        currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+        updateLightbox();
+    };
+
+     lightboxClose.addEventListener("click", closeLightbox);
     
     // Close on background click
     lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox || e.target.classList.contains('lightbox-container')) closeLightbox();
     });
 
-    // Close on Escape
+    btnNext.addEventListener("click", showNext);
+    btnPrev.addEventListener("click", showPrev);
+
+    // Keyboard Support
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && lightbox.classList.contains("active")) {
-            closeLightbox();
-        }
+        if (!lightbox.classList.contains("active")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") showNext();
+        if (e.key === "ArrowLeft") showPrev();
     });
 
     // Global Open Function
-    window.openLightbox = function(src, title, caption) {
-        lightboxImg.src = src;
-        lightboxTitle.innerText = title || "";
-        lightboxCaption.innerText = caption || "";
+    // Can be called with (index, itemsArray) OR legacy (src, title, caption)
+    window.openLightbox = function(arg1, arg2, arg3) {
+        // Mode 1: Legacy (src, title, caption) - Single Image
+        if (typeof arg1 === 'string') {
+            galleryItems = [{ src: arg1, title: arg2, caption: arg3 }];
+            currentIndex = 0;
+            // Hide arrows if only 1
+            btnPrev.style.display = 'none';
+            btnNext.style.display = 'none';
+        } 
+        // Mode 2: Gallery (index, allItems)
+        else {
+            currentIndex = arg1; // index
+            galleryItems = arg2; // array of objects {src, title, caption}
+            // Show arrows
+            btnPrev.style.display = 'flex';
+            btnNext.style.display = 'flex';
+        }
+        
+        updateLightbox();
         lightbox.classList.add("active");
     };
 });
@@ -852,4 +935,63 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+
+  // === DONATION WIZARD LOGIC ===
+  const donationTabs = document.querySelectorAll(".donation-tab");
+  const methodContents = document.querySelectorAll(".donation-method-content");
+  const amountBtns = document.querySelectorAll(".amount-btn");
+  const customInput = document.querySelector(".custom-amount-input");
+
+  // 1. Tab Switching
+  donationTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Remove active from tabs
+      donationTabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      // Show target content
+      const target = tab.getAttribute("data-target");
+      methodContents.forEach((content) => {
+        content.classList.remove("active");
+        if (content.id === `method-${target}`) {
+          content.classList.add("active");
+        }
+      });
+    });
+  });
+
+  // 2. Amount Selection
+  amountBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      amountBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      if (customInput) customInput.value = ""; // Clear custom if preset selected
+    });
+  });
+
+  if (customInput) {
+    customInput.addEventListener("input", () => {
+      amountBtns.forEach((b) => b.classList.remove("active"));
+    });
+  }
+
+  // 3. PIX Copy Logic
+  window.copyPix = function () {
+    const pixCode = document.querySelector(".copy-box code").innerText;
+    navigator.clipboard.writeText(pixCode).then(() => {
+      const btn = document.querySelector(".copy-box .btn");
+      const originalText = btn.innerText;
+      btn.innerText = "Copiado!";
+      btn.classList.add("btn-green"); // Assuming a green style exists or adding inline
+      btn.style.background = "var(--accent-green)";
+      
+      setTimeout(() => {
+        btn.innerText = originalText;
+        btn.style.background = "";
+      }, 2000);
+    }).catch(err => {
+      console.error('Erro ao copiar: ', err);
+      alert('Não foi possível copiar o código. Por favor, selecione e copie manualmente.');
+    });
+  };
 });

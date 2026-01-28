@@ -54,7 +54,7 @@
 
     <!-- Page Header -->
     <header class="page-header">
-        <div class="page-header-bg"></div>
+        <div class="page-header-bg" style="background-image: url('assets/img/news-hero.png');"></div>
         <div class="container page-header-content">
             <h1>Notícias e Atualizações</h1>
             <p>Fique por dentro das nossas ações e impactos na comunidade.</p>
@@ -62,14 +62,15 @@
     </header>
 
     <!-- News Grid -->
-    <section style="padding: 4rem 0;">
+    <section class="section-news">
+
         <div class="container">
             
             <!-- Controls Bar (Search & Filter) -->
-            <div class="news-controls reveal" style="margin-bottom: 3rem; display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; align-items: center; background: white; padding: 1.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+            <div class="news-controls reveal">
                 
                 <!-- Category Filters -->
-                <div class="filter-tabs" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <div class="filter-tabs">
                     <button class="filter-btn active" data-filter="all">Todas</button>
                     <button class="filter-btn" data-filter="institucional">Institucional</button>
                     <button class="filter-btn" data-filter="projetos">Projetos</button>
@@ -78,34 +79,34 @@
                 </div>
 
                 <!-- Search Mock -->
-                <div class="search-bar" style="position: relative; min-width: 250px;">
-                    <input type="text" placeholder="Buscar notícias..." style="width: 100%; padding: 0.8rem 1rem 0.8rem 2.5rem; border: 1px solid #ddd; border-radius: 50px; outline: none; transition: border-color 0.3s;">
-                    <i class="fas fa-search" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #999;"></i>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar notícias...">
+                    <i class="fas fa-search"></i>
                 </div>
             </div>
 
             <!-- Featured News (Redesigned) -->
-            <div class="reveal delay-100" style="margin-bottom: 4rem;">
+            <div class="reveal delay-100 featured-news-wrapper">
                 <article 
+                    class="featured-article"
                     data-category="Destaque"
                     data-title="Nova Sede do Instituto Eixos é Inaugurada em Taguatinga"
                     data-date="22 Jan, 2026"
                     data-images='["assets/img/projeto-brasilia-2025-1.png", "assets/img/Front1.png", "assets/img/reuniao-equipe.jpg"]'
                     data-content="<h3>Expansão e Impacto</h3><p>É com imenso orgulho que inauguramos nossa nova sede em Taguatinga Norte. Este espaço moderno de 500m² foi projetado para ser um verdadeiro centro de transformação social.</p><p>A nova estrutura conta com salas de aula equipadas, auditório para 100 pessoas, sala de atendimento psicossocial e um espaço de convivência comunitária. Com isso, nossa capacidade de atendimento será ampliada em mais de 50%, permitindo que novos projetos saiam do papel ainda este ano.</p><p>Agradecemos a todos que contribuíram para este sonho se tornar realidade.</p>"
-                    onclick="openNewsModal(this)"
-                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 0; background: white; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid rgba(0,0,0,0.05); cursor: pointer;">
-                    <div style="height: 400px; position: relative;">
-                        <img src="assets/img/projeto-brasilia-2025-1.png" alt="Destaque" style="width: 100%; height: 100%; object-fit: cover;">
-                        <span class="tag tag-primary" style="position: absolute; top: 1.5rem; left: 1.5rem;">Destaque Principal</span>
+                    onclick="openNewsModal(this)">
+                    <div class="featured-article-image">
+                        <img src="assets/img/projeto-brasilia-2025-1.png" alt="Destaque">
+                        <span class="tag tag-primary">Destaque Principal</span>
                     </div>
-                    <div style="padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);">
-                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: var(--text-light); font-size: 0.9rem;">
+                    <div class="featured-article-content">
+                        <div class="featured-meta">
                             <span><i class="far fa-calendar-alt"></i> 22 Jan, 2026</span>
                             <span><i class="far fa-user"></i> Assessoria de Imprensa</span>
                         </div>
-                        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem; line-height: 1.2; color: var(--text);">Nova Sede do Instituto Eixos é Inaugurada em Taguatinga</h2>
-                        <p style="color: var(--text-light); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">Espaço moderno de 500m² será utilizado para cursos profissionalizantes, workshops e atendimento psicossocial à comunidade, ampliando nossa capacidade de atuação em mais de 50% ainda este ano.</p>
-                        <button class="btn btn-primary" style="align-self: start;">Ler Matéria Completa</button>
+                        <h2 class="featured-title">Nova Sede do Instituto Eixos é Inaugurada em Taguatinga</h2>
+                        <p class="featured-excerpt">Espaço moderno de 500m² será utilizado para cursos profissionalizantes, workshops e atendimento psicossocial à comunidade, ampliando nossa capacidade de atuação em mais de 50% ainda este ano.</p>
+                        <button class="btn btn-primary btn-pill">Ler Matéria Completa</button>
                     </div>
                 </article>
             </div>
@@ -129,7 +130,7 @@
                         <span class="meta-date"><i class="far fa-calendar-alt"></i> 20 Jan, 2026</span>
                         <h3 class="article-title">Projeto Brasília 2025 impacta mais de 2.000 famílias</h3>
                         <p class="article-excerpt">Nossa iniciativa de distribuição de alimentos e roupas alcançou um novo recorde histórico de atendimentos.</p>
-                        <button class="read-more btn-link">Ler mais <i class="fas fa-arrow-right"></i></button>
+                        <button class="read-more">Ler mais <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </article>
 
@@ -149,7 +150,7 @@
                         <span class="meta-date"><i class="far fa-calendar-alt"></i> 18 Jan, 2026</span>
                         <h3 class="article-title">A importância da saúde preventiva nas comunidades</h3>
                         <p class="article-excerpt">Como nossos mutirões de saúde estão ajudando a detectar e tratar problemas precocemente.</p>
-                        <button class="read-more btn-link">Ler mais <i class="fas fa-arrow-right"></i></button>
+                        <button class="read-more">Ler mais <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </article>
 
@@ -169,7 +170,7 @@
                         <span class="meta-date"><i class="far fa-calendar-alt"></i> 15 Jan, 2026</span>
                         <h3 class="article-title">Workshop de Capacitação Profissional Aberto</h3>
                         <p class="article-excerpt">Inscreva-se agora para nossos cursos gratuitos de tecnologia, artesanato e empreendedorismo.</p>
-                        <button class="read-more btn-link">Ler mais <i class="fas fa-arrow-right"></i></button>
+                        <button class="read-more">Ler mais <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </article>
 
@@ -189,7 +190,7 @@
                         <span class="meta-date"><i class="far fa-calendar-alt"></i> 10 Jan, 2026</span>
                         <h3 class="article-title">Instituto Eixos recebe selo de Transparência</h3>
                         <p class="article-excerpt">Fomos reconhecidos pela gestão eficiente e ética dos recursos em prol da sociedade.</p>
-                        <button class="read-more btn-link">Ler mais <i class="fas fa-arrow-right"></i></button>
+                        <button class="read-more">Ler mais <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </article>
 
@@ -209,7 +210,7 @@
                         <span class="meta-date"><i class="far fa-calendar-alt"></i> 05 Jan, 2026</span>
                         <h3 class="article-title">Planejamento Estratégico 2026 Definido</h3>
                         <p class="article-excerpt">Confira as metas ambiciosas que traçamos para expandir nosso impacto este ano.</p>
-                        <button class="read-more btn-link">Ler mais <i class="fas fa-arrow-right"></i></button>
+                        <button class="read-more">Ler mais <i class="fas fa-arrow-right"></i></button>
                     </div>
                 </article>
 
@@ -344,5 +345,72 @@
 
     <!-- Scripts -->
     <script src="assets/js/script.js"></script>
+    <!-- Firebase & Dynamic Content -->
+    <script type="module" src="../admin/assets/js/firebase-config.js" id="firebase-init"></script>
+    <script type="module">
+        import { db } from '../admin/assets/js/firebase-config.js';
+        import { collection, query, orderBy, onSnapshot, limit } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const newsGrid = document.getElementById('news-grid');
+        const featuredWrapper = document.querySelector('.featured-news-wrapper');
+
+        if (newsGrid) {
+            const q = query(collection(db, "noticias"), orderBy("createdAt", "desc"));
+            onSnapshot(q, (snapshot) => {
+                newsGrid.innerHTML = '';
+                
+                if (snapshot.empty) {
+                    newsGrid.innerHTML = '<p class="text-center w-100 py-5 text-muted">Aguardando novas notícias...</p>';
+                    return;
+                }
+
+                const allNews = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                    
+                    // Update Featured News
+                    const featured = allNews[0];
+                    if (featuredWrapper && featured) {
+                        const dateStr = featured.createdAt?.toDate ? featured.createdAt.toDate().toLocaleDateString('pt-BR') : 'Recente';
+                        featuredWrapper.innerHTML = `
+                            <article class="featured-article" onclick="openNewsModal('${featured.id}')">
+                                <div class="featured-article-image">
+                                    <img src="${(featured.imageUrl || 'assets/img/projeto-brasilia-2025-1.png').replace('../', '')}" alt="${featured.title}">
+                                    <span class="tag tag-primary">Destaque Principal</span>
+                                </div>
+                                <div class="featured-article-content">
+                                    <div class="featured-meta">
+                                        <span><i class="far fa-calendar-alt"></i> ${dateStr}</span>
+                                        <span><i class="far fa-user"></i> Assessoria</span>
+                                    </div>
+                                    <h2 class="featured-title">${featured.title}</h2>
+                                    <p class="featured-excerpt">${featured.excerpt || ''}</p>
+                                    <button class="btn btn-primary btn-pill">Ler Matéria Completa</button>
+                                </div>
+                            </article>
+                        `;
+                    }
+
+                    // Render Grid (skipping the first one if it's already featured, or showing all)
+                    newsGrid.innerHTML = '';
+                    allNews.forEach((item, index) => {
+                        const dateStr = item.createdAt?.toDate ? item.createdAt.toDate().toLocaleDateString('pt-BR') : 'Recente';
+                        const card = `
+                            <article class="article-card reveal" onclick="openNewsModal('${item.id}')">
+                                <div class="article-image">
+                                    <span class="tag tag-primary" style="position: absolute; top: 1rem; right: 1rem;">${item.category || 'Geral'}</span>
+                                    <img src="${(item.imageUrl || 'assets/img/projeto-brasilia-2025-1.png').replace('../', '')}" alt="${item.title}" loading="lazy">
+                                </div>
+                                <div class="article-content">
+                                    <span class="meta-date"><i class="far fa-calendar-alt"></i> ${dateStr}</span>
+                                    <h3 class="article-title">${item.title}</h3>
+                                    <p class="article-excerpt">${item.excerpt || ''}</p>
+                                    <button class="read-more">Ler mais <i class="fas fa-arrow-right"></i></button>
+                                </div>
+                            </article>
+                        `;
+                        newsGrid.insertAdjacentHTML('beforeend', card);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>

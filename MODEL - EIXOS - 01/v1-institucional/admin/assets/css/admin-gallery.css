@@ -1,0 +1,103 @@
+
+/* === GALLERY LIST LAYOUT REFINED === */
+.gallery-admin-card {
+    display: flex;
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--admin-border);
+    overflow: hidden;
+    height: 140px; /* Reduced height */
+    transition: var(--transition);
+    align-items: center;
+}
+
+.gallery-admin-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.gallery-admin-image {
+    width: 180px; /* Reduced width */
+    height: 100%;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.gallery-admin-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-admin-inputs {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem; /* Compact gap */
+    background: #fdfdfd;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.form-group-compact {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.form-input-compact {
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    background: white;
+    transition: all 0.2s;
+    font-family: var(--font-primary);
+}
+
+.form-input-compact:focus {
+    outline: none;
+    border-color: var(--admin-primary);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.btn-delete-overlay {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(239, 68, 68, 0.9);
+    color: white;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.gallery-admin-image:hover .btn-delete-overlay {
+    opacity: 1;
+}
+
+.btn-delete-overlay:hover {
+    transform: scale(1.1);
+    background: #dc2626;
+}
+
+@media (max-width: 768px) {
+    .gallery-admin-card {
+        flex-direction: column;
+        height: auto;
+    }
+    .gallery-admin-image {
+        width: 100%;
+        height: 180px;
+    }
+}

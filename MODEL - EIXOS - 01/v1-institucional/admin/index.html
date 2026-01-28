@@ -11,64 +11,13 @@
 <body>
 
     <!-- === LOGIN SCREEN OVERLAY === -->
-    <div id="login-screen" class="login-body">
-        <!-- LEFT SIDE: Branding -->
-        <div class="login-brand-side">
-            <div class="brand-content">
-                <h1>Transformando Vidas e Comunidades</h1>
-                <p>Bem-vindo ao sistema de gestão do Instituto Eixos. Controle projetos, transparência e notícias em um só lugar.</p>
-            </div>
-        </div>
-
-        <!-- RIGHT SIDE: Form -->
-        <div class="login-form-side">
-            <div class="login-card-modern">
-                <div style="text-align: center;">
-                    <img src="assets/img/instituto-eixos-logo.png" alt="Instituto Eixos" class="login-logo" style="filter: none;">
-                    <h2 style="font-size: 1.75rem; color: var(--admin-secondary); margin-bottom: 0.5rem;">Olá, Administrador</h2>
-                    <p style="color: #64748b; margin-bottom: 2.5rem;">Digite suas credenciais para continuar.</p>
-                </div>
-                
-                <form id="login-form">
-                    <div class="form-group">
-                        <label class="form-label">E-mail</label>
-                        <div style="position: relative;">
-                            <input type="email" class="form-input" placeholder="seu@email.com" value="admin@institutoeixos.org.br" required style="padding-left: 2.5rem;">
-                            <i class="fas fa-envelope" style="position: absolute; left: 1rem; top: 1rem; color: #94a3b8;"></i>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Senha</label>
-                        <div style="position: relative;">
-                             <input type="password" class="form-input" placeholder="••••••••" value="admin123" required style="padding-left: 2.5rem;">
-                             <i class="fas fa-lock" style="position: absolute; left: 1rem; top: 1rem; color: #94a3b8;"></i>
-                        </div>
-                    </div>
-                    
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.9rem;">
-                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: #64748b;">
-                            <input type="checkbox" checked style="accent-color: var(--admin-primary);"> Lembrar-me
-                        </label>
-                        <a href="#" style="color: var(--admin-primary); font-weight: 500;">Esqueceu?</a>
-                    </div>
-
-                    <button type="submit" class="btn-login">Acessar Painel <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></button>
-                </form>
-                
-                <div style="margin-top: 2rem; text-align: center; font-size: 0.85rem; color: #94a3b8;">
-                    &copy; 2026 Instituto Eixos. Todos os direitos reservados.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- === APP CONTENT (Hidden until login) === -->
-    <div id="app-content" style="display: none; width: 100%; height: 100%;">
+    <!-- === APP CONTENT (Visible by default) === -->
+    <div id="app-content" style="display: flex; width: 100%; height: 100%;">
     
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <img src="assets/img/instituto-eixos-logo.png" alt="Instituto Eixos" class="sidebar-logo-img">
+            <img src="../assets/img/instituto-eixos-logo.png" alt="Instituto Eixos" class="sidebar-logo-img">
         </div>
 
         <ul class="sidebar-menu">
@@ -107,6 +56,11 @@
                     <i class="fas fa-users-cog"></i> Usuários
                 </a>
             </li>
+            <li class="menu-item">
+                <a href="#" class="menu-link" data-section="settings">
+                    <i class="fas fa-cog"></i> Configurações
+                </a>
+            </li>
         </ul>
 
         <div class="user-profile">
@@ -117,7 +71,7 @@
                 <h4 style="font-size: 0.9rem;">Administrador</h4>
                 <p style="font-size: 0.8rem; color: #94a3b8;">admin@eixos.org</p>
             </div>
-            <a href="login.html" title="Sair" style="color: #94a3b8;"><i class="fas fa-sign-out-alt"></i></a>
+            <a href="#" id="logout-btn" title="Sair" style="color: #94a3b8;"><i class="fas fa-sign-out-alt"></i></a>
         </div>
     </aside>
 
@@ -329,66 +283,26 @@
             </div>
         </section>
 
-        <!-- 3. MESSAGES -->
-        <section id="messages" class="dashboard-section">
-            <div class="stats-grid">
-                 <div class="stat-card">
-                    <div class="stat-value">3</div>
-                    <div class="stat-label">Não Lidas</div>
-                 </div>
-            </div>
 
-            <div class="content-card">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Remetente</th>
-                            <th>Assunto</th>
-                            <th>Data</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="background: #fefffe; font-weight: 600;">
-                            <td>Maria Silva <br><small style="font-weight: 400; color: #94a3b8;">maria@gmail.com</small></td>
-                            <td>Quero ser Voluntária - Disponibilidade Sábados</td>
-                            <td>Hoje, 09:15</td>
-                            <td><button class="btn-sm btn-primary">Responder</button></td>
-                        </tr>
-                        <tr style="background: #fefffe; font-weight: 600;">
-                            <td>João Pedro</td>
-                            <td>Dúvida sobre Doação de Equipamentos</td>
-                            <td>Ontem</td>
-                            <td><button class="btn-sm btn-primary">Responder</button></td>
-                        </tr>
-                        <tr>
-                            <td>Empresa XYZ</td>
-                            <td>Proposta de Parceria</td>
-                            <td>20 Jan</td>
-                            <td><button class="btn-sm btn-outline">Ver Detalhes</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
 
         <!-- 1.5 GALLERY MANAGEMENT -->
         <section id="gallery" class="dashboard-section">
             <div class="content-card">
                 <div class="card-header">
                     <h3>Galeria de Fotos</h3>
-                    <button class="btn-sm btn-primary"><i class="fas fa-cloud-upload-alt"></i> Upload</button>
+                    <button class="btn-sm btn-primary" onclick="document.getElementById('gallery-upload-input').click()"><i class="fas fa-cloud-upload-alt"></i> Upload</button>
+                    <input type="file" id="gallery-upload-input" style="display: none;" onchange="uploadGalleryImage(event)" accept="image/*">
                 </div>
                 <div style="padding: 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem;">
                     <!-- Gallery Mock Items -->
                     <div style="aspect-ratio: 1; background: #e2e8f0; border-radius: 0.5rem; position: relative; overflow: hidden; height: 150px;">
-                        <img src="assets/img/projeto-brasilia-2025-1.webp" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="../assets/img/projeto-brasilia-2025-1.webp" style="width: 100%; height: 100%; object-fit: cover;">
                         <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); padding: 0.5rem; display: flex; justify-content: flex-end;">
                             <button class="btn-action btn-delete" style="color: white;"><i class="fas fa-trash"></i></button>
                         </div>
                     </div>
                     <div style="aspect-ratio: 1; background: #e2e8f0; border-radius: 0.5rem; position: relative; overflow: hidden; height: 150px;">
-                         <img src="assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp" style="width: 100%; height: 100%; object-fit: cover;">
+                         <img src="../assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp" style="width: 100%; height: 100%; object-fit: cover;">
                          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.5); padding: 0.5rem; display: flex; justify-content: flex-end;">
                             <button class="btn-action btn-delete" style="color: white;"><i class="fas fa-trash"></i></button>
                         </div>
@@ -402,146 +316,134 @@
 
         <!-- 4. PROJECTS MANAGEMENT -->
         <section id="projects" class="dashboard-section">
-            <div class="content-card">
-                <div class="card-header">
-                    <h3>Gerenciar Projetos</h3>
-                    <div style="display: flex; gap: 1rem;">
-                        <input type="text" placeholder="Buscar projetos..." class="form-input" style="width: 250px; padding: 0.4rem;">
-                        <button class="btn-sm btn-primary" onclick="openModal('modal-new-project')">
-                            <i class="fas fa-plus"></i> Novo Projeto
+            
+            <!-- Projects Header Card -->
+            <div class="content-card header-action-card">
+                <div class="card-header-main">
+                    <h2>Gerenciar Projetos</h2>
+                    <div class="header-actions-group">
+                        <div class="search-wrapper">
+                            <input type="text" id="search-projects-input" placeholder="Buscar projetos..." class="form-input search-input">
+                            <i class="fas fa-search search-icon"></i>
+                        </div>
+                        <button class="btn-primary btn-search" id="btn-search-projects">
+                            BUSCAR
+                        </button>
+                        <button class="btn-primary btn-add-new" onclick="toggleProjectForm()">
+                            <i class="fas fa-plus"></i> NOVO PROJETO
                         </button>
                     </div>
                 </div>
-                <!-- Projects Table -->
-                <div class="table-responsive">
-                    <table id="projects-table">
-                        <thead>
-                            <tr>
-                                <th width="30%">Projeto</th>
-                                <th>Categoria</th>
-                                <th>Estatísticas</th>
-                                <th>Status</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Mock Data Row 1 -->
-                            <tr>
-                                <td>
-                                    <div style="display: flex; align-items: center; gap: 1rem;">
-                                        <img src="assets/img/projeto-brasilia-2025-1.webp" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover;">
-                                        <div>
-                                            <strong>Brasília 2025</strong>
-                                            <div style="font-size: 0.8rem; color: #64748b;">Ação capitânia em 15 regiões</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td><span class="status-badge" style="background: #eff6ff; color: var(--admin-primary);">Social</span></td>
-                                <td>
-                                    <div style="font-size: 0.85rem;">2.500+ Famílias</div>
-                                    <div style="font-size: 0.75rem; color: #94a3b8;">15 Regiões</div>
-                                </td>
-                                <td><span class="status-badge active">Em Andamento</span></td>
-                                <td>
-                                    <button class="btn-action"><i class="fas fa-edit"></i></button>
-                                    <button class="btn-action btn-delete"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <!-- Mock Data Row 2 -->
-                            <tr>
-                                <td>
-                                    <div style="display: flex; align-items: center; gap: 1rem;">
-                                        <img src="assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover;">
-                                        <div>
-                                            <strong>Mutirão da Saúde</strong>
-                                            <div style="font-size: 0.8rem; color: #64748b;">Atendimentos itinerantes</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td><span class="status-badge" style="background: #f0fdf4; color: var(--success);">Saúde</span></td>
-                                <td>
-                                    <div style="font-size: 0.85rem;">1.200+ Atendimentos</div>
-                                    <div style="font-size: 0.75rem; color: #94a3b8;">50 Médicos</div>
-                                </td>
-                                <td><span class="status-badge active">Ativo</span></td>
-                                <td>
-                                    <button class="btn-action"><i class="fas fa-edit"></i></button>
-                                    <button class="btn-action btn-delete"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+            </div>
+
+            <!-- INLINE NEW PROJECT FORM (Matching Screenshot) -->
+            <div id="inline-project-form" class="content-card inline-form-card" style="display: none;">
+                <div class="card-header-inline">
+                    <h3>Novo Projeto</h3>
+                    <button class="btn-close-inline" onclick="toggleProjectForm()">&times;</button>
+                </div>
+                <div class="card-body-padding">
+                    <form id="form-new-project-inline" class="form-grid-modern">
+                        <div class="form-group-modern">
+                            <label>Nome do Projeto</label>
+                            <input type="text" name="title" class="form-input-modern" placeholder="Ex: Ação Solidária 2026" required>
+                        </div>
+                        
+                        <div class="form-group-modern">
+                            <label>Categoria (Tag)</label>
+                            <select name="category" class="form-input-modern">
+                                <option>Em Andamento</option>
+                                <option>Saúde</option>
+                                <option>Educação</option>
+                                <option>Cultura</option>
+                                <option>Esporte</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group-modern">
+                            <label>Descrição Curta (Card)</label>
+                            <textarea name="excerpt" class="form-input-modern" rows="3" placeholder="Resumo breve que aparece no card..." required></textarea>
+                        </div>
+
+                        <div class="form-grid-row">
+                            <div class="form-group-modern">
+                                <label>Estatística Principal</label>
+                                <input type="text" name="stat_main" class="form-input-modern" placeholder="Ex: 500+ Famílias">
+                            </div>
+                            <div class="form-group-modern">
+                                <label>Estatística Secundária</label>
+                                <input type="text" name="stat_sec" class="form-input-modern" placeholder="Ex: 5 Cidades">
+                            </div>
+                        </div>
+
+                        <div class="form-group-modern">
+                            <label>Galeria de Imagens</label>
+                            <input type="file" id="gallery-file-input" class="form-input-modern" multiple accept="image/*" onchange="previewImages()">
+                            <small style="color: var(--admin-muted); font-size: 0.8rem;">Selecione até 10 imagens. A primeira será a capa.</small>
+                            <div id="gallery-preview" style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;"></div>
+                        </div>
+
+                        <div class="form-group-modern">
+                            <label>Descrição Completa</label>
+                            <textarea name="full_description" class="form-input-modern" rows="5" placeholder="Texto detalhado que aparecerá no modal do site..." required></textarea>
+                        </div>
+
+                        <div class="form-actions-inline">
+                            <button type="button" class="btn-primary" onclick="submitProjectInline()">SALVAR PROJETO</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
-            <!-- NEW PROJECT MODAL -->
-            <div id="modal-new-project" class="admin-modal-overlay">
-                <div class="admin-modal">
-                    <div class="admin-modal-header">
-                        <h3 class="admin-modal-title">Novo Projeto</h3>
-                        <button class="admin-modal-close" onclick="closeModal('modal-new-project')">&times;</button>
-                    </div>
-                    <div class="admin-modal-body">
-                        <form id="form-new-project" class="form-grid">
-                            <!-- Title & Category -->
-                            <div class="form-group">
-                                <label class="form-label">Nome do Projeto</label>
-                                <input type="text" name="title" class="form-input" placeholder="Ex: Ação Solidária 2026" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Categoria (Tag)</label>
-                                <select name="category" class="form-input">
-                                    <option>Em Andamento</option>
-                                    <option>Saúde</option>
-                                    <option>Educação</option>
-                                    <option>Cultura</option>
-                                    <option>Esporte</option>
-                                </select>
-                            </div>
+            <!-- FEATURED PROJECT SECTION -->
+            <div class="content-card" style="border-left: 5px solid var(--warning); background: #fffbeb; margin-bottom: 2rem;">
+                <div class="card-header">
+                    <h3 style="color: var(--warning-dark); display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-star"></i> Projeto em Destaque (Home)
+                    </h3>
+                </div>
+                <div id="main-project-container" style="padding: 1rem; text-align: center; color: var(--admin-muted);">
+                    <!-- Dynamic Featured Project will appear here -->
+                    <p>Carregando destaque...</p>
+                </div>
+            </div>
 
-                            <!-- Short Description -->
-                            <div class="form-group form-full">
-                                <label class="form-label">Descrição Curta (Card)</label>
-                                <textarea name="excerpt" class="form-input" rows="2" placeholder="Resumo breve que aparece no card..." required></textarea>
-                            </div>
+            <!-- PROJECTS GALLERY HEADER -->
+            <div class="content-card" style="margin-bottom: 0; border-bottom: none; border-radius: 8px 8px 0 0;">
+                <div class="card-header">
+                    <h3>Galeria de Projetos</h3>
+                </div>
+            </div>
 
-                            <!-- Stats -->
-                            <div class="form-group">
-                                <label class="form-label">Estatística Principal</label>
-                                <input type="text" name="stat_main" class="form-input" placeholder="Ex: 500+ Famílias">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Estatística Secundária</label>
-                                <input type="text" name="stat_sec" class="form-input" placeholder="Ex: 5 Cidades">
-                            </div>
+            <!-- Project Cards Grid -->
+            <div class="grid-container-wrapper">
+                <div id="projects-grid" class="projects-grid-container">
+                    <!-- Cards will be injected here by admin.js -->
+                </div>
+            </div>
 
-                            <!-- Full Description (HTML) -->
-                            <div class="form-group form-full">
-                                <label class="form-label">Descrição Completa</label>
-                                <div style="background: #f1f5f9; padding: 0.5rem; border-radius: 0.5rem 0.5rem 0 0; border: 1px solid var(--admin-border); border-bottom: none; display: flex; gap: 0.5rem;">
-                                    <button type="button" class="btn-sm btn-outline" style="padding: 0.2rem 0.5rem;"><b>B</b></button>
-                                    <button type="button" class="btn-sm btn-outline" style="padding: 0.2rem 0.5rem;"><i>I</i></button>
-                                    <button type="button" class="btn-sm btn-outline" style="padding: 0.2rem 0.5rem;">Link</button>
-                                </div>
-                                <textarea name="full_description" class="form-input" rows="6" style="border-top-left-radius: 0; border-top-right-radius: 0;" placeholder="Texto detalhado que aparecerá no modal do site..." required></textarea>
-                            </div>
+        </section>
 
-                            <!-- Image Upload -->
-                            <div class="form-group form-full">
-                                <label class="form-label">Imagem de Capa</label>
-                                <div class="admin-file-upload">
-                                    <i class="fas fa-cloud-upload-alt" style="font-size: 2rem; color: #94a3b8; margin-bottom: 1rem;"></i>
-                                    <p style="color: #64748b;">Arraste uma imagem ou clique para selecionar</p>
-                                    <input type="file" style="display: none;">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="admin-modal-footer">
-                        <button class="btn-sm btn-outline" onclick="closeModal('modal-new-project')">Cancelar</button>
-                        <button type="button" class="btn-sm btn-primary" onclick="submitProject()">Salvar Projeto</button>
+        <!-- 4. GALLERY MANAGEMENT -->
+        <section id="gallery" class="dashboard-section">
+            <div class="content-card header-action-card">
+                <div class="card-header-main">
+                    <h2>Galeria de Fotos</h2>
+                    <p style="color: var(--text-light); margin: 0;">Gerencie as fotos gerais do site (Eventos, Ações, etc).</p>
+                    <div class="header-actions-group">
+                        <button class="btn-primary" onclick="document.getElementById('global-gallery-upload').click()">
+                            <i class="fas fa-cloud-upload-alt"></i> Adicionar Fotos
+                        </button>
+                        <input type="file" id="global-gallery-upload" multiple accept="image/*" style="display: none;" onchange="uploadGlobalGallery()">
                     </div>
                 </div>
+            </div>
+
+            <div class="content-card">
+                 <div id="global-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
+                     <!-- Gallery items injected here -->
+                     <p class="text-muted col-12 text-center" style="grid-column: 1/-1; padding: 2rem;">Carregando galeria...</p>
+                 </div>
             </div>
         </section>
         
@@ -659,10 +561,10 @@
                             <!-- File Upload -->
                             <div class="form-group form-full">
                                 <label class="form-label">Arquivo (PDF/DOC)</label>
-                                <div class="admin-file-upload">
+                                <div class="admin-file-upload" onclick="document.getElementById('doc-file-input').click()">
                                     <i class="fas fa-file-upload" style="font-size: 2rem; color: #94a3b8; margin-bottom: 1rem;"></i>
-                                    <p style="color: #64748b;">Clique para enviar o documento</p>
-                                    <input type="file" style="display: none;">
+                                    <p id="doc-file-label" style="color: #64748b;">Clique para enviar o documento</p>
+                                    <input type="file" id="doc-file-input" accept=".pdf,.doc,.docx" style="display: none;" onchange="updateDocFileLabel(this)">
                                 </div>
                             </div>
                         </form>
@@ -670,6 +572,45 @@
                     <div class="admin-modal-footer">
                         <button class="btn-sm btn-outline" onclick="closeModal('modal-new-doc')">Cancelar</button>
                         <button type="button" class="btn-sm btn-primary" onclick="submitDoc()">Salvar Documento</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. MESSAGES INBOX -->
+        <section id="messages" class="dashboard-section">
+            <div class="content-card header-action-card">
+                <div class="card-header-main">
+                    <h2>Caixa de Entrada</h2>
+                    <div class="header-actions-group">
+                        <select id="msg-filter" class="form-input search-input" style="width: 200px;">
+                            <option value="all">Todas as Mensagens</option>
+                            <option value="unread" selected>Não Lidas</option>
+                            <option value="read">Lidas</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <div class="table-responsive">
+                    <table id="messages-table">
+                        <thead>
+                            <tr>
+                                <th width="20%">Remetente</th>
+                                <th width="20%">Assunto</th>
+                                <th width="40%">Mensagem</th>
+                                <th width="10%">Data</th>
+                                <th width="10%">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Messages injected via JS -->
+                        </tbody>
+                    </table>
+                    <div id="no-messages" style="text-align: center; padding: 3rem; color: #94a3b8; display: none;">
+                        <i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                        <p>Sua caixa de entrada está vazia.</p>
                     </div>
                 </div>
             </div>
@@ -683,11 +624,51 @@
             </div>
         </section>
 
+        <!-- 9. SETTINGS -->
+        <section id="settings" class="dashboard-section">
+            <div class="section-header">
+                <div>
+                    <h2>Configurações do Sistema</h2>
+                    <p>Gerencie as preferências e ferramentas de manutenção do painel.</p>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <div class="card-header">
+                    <h3>Sincronização de Dados</h3>
+                </div>
+                <div class="card-body">
+                    <p style="margin-bottom: 1.5rem; color: #64748b;">
+                        Esta ferramenta permite importar todo o conteúdo estático original do site (projetos, notícias, galeria) diretamente para o banco de dados do Firebase.
+                        <strong>Use apenas se o seu banco de dados estiver vazio para evitar duplicidade.</strong>
+                    </p>
+                    <button class="btn-primary" onclick="runFullMigration(event)" id="btn-migrate-now">
+                        <i class="fas fa-sync-alt"></i> Migrar Todos os Dados do Site
+                    </button>
+                    <div id="migration-status" style="margin-top: 1rem; display: none; font-weight: 500;"></div>
+                </div>
+            </div>
+
+            <div class="admin-card" style="margin-top: 2rem; border-top: 4px solid var(--danger);">
+                <div class="card-header">
+                    <h3 style="color: #b91c1c;"><i class="fas fa-broom"></i> Limpeza de Banco de Dados</h3>
+                </div>
+                <div class="card-body">
+                    <p style="margin-bottom: 1.5rem; color: #64748b;">
+                        Esta ferramenta remove automaticamente registros duplicados nas coleções de Projetos, Notícias, Galeria e Editais baseando-se em títulos ou URLs de imagem idênticos.
+                    </p>
+                    <button class="btn-danger" style="background: #ef4444; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 0.5rem;" onclick="runDeduplication(event)" id="btn-deduplicate">
+                        <i class="fas fa-trash-sweep"></i> Remover Itens Duplicados
+                    </button>
+                    <div id="deduplication-status" style="margin-top: 1rem; display: none; font-weight: 500;"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
     </div>
     <!-- End #app-content -->
 
-    <script src="assets/js/admin.js"></script>
+    <script type="module" src="assets/js/admin.js"></script>
 </body>
 </html>

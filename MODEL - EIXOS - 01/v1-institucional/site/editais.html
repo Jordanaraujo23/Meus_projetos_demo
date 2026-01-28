@@ -54,7 +54,7 @@
 
     <!-- Page Header -->
     <header class="page-header">
-        <div class="page-header-bg"></div>
+        <div class="page-header-bg" style="background-image: url('assets/img/transparency-hero.png');"></div>
         <div class="container page-header-content">
             <h1>Portal de Transparência</h1>
             <p>Prestação de contas, valores, documentos oficiais e registros de nossas ações.</p>
@@ -190,40 +190,10 @@
             <div class="reveal delay-300">
                 <h2 class="section-title">Editais e Chamamentos</h2>
                 <div class="editais-list" style="max-width: 900px; margin: 2rem auto 0; background: var(--surface); padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-                    
-                    <!-- Edital Item 1 -->
-                    <div class="edital-item" style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; border-bottom: 1px solid #e2e8f0;">
-                        <div class="edital-info">
-                            <span class="tag tag-primary" style="margin-bottom: 0.5rem;">Aberto</span>
-                            <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Edital de Chamamento 01/2026</h3>
-                            <p style="color: var(--text-light); font-size: 0.9rem;">Seleção de fornecedores para o Projeto Brasília 2025.</p>
-                            <small style="color: var(--text-light);"><i class="far fa-calendar-alt"></i> Publicado em: 15/01/2026</small>
-                        </div>
-                        <a href="#" class="btn btn-outline" style="font-size: 0.85rem;"><i class="fas fa-download"></i> Baixar PDF</a>
+                    <div class="text-center py-5">
+                        <i class="fas fa-circle-notch fa-spin fa-2x text-primary"></i>
+                        <p class="mt-3 text-muted">Carregando documentos...</p>
                     </div>
-
-                    <!-- Edital Item 2 -->
-                    <div class="edital-item" style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; border-bottom: 1px solid #e2e8f0;">
-                        <div class="edital-info">
-                            <span class="tag tag-green" style="margin-bottom: 0.5rem;">Concluído</span>
-                            <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Relatório Financeiro 2025</h3>
-                            <p style="color: var(--text-light); font-size: 0.9rem;">Balanço patrimonial e demonstração de resultados.</p>
-                            <small style="color: var(--text-light);"><i class="far fa-calendar-alt"></i> Publicado em: 30/12/2025</small>
-                        </div>
-                        <a href="#" class="btn btn-outline" style="font-size: 0.85rem;"><i class="fas fa-download"></i> Baixar PDF</a>
-                    </div>
-                    
-                    <!-- Edital Item 3 -->
-                    <div class="edital-item" style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem;">
-                        <div class="edital-info">
-                            <span class="tag tag-red" style="margin-bottom: 0.5rem;">Encerrado</span>
-                            <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Termo de Fomento 05/2025</h3>
-                            <p style="color: var(--text-light); font-size: 0.9rem;">Parceria com SMSA/PMBV para execução de projetos sociais.</p>
-                            <small style="color: var(--text-light);"><i class="far fa-calendar-alt"></i> Publicado em: 10/05/2025</small>
-                        </div>
-                        <a href="https://institutoeixos.org.br/wp-content/uploads/2025/12/TERMO-DE-FOMENTO.pdf" target="_blank" class="btn btn-outline" style="font-size: 0.85rem;"><i class="fas fa-download"></i> Baixar PDF</a>
-                    </div>
-
                 </div>
             </div>
 
@@ -270,5 +240,57 @@
 
     <!-- Scripts -->
     <script src="assets/js/script.js"></script>
+    <!-- Firebase & Dynamic Content -->
+    <script type="module" src="../admin/assets/js/firebase-config.js" id="firebase-init"></script>
+    <script type="module">
+        import { db } from '../admin/assets/js/firebase-config.js';
+        import { collection, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const editaisList = document.querySelector('.editais-list');
+        if (editaisList) {
+            const q = query(collection(db, "transparencia"), orderBy("date", "desc"));
+            onSnapshot(q, (snapshot) => {
+                editaisList.innerHTML = ''; // Clear hardcoded
+                
+                if (snapshot.empty) {
+                     editaisList.innerHTML = '<p class="text-center py-5 text-muted">Nenhum documento disponível no momento.</p>';
+                     return;
+                }
+
+                snapshot.forEach((docSnap) => {
+                    const data = docSnap.data();
+                    // Handle Date (String YYYY-MM-DD or Timestamp)
+                    let dateDisplay = 'Recente';
+                    if (data.date) {
+                         const parts = data.date.split('-'); // 2026-01-15
+                         if (parts.length === 3) dateDisplay = `${parts[2]}/${parts[1]}/${parts[0]}`;
+                    } else if (data.createdAt && data.createdAt.toDate) {
+                         dateDisplay = data.createdAt.toDate().toLocaleDateString('pt-BR');
+                    }
+
+                    // Status Colors
+                    let tagClass = 'tag-primary';
+                    if (data.status === 'Concluído') tagClass = 'tag-green';
+                    if (data.status === 'Encerrado') tagClass = 'tag-red';
+                    if (data.status === 'Em Execução') tagClass = 'tag-yellow'; // helper needed or custom style
+
+                    const item = `
+                        <div class="edital-item" style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem; border-bottom: 1px solid #e2e8f0;">
+                            <div class="edital-info">
+                                <span class="tag ${tagClass}" style="margin-bottom: 0.5rem;">${data.status || 'Aberto'}</span>
+                                <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">${data.title}</h3>
+                                <p style="color: var(--text-light); font-size: 0.9rem;">${data.description || ''}</p>
+                                <small style="color: var(--text-light);"><i class="far fa-calendar-alt"></i> Publicado em: ${dateDisplay}</small>
+                            </div>
+                            <a href="${data.fileUrl || '#'}" class="btn btn-outline" style="font-size: 0.85rem;" target="_blank">
+                                <i class="fas fa-download"></i> Baixar PDF
+                            </a>
+                        </div>
+                    `;
+                    editaisList.insertAdjacentHTML('beforeend', item);
+                });
+            });
+        }
+    </script>
 </body>
 </html>

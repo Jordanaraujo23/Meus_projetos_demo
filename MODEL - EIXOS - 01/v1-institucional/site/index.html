@@ -274,33 +274,14 @@
             gap: 2rem;
           "
         >
-          <article class="article-card">
-            <div class="article-image">
-              <span
-                class="tag tag-primary"
-                style="position: absolute; top: 1rem; left: 1rem"
-                >Novidade</span
-              >
-              <img
-                src="assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp"
-                alt="Notícia 1"
-                loading="lazy"
-              />
-            </div>
-            <div class="article-content">
-              <h3 class="article-title">Ação Social no Bairro dos Estados</h3>
-              <p class="article-excerpt">
-                Confira como foi nossa última ação de distribuição de cestas
-                básicas.
-              </p>
-              <a
-                href="noticias.html"
-                style="color: var(--primary); font-weight: 600"
-                >Ler mais <i class="fas fa-arrow-right"></i
-              ></a>
-            </div>
-          </article>
-          <!-- More articles omitted for brevity but structure maintained -->
+          <!-- Dynamic Content Loaded Here -->
+        </div>
+
+        <!-- Fixed "View All" Button -->
+        <div class="text-center reveal delay-200" style="margin-top: 3rem;">
+            <a href="noticias.html" class="btn btn-outline" style="padding: 1rem 2.5rem;">
+                Ver Todas as Notícias <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+            </a>
         </div>
       </div>
     </section>
@@ -441,7 +422,72 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="assets/js/script.js"></script>
-  </body>
+    <!-- Firebase & Dynamic Content -->
+    <script type="module" src="../admin/assets/js/firebase-config.js" id="firebase-init"></script>
+    <script type="module">
+        import { db } from '../admin/assets/js/firebase-config.js';
+        import { collection, query, orderBy, limit, onSnapshot, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        // Helper for Dates
+        const formatDate = (timestamp) => {
+            if (!timestamp) return 'Recente';
+            const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+            return date.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
+        };
+
+        // --- DYNAMIC NEWS INJECTION ---
+        const newsGrid = document.querySelector('.news-grid');
+        if (newsGrid) {
+            const qNews = query(collection(db, "noticias"), orderBy("createdAt", "desc"), limit(3));
+            onSnapshot(qNews, (snapshot) => {
+                if (!snapshot.empty) {
+                    newsGrid.innerHTML = '';
+                    snapshot.forEach((docSnap) => {
+                        const data = docSnap.data();
+                        const card = `
+                            <article class="article-card reveal">
+                                <div class="article-image">
+                                    <span class="tag tag-primary" style="position: absolute; top: 1rem; left: 1rem">${data.category || 'Novidade'}</span>
+                                    <img src="${(data.imageUrl || 'assets/img/projeto-brasilia-2025-1.png').replace('../', '')}" alt="${data.title}" loading="lazy">
+                                </div>
+                                <div class="article-content">
+                                    <h3 class="article-title">${data.title}</h3>
+                                    <p class="article-excerpt">${data.excerpt || ''}</p>
+                                    <a href="noticias.html" style="color: var(--primary); font-weight: 600">
+                                        Ler mais <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </article>
+                        `;
+                        newsGrid.insertAdjacentHTML('beforeend', card);
+                    });
+                }
+            });
+        }
+
+        // --- DYNAMIC IMPACT STATS ---
+        const updateStats = () => {
+            // This could be made smarter by counting docs, but for now we'll keep the static design 
+            // unless requested otherwise, as it's purely stylistic in the current HTML.
+        };
+
+        // --- DYNAMIC PROJECTS HIGHLIGHTS (O QUE FAZEMOS) ---
+        // We'll replace the image in the 'O Que Fazemos' section with the latest project image dynamically
+        const featuredProjectImg = document.querySelector('.split-section.bg-white .split-image img');
+        if (featuredProjectImg) {
+            // Fetch Main Project
+            const qProj = query(collection(db, "projetos"), where("isMain", "==", true), limit(1));
+            onSnapshot(qProj, (snapshot) => {
+                if (!snapshot.empty) {
+                    const data = snapshot.docs[0].data();
+                    if (data.imageUrl) featuredProjectImg.src = data.imageUrl.replace('../', '');
+                } else {
+                     // Fallback to latest if no main project is set
+                     // (Optional logic, but good for safety)
+                }
+            });
+        }
+    </script>
+</body>
 </html>

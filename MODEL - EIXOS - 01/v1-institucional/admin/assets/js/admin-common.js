@@ -1,17 +1,12 @@
 import { auth, db } from './firebase-config.js';
+import { checkAuth } from './auth-guard.js';
 
 // Common Admin UI Logic
-export const initCommon = () => {
+export const initCommon = async () => {
     console.log("Admin Common UI Initializing...");
 
-    // Set Static Admin Profile
-    const userName = document.querySelector('.user-profile h4');
-    const userEmail = document.querySelector('.user-profile p');
-    const avatar = document.querySelector('.user-avatar img');
-    
-    if(userName) userName.textContent = 'Administrador';
-    if(userEmail) userEmail.textContent = 'admin@eixos.org';
-    if(avatar) avatar.src = `https://ui-avatars.com/api/?name=Admin+User&background=2563eb&color=fff`;
+    // Protect Route
+    await checkAuth();
 
     // Sidebar Toggle (Mobile)
     const toggleBtn = document.querySelector('.menu-toggle-admin');
@@ -49,14 +44,15 @@ export const initCommon = () => {
         });
     });
 
-    // Fake Logout
+    // Real Logout
     const logoutBtn = document.getElementById('logout-btn');
     if(logoutBtn) {
-        logoutBtn.addEventListener('click', (e) => {
+        logoutBtn.addEventListener('click', async (e) => {
             e.preventDefault();
-            if (confirm('Deseja realmente sair?')) {
-                window.location.href = 'login.html';
+            if (typeof window.handleLogout === 'function') {
+                await window.handleLogout();
             }
         });
     }
 };
+

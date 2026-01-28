@@ -1,4 +1,4 @@
-import { db } from '../../../admin/assets/js/firebase-config.js';
+import { db } from './firebase-config.js';
 import { collection, query, orderBy, onSnapshot, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", () => {

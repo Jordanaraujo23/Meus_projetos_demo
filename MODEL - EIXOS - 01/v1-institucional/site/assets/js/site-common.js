@@ -1,4 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
+import { checkAuth } from '../../admin/assets/js/auth-guard.js';
+
+document.addEventListener("DOMContentLoaded", async function () {
+    // Lock public site with auth
+    await checkAuth(false);
+
     // 1. Mobile Menu Logic
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector(".nav-menu");
@@ -139,5 +144,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 btn.style.transform = "translate(0, 0)";
             });
         });
+    }
+    // 6. Injection of Logout Button
+    if (navMenu && !document.getElementById('logout-btn-site')) {
+        const logoutLi = document.createElement("a");
+        logoutLi.href = "#";
+        logoutLi.id = "logout-btn-site";
+        logoutLi.className = "nav-link logout-site-link";
+        logoutLi.innerHTML = '<i class="fas fa-sign-out-alt"></i> Sair';
+        logoutLi.style.cssText = "color: #ef4444; font-weight: 600;";
+        
+        logoutLi.addEventListener("click", async (e) => {
+            e.preventDefault();
+            if (typeof window.handleLogout === 'function') {
+                await window.handleLogout();
+            }
+        });
+        
+        navMenu.appendChild(logoutLi);
     }
 });

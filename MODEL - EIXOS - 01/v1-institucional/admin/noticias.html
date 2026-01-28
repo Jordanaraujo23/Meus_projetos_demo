@@ -43,7 +43,12 @@
                 <h4 style="font-size: 0.9rem; color: white;">Administrador</h4>
                 <p style="font-size: 0.8rem; color: #94a3b8;">admin@eixos.org</p>
             </div>
-            <a href="../site/index.html" title="Voltar ao Site" style="color: #94a3b8;"><i class="fas fa-home"></i></a>
+            <a href="../site/index.html" title="Voltar ao Site" style="color: #94a3b8; padding: 0.5rem; transition: color 0.2s;">
+                <i class="fas fa-home"></i>
+            </a>
+            <a href="#" id="logout-btn" title="Sair" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
         </div>
     </aside>
 
@@ -66,31 +71,47 @@
                 </div>
                 <div class="admin-modal-body">
                     <form id="form-new-news">
-                        <div class="form-group">
-                            <label>Título da Notícia</label>
-                            <input type="text" name="news_title" class="form-input" required placeholder="Ex: Mutirão de Saúde alcança recorde">
-                        </div>
-                        <div class="form-group">
-                            <label>Categoria</label>
-                            <select name="news_category" class="form-input">
-                                <option value="Geral">Geral</option>
-                                <option value="Institucional">Institucional</option>
-                                <option value="Projetos">Projetos</option>
-                                <option value="Saúde">Saúde</option>
-                                <option value="Educação">Educação</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Resumo (Excerpt)</label>
-                            <input type="text" name="news_excerpt" class="form-input" placeholder="Breve descrição para a Home">
-                        </div>
-                        <div class="form-group">
-                            <label>Conteúdo Completo</label>
-                            <textarea name="news_content" class="form-input" rows="5" placeholder="Texto completo da matéria..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>URL da Imagem</label>
-                            <input type="text" name="news_image" class="form-input" placeholder="https://exemplo.com/imagem.jpg (opcional)">
+                        <input type="hidden" name="news_id" id="news-id">
+                        <div class="admin-form-grid">
+                            <div class="admin-form-group full-width">
+                                <label>Título da Notícia</label>
+                                <input type="text" name="news_title" class="admin-form-input" required placeholder="Ex: Mutirão de Saúde alcança recorde">
+                            </div>
+                            
+                            <div class="admin-form-group">
+                                <label>Categoria</label>
+                                <select name="news_category" class="admin-form-select">
+                                    <option value="Geral">Geral</option>
+                                    <option value="Institucional">Institucional</option>
+                                    <option value="Projetos">Projetos</option>
+                                    <option value="Saúde">Saúde</option>
+                                    <option value="Educação">Educação</option>
+                                </select>
+                            </div>
+                            
+                            <div class="admin-form-group">
+                                <label>Resumo (Excerpt)</label>
+                                <input type="text" name="news_excerpt" class="admin-form-input" placeholder="Breve descrição para a Home">
+                            </div>
+                            
+                            <div class="admin-form-group full-width">
+                                <label>Conteúdo Completo</label>
+                                <textarea name="news_content" class="admin-form-textarea" rows="8" placeholder="O que você quer contar hoje? Escreva a matéria completa aqui..."></textarea>
+                            </div>
+                            
+                            <div class="admin-form-group full-width">
+                                <label>Capa da Notícia</label>
+                                <div class="file-upload-wrapper">
+                                    <input type="file" name="news_image_file" class="file-upload-input" accept="image/*" id="news-image-input">
+                                    <div class="file-upload-btn">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span>Clique ou arraste a imagem para selecionar</span>
+                                    </div>
+                                </div>
+                                <div id="image-preview" style="display: none;">
+                                    <img src="" alt="Preview">
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>

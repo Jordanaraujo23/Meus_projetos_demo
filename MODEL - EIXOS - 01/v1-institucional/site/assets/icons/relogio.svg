@@ -1,0 +1,11 @@
+<!-- Ícone: Relógio - Identidade Visual -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="28" stroke="#005B89" stroke-width="5" fill="none"/>
+  <line x1="50" y1="50" x2="50" y2="30" stroke="#E42836" stroke-width="5" stroke-linecap="round"/>
+  <line x1="50" y1="50" x2="65" y2="50" stroke="#F7AA2C" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="50" cy="50" r="4" fill="#3D6446"/>
+  <circle cx="50" cy="25" r="3" fill="#005B89"/>
+  <circle cx="75" cy="50" r="3" fill="#005B89"/>
+  <circle cx="50" cy="75" r="3" fill="#005B89"/>
+  <circle cx="25" cy="50" r="3" fill="#005B89"/>
+</svg>

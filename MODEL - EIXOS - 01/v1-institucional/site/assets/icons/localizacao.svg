@@ -1,0 +1,7 @@
+<!-- Ícone: Localização - Identidade Visual -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <path d="M50 20 Q38 20, 35 35 Q35 48, 50 70" stroke="#3D6446" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M50 20 Q62 20, 65 35 Q65 48, 50 70" stroke="#005B89" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <circle cx="50" cy="38" r="8" stroke="#E42836" stroke-width="4" fill="none"/>
+  <circle cx="50" cy="70" r="4" fill="#F7AA2C"/>
+</svg>

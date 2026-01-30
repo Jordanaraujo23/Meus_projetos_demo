@@ -1,8 +1,35 @@
-import { checkAuth } from '../../admin/assets/js/auth-guard.js';
+// Remoção temporária de checkAuth para diagnosticar desaparecimento da página
+// import { checkAuth } from '../../../admin/assets/js/auth-guard.js';
+import { db } from './firebase-config.js';
+import { doc, updateDoc, increment, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-document.addEventListener("DOMContentLoaded", async function () {
-    // Lock public site with auth
-    await checkAuth(false);
+// Visit Tracking
+const trackVisit = async () => {
+    try {
+        const sessionKey = 'site-visit-counted';
+        if (!sessionStorage.getItem(sessionKey)) {
+            const analyticsRef = doc(db, "config", "analytics");
+            try {
+                await updateDoc(analyticsRef, {
+                    visits: increment(1),
+                    lastVisit: new Date().toISOString()
+                });
+            } catch (e) {
+                // If doc doesn't exist, create it
+                await setDoc(analyticsRef, { visits: 1, lastVisit: new Date().toISOString() });
+            }
+            sessionStorage.setItem(sessionKey, 'true');
+        }
+    } catch (error) {
+        console.warn("Analytics error:", error);
+    }
+};
+trackVisit();
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Forçar visibilidade do site em caso de bloqueio por scripts anteriores
+    document.body.style.opacity = '1';
+    document.body.style.visibility = 'visible';
 
     // 1. Mobile Menu Logic
     const menuToggle = document.querySelector(".menu-toggle");
@@ -144,23 +171,5 @@ document.addEventListener("DOMContentLoaded", async function () {
                 btn.style.transform = "translate(0, 0)";
             });
         });
-    }
-    // 6. Injection of Logout Button
-    if (navMenu && !document.getElementById('logout-btn-site')) {
-        const logoutLi = document.createElement("a");
-        logoutLi.href = "#";
-        logoutLi.id = "logout-btn-site";
-        logoutLi.className = "nav-link logout-site-link";
-        logoutLi.innerHTML = '<i class="fas fa-sign-out-alt"></i> Sair';
-        logoutLi.style.cssText = "color: #ef4444; font-weight: 600;";
-        
-        logoutLi.addEventListener("click", async (e) => {
-            e.preventDefault();
-            if (typeof window.handleLogout === 'function') {
-                await window.handleLogout();
-            }
-        });
-        
-        navMenu.appendChild(logoutLi);
     }
 });

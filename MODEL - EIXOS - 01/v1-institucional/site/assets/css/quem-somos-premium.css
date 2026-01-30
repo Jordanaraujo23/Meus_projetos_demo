@@ -1,0 +1,528 @@
+/* ============================================
+   QUEM SOMOS - PREMIUM DESIGN
+   Transformação fabulosa da página institucional
+   ============================================ */
+
+/* ===== HERO SECTION COM PARALLAX ===== */
+.page-header {
+  position: relative;
+  height: 60vh;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.page-header-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.85) 0%,
+    rgba(15, 23, 42, 0.75) 100%
+  );
+  z-index: 1;
+}
+
+.page-header-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(16, 185, 129, 0.2) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(139, 92, 246, 0.2) 0%,
+      transparent 50%
+    );
+  z-index: 2;
+}
+
+.page-header-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.page-header-content h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.02em;
+}
+
+.page-header-content p {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== ABOUT STORY - ENHANCED ===== */
+.about-story {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-story::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(37, 99, 235, 0.03) 100%
+  );
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.story-block {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.story-block:hover {
+  transform: translateY(-5px);
+}
+
+.story-block img {
+  transition: all 0.5s ease;
+}
+
+.story-block:hover img {
+  transform: rotate(0deg) scale(1.05) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ===== MISSION/VISION/VALUES - 3D CARDS ===== */
+.values-section {
+  position: relative;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.value-item {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.value-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    var(--accent-green) 50%,
+    var(--accent-purple) 100%
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.value-item:hover::before {
+  transform: scaleX(1);
+}
+
+.value-item:hover {
+  transform: translateY(-10px) rotateX(2deg);
+  box-shadow: 0 20px 60px rgba(37, 99, 235, 0.2);
+}
+
+.value-item i {
+  font-size: 3rem;
+  background: linear-gradient(135deg, var(--primary), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  display: block;
+  transition: all 0.4s ease;
+}
+
+.value-item:hover i {
+  transform: rotateY(360deg) scale(1.1);
+}
+
+.value-item h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.value-item p {
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+/* ===== TIMELINE INTERATIVA ===== */
+.timeline-container {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.timeline-track {
+  position: relative;
+}
+
+.timeline-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.timeline-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15);
+}
+
+.timeline-item h3 {
+  color: var(--secondary);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.timeline-item .tag {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.tag-primary {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+}
+
+.tag-green {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--accent-green);
+}
+
+.tag-red {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--accent-red);
+}
+
+/* ===== TEAM SECTION - PREMIUM CARDS ===== */
+.team-member-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.team-member-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.05) 0%,
+    rgba(139, 92, 246, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.team-member-card:hover::before {
+  opacity: 1;
+}
+
+.team-member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
+}
+
+.team-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.team-member-card:hover .team-avatar {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(37, 99, 235, 0.3);
+}
+
+.team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.team-role {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.team-bio {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ===== TESTIMONIALS - ENHANCED ===== */
+.testimonial-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary), var(--accent-purple));
+  border-radius: 20px 0 0 20px;
+  transform: scaleY(0);
+  transition: transform 0.4s ease;
+}
+
+.testimonial-card:hover::before {
+  transform: scaleY(1);
+}
+
+.testimonial-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.15);
+}
+
+.testimonial-card .fa-quote-left {
+  transition: all 0.4s ease;
+}
+
+.testimonial-card:hover .fa-quote-left {
+  color: var(--primary) !important;
+  transform: scale(1.2);
+}
+
+/* ===== CTA SECTION - GRADIENT MAGIC ===== */
+.volunteer-cta {
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    #1e40af 50%,
+    var(--accent-purple) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.volunteer-cta::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: rotate 20s linear infinite;
+}
+
+.volunteer-cta .btn {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.volunteer-cta .btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== SCROLL REVEAL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.delay-100 {
+  transition-delay: 0.1s;
+}
+
+.reveal.delay-200 {
+  transition-delay: 0.2s;
+}
+
+.reveal.delay-300 {
+  transition-delay: 0.3s;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .page-header {
+    height: 50vh;
+    min-height: 400px;
+  }
+
+  .page-header-bg {
+    background-attachment: scroll;
+  }
+
+  .page-header-content h1 {
+    font-size: 2rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .timeline-track {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+
+  .timeline-item {
+    width: 100% !important;
+  }
+
+  .story-block {
+    flex-direction: column !important;
+  }
+
+  .story-block img {
+    width: 100% !important;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* ===== DECORATIVE PATTERNS ===== */
+.pattern-dots {
+  background-image: radial-gradient(
+    circle,
+    rgba(37, 99, 235, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+
+.pattern-grid {
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}

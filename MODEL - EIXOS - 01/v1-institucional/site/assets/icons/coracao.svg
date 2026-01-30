@@ -1,0 +1,8 @@
+<!-- Ícone: Coração - Identidade Visual -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <path d="M50 75 Q30 58, 27 43 Q25 30, 35 25 Q43 22, 50 32" stroke="#E42836" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 75 Q70 58, 73 43 Q75 30, 65 25 Q57 22, 50 32" stroke="#F7AA2C" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="35" cy="30" r="3" fill="#E42836"/>
+  <circle cx="65" cy="30" r="3" fill="#F7AA2C"/>
+  <circle cx="50" cy="75" r="4" fill="#005B89"/>
+</svg>

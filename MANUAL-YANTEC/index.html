@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Conhecimento | YanTec</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Background Dynamic Icons -->
+    <div id="bg-animation-premium">
+        <!-- JS will inject many icons here for better performance and variety -->
+    </div>
+
+    <!-- Header -->
+    <header class="manual-header">
+        <a href="index.html" class="brand-area">
+            <img src="assets/img/yantec-logo.svg" alt="YanTec Logo" class="brand-logo">
+            <span class="brand-title">Portal do Conhecimento</span>
+        </a>
+        <div class="header-actions">
+           <!-- Potential login or profile here -->
+        </div>
+    </header>
+
+    <div class="manual-wrapper" style="overflow: hidden;">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 2rem;">
+            
+            <section class="hero-section">
+                <div class="hero-tag">Apoio ao Cliente & Treinamento</div>
+                <h1 class="hero-title">Domine nossa <span>tecnologia</span> <br>com facilidade</h1>
+                <p class="hero-subtitle">
+                    A central definitiva para gestores e professores. Explore tutoriais detalhados e vídeo aulas práticas para transformar a educação no seu município.
+                </p>
+
+
+
+                <div class="portal-grid">
+                    <!-- Card 1: Documentation -->
+                    <a href="manual.html" class="portal-card">
+                        <div class="card-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3 class="card-title">Documentação</h3>
+                        <p class="card-desc">Guias completos em texto, fluxos de processos e tutoriais passo a passo ilustrados.</p>
+                        <div class="card-cta" style="font-weight: 700; color: var(--primary-color); display: flex; align-items: center; gap: 0.5rem; margin-top: auto;">
+                            Acessar Manuais <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- Card 2: Video Aulas -->
+                    <a href="video-aulas.html" class="portal-card">
+                        <div class="card-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <h3 class="card-title">Vídeo Aulas</h3>
+                        <p class="card-desc">Tutoriais práticos em vídeo demonstrando cada funcionalidade do sistema em tempo real.</p>
+                        <div class="card-cta" style="font-weight: 700; color: var(--primary-color); display: flex; align-items: center; gap: 0.5rem; margin-top: auto;">
+                            Assistir Agora <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+
+                    <!-- Card 3: Support (New) -->
+                    <a href="https://wa.me/5500000000000" target="_blank" class="portal-card">
+                        <div class="card-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="card-title">Suporte Direto</h3>
+                        <p class="card-desc">Precisa de uma ajuda extra? Nossa equipe técnica está disponível para resolver sua dúvida.</p>
+                        <div class="card-cta" style="font-weight: 700; color: var(--primary-color); display: flex; align-items: center; gap: 0.5rem; margin-top: auto;">
+                            Falar com Suporte <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <footer style="padding: 6rem 0; border-top: 1px solid var(--surface-200); text-align: center; background: white;">
+        <div class="container">
+            <img src="assets/img/yantec-logo.svg" alt="YanTec" style="height: 40px; margin-bottom: 2rem; opacity: 0.8;">
+            <p style="color: var(--text-muted); font-size: 1rem; max-width: 600px; margin: 0 auto 2rem auto;">
+                Unindo tecnologia e educação para construir o futuro da gestão pública no Brasil.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
+                <a href="#" style="color: var(--text-muted); font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: var(--text-muted); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+                <a href="#" style="color: var(--text-muted); font-size: 1.5rem;"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">&copy; 2026 Yan Tecnologia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Social Buttons -->
+    <div class="floating-actions">
+        <a href="https://www.instagram.com/yantec__/" target="_blank" class="floating-btn instagram">
+            <i class="fab fa-instagram"></i>
+            <span class="tooltip">Siga no Instagram</span>
+        </a>
+        <a href="https://wa.me/5500000000000" target="_blank" class="floating-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">Fale Conosco</span>
+        </a>
+    </div>
+
+    <script>
+        // Inject background icons dynamically
+        const bgContainer = document.getElementById('bg-animation-premium');
+        const icons = ['graduation-cap', 'book', 'pencil-alt', 'laptop-code', 'chalkboard', 'microscope', 'atom', 'calculator', 'brain', 'school'];
+        
+        for (let i = 0; i < 25; i++) {
+            const icon = document.createElement('i');
+            icon.className = `fas fa-${icons[Math.floor(Math.random() * icons.length)]} ani-icon`;
+            
+            // Random properties
+            const top = Math.random() * 100;
+            const left = Math.random() * 100;
+            const size = 2 + Math.random() * 4;
+            const duration = 15 + Math.random() * 20;
+            const delay = Math.random() * 15;
+            
+            icon.style.top = `${top}%`;
+            icon.style.left = `${left}%`;
+            icon.style.fontSize = `${size}rem`;
+            icon.style.animationDuration = `${duration}s`;
+            icon.style.animationDelay = `${delay}s`;
+            
+            bgContainer.appendChild(icon);
+        }
+    </script>
+</body>
+</html>

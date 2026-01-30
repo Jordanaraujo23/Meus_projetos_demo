@@ -1,0 +1,9 @@
+<!-- Ícone: Missão - Identidade Visual -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="38" r="16" stroke="#F7AA2C" stroke-width="5" fill="none"/>
+  <path d="M40 54 L40 66 Q40 70, 44 70 L56 70 Q60 70, 60 66 L60 54" stroke="#005B89" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <line x1="50" y1="15" x2="50" y2="22" stroke="#E42836" stroke-width="5" stroke-linecap="round"/>
+  <line x1="28" y1="24" x2="34" y2="30" stroke="#3D6446" stroke-width="5" stroke-linecap="round"/>
+  <line x1="72" y1="24" x2="66" y2="30" stroke="#005B89" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="50" cy="38" r="4" fill="#F7AA2C"/>
+</svg>

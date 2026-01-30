@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeo Aulas | YanTec</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Video Page Overrides */
+        .video-modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.95); z-index: 2000;
+            justify-content: center; align-items: center; padding: 2rem;
+            backdrop-filter: blur(8px);
+        }
+        .modal-content {
+            width: 100%; max-width: 1100px; aspect-ratio: 16/9;
+            background: black; border-radius: var(--radius-lg);
+            overflow: hidden; position: relative;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .close-modal {
+            position: absolute; top: -50px; right: 0; color: white;
+            font-size: 2.5rem; cursor: pointer; transition: 0.3s;
+        }
+        .close-modal:hover { color: var(--primary-color); transform: rotate(90deg); }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+
+    <!-- Background Dynamic Icons -->
+    <div id="bg-animation-premium"></div>
+
+    <!-- Header -->
+    <header class="manual-header">
+        <a href="index.html" class="brand-area">
+            <img src="assets/img/yantec-logo.svg" alt="YanTec Logo" class="brand-logo">
+            <span class="brand-title">Vídeo Aulas</span>
+        </a>
+        <div class="header-actions">
+            <nav style="display: flex; gap: 2rem; align-items: center; margin-right: 2rem;">
+                <a href="index.html" style="font-weight: 600; color: var(--text-muted);">Início</a>
+                <a href="manual.html" style="font-weight: 600; color: var(--text-muted);">Manual</a>
+                <a href="video-aulas.html" style="font-weight: 700; color: var(--primary-color);">Tutoriais</a>
+            </nav>
+           
+        </div>
+    </header>
+
+    <div class="manual-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="manual-sidebar">
+            <div class="sidebar-group">
+                <h6 class="sidebar-title">Explore os Temas</h6>
+                <nav>
+                    <a href="#" class="sidebar-link active" onclick="filterVideos('all', this)"><i class="fas fa-layer-group"></i> Todos os Vídeos</a>
+                    <a href="#" class="sidebar-link" onclick="filterVideos('intro', this)"><i class="fas fa-rocket"></i> Primeiros Passos</a>
+                    <a href="#" class="sidebar-link" onclick="filterVideos('gestao', this)"><i class="fas fa-university"></i> Gestão Administrativa</a>
+                    <a href="#" class="sidebar-link" onclick="filterVideos('professor', this)"><i class="fas fa-chalkboard-teacher"></i> Portal do Docente</a>
+                    <a href="#" class="sidebar-link" onclick="filterVideos('advanced', this)"><i class="fas fa-bolt-lightning"></i> Recursos Avançados</a>
+                </nav>
+            </div>
+            
+            <div style="margin-top: 4rem; padding: 2rem; background: var(--p-50); border-radius: var(--radius-lg); border: 1px solid var(--p-100);">
+                <h4 style="margin-top: 0; font-size: 1rem; color: var(--p-700);"><i class="fab fa-youtube"></i> Canal Oficial</h4>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Inscreva-se em nosso canal e receba notificações de novos tutoriais.</p>
+                <a href="https://www.youtube.com/@yantec5468" target="_blank" style="background: #ff0000; color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: 700; font-size: 0.8rem; display: inline-block;">
+                    Seguir Canal
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="manual-content">
+            
+            <section class="content-header">
+                <h1 class="content-title">Central de Vídeos</h1>
+                <p class="content-subtitle">Domine o sistema visualmente com nossos guias especialistas.</p>
+            </section>
+
+            <!-- Categorized Videos -->
+            <div id="video-sections">
+                
+                <!-- Category: Primeiros Passos -->
+                <div class="video-section-group" data-section="intro">
+                    <h2 class="section-category-title"><i class="fas fa-rocket"></i> Primeiros Passos</h2>
+                    <div class="video-grid">
+                        <div class="video-card" onclick="openVideo('u8H4v788xYo')">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/u8H4v788xYo/maxresdefault.jpg" alt="Video">
+                                <div class="play-btn-circle"><i class="fas fa-play"></i></div>
+                            </div>
+                            <div class="video-info" style="padding: 1.5rem;">
+                                <h3 style="margin: 0; font-size: 1.15rem; color: var(--text-title);">01. Introdução e Acesso Inicial</h3>
+                                <p style="margin: 0.5rem 0 0 0; color: var(--text-muted); font-size: 0.9rem;">Saiba como configurar sua senha e navegar pelo painel.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Gestão Escolar -->
+                <div class="video-section-group" data-section="gestao">
+                    <h2 class="section-category-title"><i class="fas fa-university"></i> Gestão Administrativa</h2>
+                    <div class="video-grid">
+                        <div class="video-card" onclick="openVideo('YpCq_b7hsk0')">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/YpCq_b7hsk0/maxresdefault.jpg" alt="Video">
+                                <div class="play-btn-circle"><i class="fas fa-play"></i></div>
+                            </div>
+                            <div class="video-info" style="padding: 1.5rem;">
+                                <h3 style="margin: 0; font-size: 1.15rem; color: var(--text-title);">Configuração de Unidades</h3>
+                                <p style="margin: 0.5rem 0 0 0; color: var(--text-muted); font-size: 0.9rem;">Organizando as unidades escolares da sua rede.</p>
+                            </div>
+                        </div>
+                        <div class="video-card" onclick="openVideo('L_YvjK4hW1A')">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/L_YvjK4hW1A/maxresdefault.jpg" alt="Video">
+                                <div class="play-btn-circle"><i class="fas fa-play"></i></div>
+                            </div>
+                            <div class="video-info" style="padding: 1.5rem;">
+                                <h3 style="margin: 0; font-size: 1.15rem; color: var(--text-title);">Matrículas e Transferências</h3>
+                                <p style="margin: 0.5rem 0 0 0; color: var(--text-muted); font-size: 0.9rem;">Fluxo completo de movimentação de alunos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Portal do Professor -->
+                <div class="video-section-group" data-section="professor">
+                    <h2 class="section-category-title"><i class="fas fa-chalkboard-teacher"></i> Portal do Docente</h2>
+                    <div class="video-grid">
+                        <div class="video-card" onclick="openVideo('H1O-C08Kov4')">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/H1O-C08Kov4/maxresdefault.jpg" alt="Video">
+                                <div class="play-btn-circle"><i class="fas fa-play"></i></div>
+                            </div>
+                            <div class="video-info" style="padding: 1.5rem;">
+                                <h3 style="margin: 0; font-size: 1.15rem; color: var(--text-title);">Lançamento Online de Notas</h3>
+                                <p style="margin: 0.5rem 0 0 0; color: var(--text-muted); font-size: 0.9rem;">Passo a passo do diário digital e frequência.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Video Modal Player -->
+    <div id="videoModal" class="video-modal" onclick="closeVideo()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-modal" onclick="closeVideo()">&times;</span>
+            <iframe id="videoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Floating Social Buttons -->
+    <div class="floating-actions">
+        <a href="https://www.instagram.com/yantec__/" target="_blank" class="floating-btn instagram">
+            <i class="fab fa-instagram"></i>
+            <span class="tooltip">Siga no Instagram</span>
+        </a>
+        <a href="https://wa.me/5500000000000" target="_blank" class="floating-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="tooltip">Fale Conosco</span>
+        </a>
+    </div>
+
+    <script>
+        // Inject background icons dynamically
+        const bgContainer = document.getElementById('bg-animation-premium');
+        const icons = ['graduation-cap', 'book', 'pencil-alt', 'laptop-code', 'chalkboard', 'microscope', 'atom', 'calculator', 'brain', 'school'];
+        
+        for (let i = 0; i < 20; i++) {
+            const icon = document.createElement('i');
+            icon.className = `fas fa-${icons[Math.floor(Math.random() * icons.length)]} ani-icon`;
+            
+            const top = Math.random() * 100;
+            const left = Math.random() * 100;
+            const size = 2 + Math.random() * 3;
+            const duration = 15 + Math.random() * 20;
+            const delay = Math.random() * 15;
+            
+            icon.style.top = `${top}%`;
+            icon.style.left = `${left}%`;
+            icon.style.fontSize = `${size}rem`;
+            icon.style.animationDuration = `${duration}s`;
+            icon.style.animationDelay = `${delay}s`;
+            
+            bgContainer.appendChild(icon);
+        }
+
+        function openVideo(videoId) {
+            const modal = document.getElementById('videoModal');
+            const frame = document.getElementById('videoFrame');
+            frame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&showinfo=0&modestbranding=1`;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeVideo() {
+            const modal = document.getElementById('videoModal');
+            const frame = document.getElementById('videoFrame');
+            frame.src = '';
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function filterVideos(category, element) {
+            document.querySelectorAll('.sidebar-link').forEach(link => link.classList.remove('active'));
+            element.classList.add('active');
+
+            const sections = document.querySelectorAll('.video-section-group');
+            sections.forEach(section => {
+                if (category === 'all' || section.getAttribute('data-section') === category) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeVideo();
+        });
+    </script>
+</body>
+</html>

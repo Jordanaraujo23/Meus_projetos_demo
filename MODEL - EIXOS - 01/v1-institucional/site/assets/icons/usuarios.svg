@@ -1,0 +1,9 @@
+<!-- Ícone: Usuários - Identidade Visual -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="35" cy="30" r="10" stroke="#3D6446" stroke-width="4" fill="none"/>
+  <path d="M22 60 Q22 48, 35 48 Q48 48, 48 60" stroke="#F7AA2C" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="65" cy="30" r="10" stroke="#005B89" stroke-width="4" fill="none"/>
+  <path d="M52 60 Q52 48, 65 48 Q78 48, 78 60" stroke="#E42836" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="35" cy="30" r="3" fill="#3D6446"/>
+  <circle cx="65" cy="30" r="3" fill="#005B89"/>
+</svg>

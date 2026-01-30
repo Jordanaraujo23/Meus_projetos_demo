@@ -1,0 +1,202 @@
+<!-- ============================================
+     EXEMPLO: Seção de Pilares com Ícones Customizados
+     ============================================ -->
+
+<!-- Incluir no HEAD -->
+<link rel="stylesheet" href="assets/css/custom-icons.css">
+
+<!-- Seção de Pilares -->
+<section class="pillars-section" style="padding: 6rem 0; background: #f8fafc;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="tag tag-primary">Nossos Pilares</span>
+            <h2 class="section-title center">Áreas de Atuação</h2>
+            <p>Transformando vidas através de ações integradas</p>
+        </div>
+
+        <div class="pillars-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            
+            <!-- Pilar 1: Saúde -->
+            <div class="pillar-card">
+                <div class="pillar-icon">
+                    <img src="assets/icons/saude.svg" alt="Saúde">
+                </div>
+                <h3>Saúde</h3>
+                <p>Atendimento médico, odontológico e oftalmológico para comunidades carentes.</p>
+                <span class="category-badge saude">
+                    <div class="custom-icon">
+                        <img src="assets/icons/saude.svg" alt="">
+                    </div>
+                    <span>1.200+ atendimentos</span>
+                </span>
+            </div>
+
+            <!-- Pilar 2: Educação -->
+            <div class="pillar-card">
+                <div class="pillar-icon">
+                    <img src="assets/icons/educacao.svg" alt="Educação">
+                </div>
+                <h3>Educação</h3>
+                <p>Cursos profissionalizantes e apoio educacional para jovens e adultos.</p>
+                <span class="category-badge educacao">
+                    <div class="custom-icon">
+                        <img src="assets/icons/educacao.svg" alt="">
+                    </div>
+                    <span>350+ formados</span>
+                </span>
+            </div>
+
+            <!-- Pilar 3: Cultura -->
+            <div class="pillar-card">
+                <div class="pillar-icon">
+                    <img src="assets/icons/cultura.svg" alt="Cultura">
+                </div>
+                <h3>Cultura</h3>
+                <p>Oficinas culturais e artísticas para desenvolvimento social.</p>
+                <span class="category-badge cultura">
+                    <div class="custom-icon">
+                        <img src="assets/icons/cultura.svg" alt="">
+                    </div>
+                    <span>200+ participantes</span>
+                </span>
+            </div>
+
+            <!-- Pilar 4: Sustentabilidade -->
+            <div class="pillar-card">
+                <div class="pillar-icon">
+                    <img src="assets/icons/sustentabilidade.svg" alt="Sustentabilidade">
+                </div>
+                <h3>Sustentabilidade</h3>
+                <p>Ações de preservação ambiental e educação ecológica.</p>
+                <span class="category-badge sustentabilidade">
+                    <div class="custom-icon">
+                        <img src="assets/icons/sustentabilidade.svg" alt="">
+                    </div>
+                    <span>15 regiões</span>
+                </span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Incluir antes do </body> -->
+<script src="assets/js/custom-icons.js"></script>
+
+<!-- ============================================
+     EXEMPLO: Filtros de Projetos
+     ============================================ -->
+
+<div class="filter-tabs">
+    <button class="filter-btn active" data-filter="all">
+        <span>Todos</span>
+    </button>
+    
+    <button class="filter-btn" data-filter="saude">
+        <div class="custom-icon custom-icon-sm">
+            <img src="assets/icons/saude.svg" alt="">
+        </div>
+        <span>Saúde</span>
+    </button>
+    
+    <button class="filter-btn" data-filter="educacao">
+        <div class="custom-icon custom-icon-sm">
+            <img src="assets/icons/educacao.svg" alt="">
+        </div>
+        <span>Educação</span>
+    </button>
+    
+    <button class="filter-btn" data-filter="cultura">
+        <div class="custom-icon custom-icon-sm">
+            <img src="assets/icons/cultura.svg" alt="">
+        </div>
+        <span>Cultura</span>
+    </button>
+    
+    <button class="filter-btn" data-filter="sustentabilidade">
+        <div class="custom-icon custom-icon-sm">
+            <img src="assets/icons/sustentabilidade.svg" alt="">
+        </div>
+        <span>Sustentabilidade</span>
+    </button>
+</div>
+
+<!-- ============================================
+     EXEMPLO: Timeline com Ícones
+     ============================================ -->
+
+<div class="timeline-item">
+    <div class="timeline-content">
+        <span class="timeline-year">2020</span>
+        <h3>Projeto Saúde para Todos</h3>
+        <p>Início do mutirão de saúde itinerante.</p>
+    </div>
+    
+    <div class="timeline-marker">
+        <div class="timeline-icon">
+            <img src="assets/icons/saude.svg" alt="Saúde">
+        </div>
+    </div>
+    
+    <div class="timeline-content"></div>
+</div>
+
+<!-- ============================================
+     EXEMPLO: Cards de Notícias
+     ============================================ -->
+
+<div class="news-card">
+    <div class="news-image">
+        <img src="assets/img/noticia.jpg" alt="Notícia">
+        <span class="category-badge educacao">
+            <div class="custom-icon">
+                <img src="assets/icons/educacao.svg" alt="">
+            </div>
+            <span>Educação</span>
+        </span>
+    </div>
+    <div class="news-content">
+        <h3>Futuro Brilhante Forma 350 Alunos</h3>
+        <p>Projeto de educação profissional celebra nova turma...</p>
+    </div>
+</div>
+
+<!-- ============================================
+     EXEMPLO: Showcase de Ícones (Página Sobre)
+     ============================================ -->
+
+<section class="icons-showcase-section">
+    <div class="container">
+        <h2>Nossas Áreas de Impacto</h2>
+        <div id="icons-showcase"></div>
+    </div>
+</section>
+
+<script>
+// Criar showcase automaticamente
+document.addEventListener('DOMContentLoaded', () => {
+    CustomIcons.createIconShowcase('icons-showcase');
+});
+</script>
+
+<!-- ============================================
+     EXEMPLO: Uso com JavaScript Dinâmico
+     ============================================ -->
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    // Criar ícone programaticamente
+    const icon = await CustomIcons.createCustomIcon('saude', {
+        size: 'xl',
+        hover: 'rotate',
+        animate: true
+    });
+    
+    // Adicionar ao DOM
+    document.querySelector('.hero-section').appendChild(icon);
+    
+    // Criar badge
+    const badge = await CustomIcons.createCategoryBadge('educacao', 'Educação');
+    document.querySelector('.project-card').appendChild(badge);
+});
+</script>

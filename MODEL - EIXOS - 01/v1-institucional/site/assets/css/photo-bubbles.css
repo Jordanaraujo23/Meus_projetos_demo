@@ -1,0 +1,78 @@
+/* ============================================
+   PHOTO BUBBLES ANIMATION
+   Floating images from the gallery
+   ============================================ */
+
+.photo-bubbles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.photo-bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border: 3px solid white;
+    transition: transform 0.3s ease;
+    opacity: 0;
+    animation: bubbleFadeIn 1s forwards, bubbleFloat var(--float-duration, 15s) infinite ease-in-out;
+}
+
+.photo-bubble::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+}
+
+@keyframes bubbleFadeIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 0.75; transform: scale(1); }
+}
+
+@keyframes bubbleFloat {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(var(--move-x-1, 50px), var(--move-y-1, -50px)) rotate(5deg);
+    }
+    50% {
+        transform: translate(var(--move-x-2, -30px), var(--move-y-2, -100px)) rotate(-5deg);
+    }
+    75% {
+        transform: translate(var(--move-x-3, 40px), var(--move-y-3, -40px)) rotate(3deg);
+    }
+}
+
+/* Color variations for borders */
+.bubble-red { border-color: #E42836; }
+.bubble-yellow { border-color: #F7AA2C; }
+.bubble-green { border-color: #3D6446; }
+.bubble-blue { border-color: #005B89; }
+
+/* Interactive hover when not obscured */
+.photo-bubble.interactive {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.photo-bubble.interactive:hover {
+    opacity: 1 !important;
+    transform: scale(1.1) !important;
+    z-index: 10;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,211 @@
+/* ============================================
+   CUSTOM ICONS - INSTITUTO EIXOS
+   Sistema de ícones personalizados SVG
+   ============================================ */
+
+/* ===== ICON CONTAINER ===== */
+.custom-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    transition: all 0.3s ease;
+}
+
+.custom-icon svg {
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+/* ===== SIZES ===== */
+.custom-icon-sm {
+    width: 32px;
+    height: 32px;
+}
+
+.custom-icon-md {
+    width: 48px;
+    height: 48px;
+}
+
+.custom-icon-lg {
+    width: 64px;
+    height: 64px;
+}
+
+.custom-icon-xl {
+    width: 80px;
+    height: 80px;
+}
+
+.custom-icon-2xl {
+    width: 120px;
+    height: 120px;
+}
+
+/* ===== HOVER EFFECTS ===== */
+.custom-icon:hover svg {
+    transform: scale(1.1);
+}
+
+.custom-icon.rotate-hover:hover svg {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.custom-icon.pulse-hover:hover svg {
+    animation: pulse 0.6s ease;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.custom-icon.float {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ===== PILLAR ICONS (para os cards de pilares) ===== */
+.pillar-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(139, 92, 246, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pillar-icon svg {
+    width: 48px;
+    height: 48px;
+    transition: all 0.4s ease;
+}
+
+.pillar-card:hover .pillar-icon {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(139, 92, 246, 0.2));
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.pillar-card:hover .pillar-icon svg {
+    transform: rotate(360deg);
+}
+
+/* ===== TIMELINE ICONS ===== */
+.timeline-icon {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+/* ===== CATEGORY BADGES WITH ICONS ===== */
+.category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.category-badge .custom-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.category-badge.educacao {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(74, 124, 126, 0.1));
+    color: #2563eb;
+}
+
+.category-badge.saude {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(37, 99, 235, 0.1));
+    color: #10b981;
+}
+
+.category-badge.cultura {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(230, 126, 80, 0.1));
+    color: #8b5cf6;
+}
+
+.category-badge.sustentabilidade {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(74, 124, 126, 0.1));
+    color: #10b981;
+}
+
+/* ===== ICON GRID (para showcase) ===== */
+.icon-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 16px;
+}
+
+.icon-showcase-item {
+    text-align: center;
+}
+
+.icon-showcase-item .custom-icon {
+    margin: 0 auto 1rem;
+}
+
+.icon-showcase-item p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .custom-icon-xl {
+        width: 64px;
+        height: 64px;
+    }
+
+    .custom-icon-2xl {
+        width: 80px;
+        height: 80px;
+    }
+
+    .pillar-icon {
+        width: 64px;
+        height: 64px;
+    }
+
+    .pillar-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+}

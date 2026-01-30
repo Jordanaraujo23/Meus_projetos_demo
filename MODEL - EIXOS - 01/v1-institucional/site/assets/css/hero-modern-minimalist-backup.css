@@ -1,0 +1,95 @@
+/* 
+   BACKUP: MODERN CLEAN MINIMALIST HERO
+   Saved on: 2026-01-29
+   Description: Hero style focusing on bold typography and clean layout.
+*/
+
+/* CSS FOR style.css */
+.hero-slider {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  background-color: var(--secondary);
+  display: flex;
+  align-items: center;
+  color: var(--text-inverse);
+  overflow: hidden;
+}
+
+.hero-slider::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(15, 23, 42, 0.95) 0%, 
+    rgba(15, 23, 42, 0.6) 50%, 
+    transparent 100%);
+  z-index: 1;
+}
+
+.hero-slide-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+}
+
+.hero-title {
+  font-size: 4.8rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  line-height: 1;
+  letter-spacing: -3px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.hero-title span {
+  color: var(--primary);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 3.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 550px;
+  border-left: 5px solid var(--primary);
+  padding-left: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* HTML STRUCTURE FOR index.html */
+/*
+  <section class="hero-slider">
+    <div class="hero-slide-bg" style="background-image: url('assets/img/Street_Billboard_Mockup_1.png')"></div>
+
+    <div class="container">
+      <div class="hero-content reveal">
+        <h1 class="hero-title">
+          Eixos que <br><span>Conectam</span>
+        </h1>
+        <p class="hero-subtitle">
+          Compromisso com o desenvolvimento humano e social em todo o Brasil. Atuamos como pontes para um futuro mais
+          justo e igualitário.
+        </p>
+        <div class="hero-actions reveal delay-200">
+          <a href="quem-somos.html" class="btn btn-primary">SAIBA MAIS</a>
+          <a href="projetos.html" class="btn btn-outline btn-white-outline">VER PROJETOS</a>
+        </div>
+      </div>
+    </div>
+  </section>
+*/

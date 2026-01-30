@@ -1,0 +1,7 @@
+<!-- Ícone: Visão - Identidade Visual -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <path d="M20 50 Q35 32, 50 32 Q65 32, 80 50" stroke="#3D6446" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M20 50 Q35 68, 50 68 Q65 68, 80 50" stroke="#005B89" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <circle cx="50" cy="50" r="12" stroke="#F7AA2C" stroke-width="4" fill="none"/>
+  <circle cx="50" cy="50" r="6" fill="#E42836"/>
+</svg>

@@ -1,5 +1,5 @@
 import { db } from './firebase-config.js';
-import { collection, query, orderBy, limit, onSnapshot, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { collection, query, orderBy, limit, onSnapshot, where, doc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     // 1. Dynamic News
@@ -45,4 +45,29 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // 3. Dynamic Stats Counters (for animation in home.js)
+    const updateHomeStats = () => {
+        // Projects Count
+        onSnapshot(collection(db, "projetos"), (snapshot) => {
+            const projectCounter = document.querySelector('.stats-section [data-target="20"]');
+            if (projectCounter) {
+                projectCounter.setAttribute('data-target', snapshot.size);
+                // Trigger animation if it didn't run yet or reset it if needed
+                if (window.animateStats && projectCounter.innerText === "0") {
+                    projectCounter.innerText = snapshot.size; // Fallback if scroll already happened
+                }
+            }
+        });
+
+        // Families Count (from Transparency Stats)
+        onSnapshot(doc(db, "config", "transparency_stats"), (docSnap) => {
+            const familiesCounter = document.querySelector('.stats-section [data-target="2500"]');
+            if (familiesCounter && docSnap.exists()) {
+                const total = docSnap.data().stat_familias_val || "2500";
+                familiesCounter.setAttribute('data-target', total.replace(/\D/g, ''));
+            }
+        });
+    };
+    updateHomeStats();
 });

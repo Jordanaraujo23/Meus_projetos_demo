@@ -79,14 +79,14 @@ atexit.register(work_area_mgr.restore)
 # Default Schedule Data (Template)
 DEFAULT_SCHEDULE = [
     {"time": "18:20 as 18:25", "sigla": "Videos", "content": "Vídeo de Abertura", "duration": "5min", "lead": "Vídeo", "color": "#808080"}, 
-    {"time": "18:25 as 18:30", "sigla": "ORA", "content": "Oração Inicial", "duration": "5min", "lead": "Pr. Ítalo", "color": "#FFC107"}, 
+    {"time": "18:25 as 18:30", "sigla": "ORA", "content": "Oração Inicial", "duration": "5min", "lead": "", "color": "#FFC107"}, 
     {"time": "18:30 as 18:55", "sigla": "MSC", "content": "Lagoinha Music", "duration": "25min", "lead": "Lagoinha Music", "color": "#FFEB3B"}, 
-    {"time": "18:55 as 19:00", "sigla": "ORA", "content": "ORAÇÃO INTERCESSÃO", "duration": "5min", "lead": "Pr. Ítalo", "color": "#D2691E"}, 
-    {"time": "19:00 as 19:05", "sigla": "PLV", "content": "LAGOINHA NEWS", "duration": "5min", "lead": "Virgínia", "color": "#FF8C00"}, 
-    {"time": "19:05 as 19:09", "sigla": "PLV", "content": "PALAVRA DE OFERTA", "duration": "4min", "lead": "Pr. Ítalo", "color": "#E0E0E0"}, 
+    {"time": "18:55 as 19:00", "sigla": "ORA", "content": "ORAÇÃO INTERCESSÃO", "duration": "5min", "lead": "", "color": "#D2691E"}, 
+    {"time": "19:00 as 19:05", "sigla": "PLV", "content": "LAGOINHA NEWS", "duration": "5min", "lead": "", "color": "#FF8C00"}, 
+    {"time": "19:05 as 19:09", "sigla": "PLV", "content": "PALAVRA DE OFERTA", "duration": "4min", "lead": "", "color": "#E0E0E0"}, 
     {"time": "19:09 as 19:14", "sigla": "MSC", "content": "Lagoinha AMusic", "duration": "5min", "lead": "Lagoinha Music", "color": "#FFEB3B"}, 
-    {"time": "19:14 as 19:16", "sigla": "ORA", "content": "ORAÇÃO PELA OFERTA", "duration": "2min", "lead": "Pr. Ítalo", "color": "#90EE90"}, 
-    {"time": "19:16 as 19:56", "sigla": "PLV", "content": "PALAVRA DO CULTO", "duration": "40min", "lead": "Pra. Cristiane", "color": "#4682B4"}, 
+    {"time": "19:14 as 19:16", "sigla": "ORA", "content": "ORAÇÃO PELA OFERTA", "duration": "2min", "lead": "", "color": "#90EE90"}, 
+    {"time": "19:16 as 19:56", "sigla": "PLV", "content": "PALAVRA DO CULTO", "duration": "40min", "lead": "", "color": "#4682B4"}, 
     {"time": "19:56 as 19:58", "sigla": "ORA", "content": "APELO FINAL", "duration": "2min", "lead": "Pra. Cristiane", "color": "#E0E0E0"}, 
     {"time": "19:58 as 20:00", "sigla": "FIM", "content": "FINALIZAÇÃO", "duration": "2min", "lead": "Pra. Cristiane", "color": "#FF0000"}, 
 ]

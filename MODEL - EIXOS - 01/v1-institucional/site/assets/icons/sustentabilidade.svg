@@ -1,0 +1,34 @@
+<!-- Ícone: Sustentabilidade/Folha - Identidade Visual -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Contorno da folha - parte superior -->
+  <path d="M50 85 Q30 70, 25 50 Q20 30, 35 20 Q50 15, 60 20" 
+        stroke="#3D6446" 
+        stroke-width="5" 
+        fill="none"
+        stroke-linecap="round"/>
+  <!-- Contorno da folha - parte direita -->
+  <path d="M60 20 Q75 25, 75 45 Q72 65, 50 85" 
+        stroke="#005B89" 
+        stroke-width="5" 
+        fill="none"
+        stroke-linecap="round"/>
+  <!-- Nervura central -->
+  <path d="M50 85 L50 30" 
+        stroke="#F7AA2C" 
+        stroke-width="4" 
+        fill="none"
+        stroke-linecap="round"/>
+  <!-- Nervuras laterais -->
+  <path d="M50 45 Q40 50, 35 55" 
+        stroke="#E42836" 
+        stroke-width="3" 
+        fill="none"
+        stroke-linecap="round"/>
+  <path d="M50 60 Q60 63, 65 65" 
+        stroke="#E42836" 
+        stroke-width="3" 
+        fill="none"
+        stroke-linecap="round"/>
+  <!-- Ponto de destaque -->
+  <circle cx="50" cy="85" r="4" fill="#005B89"/>
+</svg>

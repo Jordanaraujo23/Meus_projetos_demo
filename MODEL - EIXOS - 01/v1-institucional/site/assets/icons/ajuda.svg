@@ -1,0 +1,8 @@
+<!-- Ícone: Ajuda - Identidade Visual -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <path d="M30 60 Q30 48, 38 48 L38 38 Q38 28, 48 28 Q58 28, 58 38 L58 48 Q66 48, 66 60 L66 75 Q66 82, 58 82 L38 82 Q30 82, 30 75 Z" stroke="#3D6446" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="38" y1="48" x2="38" y2="38" stroke="#F7AA2C" stroke-width="4"/>
+  <line x1="48" y1="48" x2="48" y2="28" stroke="#E42836" stroke-width="4"/>
+  <line x1="58" y1="48" x2="58" y2="38" stroke="#005B89" stroke-width="4"/>
+  <circle cx="48" cy="28" r="3" fill="#E42836"/>
+</svg>

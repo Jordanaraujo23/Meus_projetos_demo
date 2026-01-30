@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Ícones - Instituto Eixos</title>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/custom-icons.css">
+    
+    <style>
+        body {
+            background: #f8fafc;
+            padding: 3rem 0;
+        }
+        
+        .catalog-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .catalog-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2563eb, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .catalog-section {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .catalog-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #e2e8f0;
+        }
+        
+        .icons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 2rem;
+        }
+        
+        .icon-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 16px;
+            background: #f8fafc;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .icon-item:hover {
+            background: white;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .icon-item .custom-icon {
+            margin: 0 auto 1rem;
+        }
+        
+        .icon-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .icon-item p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        
+        .copy-notification {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent-green);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .copy-notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="catalog-header">
+            <h1>🎨 Catálogo de Ícones Customizados</h1>
+            <p style="font-size: 1.2rem; color: var(--text-light);">
+                24 ícones SVG personalizados para o Instituto Eixos
+            </p>
+        </div>
+
+        <!-- PILARES -->
+        <div class="catalog-section">
+            <h2>🎯 Pilares (4)</h2>
+            <div class="icons-grid">
+                <div class="icon-item" onclick="copyIconCode('educacao')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/educacao.svg" alt="Educação">
+                    </div>
+                    <h4>Educação</h4>
+                    <p>educacao.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('saude')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/saude.svg" alt="Saúde">
+                    </div>
+                    <h4>Saúde</h4>
+                    <p>saude.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('cultura')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/cultura.svg" alt="Cultura">
+                    </div>
+                    <h4>Cultura</h4>
+                    <p>cultura.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('sustentabilidade')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/sustentabilidade.svg" alt="Sustentabilidade">
+                    </div>
+                    <h4>Sustentabilidade</h4>
+                    <p>sustentabilidade.svg</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- INSTITUCIONAL -->
+        <div class="catalog-section">
+            <h2>🏢 Institucional (4)</h2>
+            <div class="icons-grid">
+                <div class="icon-item" onclick="copyIconCode('missao')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/missao.svg" alt="Missão">
+                    </div>
+                    <h4>Missão</h4>
+                    <p>missao.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('visao')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/visao.svg" alt="Visão">
+                    </div>
+                    <h4>Visão</h4>
+                    <p>visao.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('valores')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/valores.svg" alt="Valores">
+                    </div>
+                    <h4>Valores</h4>
+                    <p>valores.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('alvo')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/alvo.svg" alt="Alvo">
+                    </div>
+                    <h4>Alvo/Meta</h4>
+                    <p>alvo.svg</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTATO -->
+        <div class="catalog-section">
+            <h2>📞 Contato (3)</h2>
+            <div class="icons-grid">
+                <div class="icon-item" onclick="copyIconCode('email')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/email.svg" alt="Email">
+                    </div>
+                    <h4>Email</h4>
+                    <p>email.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('telefone')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/telefone.svg" alt="Telefone">
+                    </div>
+                    <h4>Telefone</h4>
+                    <p>telefone.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('localizacao')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/localizacao.svg" alt="Localização">
+                    </div>
+                    <h4>Localização</h4>
+                    <p>localizacao.svg</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AÇÕES -->
+        <div class="catalog-section">
+            <h2>⚡ Ações (6)</h2>
+            <div class="icons-grid">
+                <div class="icon-item" onclick="copyIconCode('coracao')">
+                    <div class="custom-icon custom-icon-xl pulse-hover">
+                        <img src="assets/icons/coracao.svg" alt="Coração">
+                    </div>
+                    <h4>Coração</h4>
+                    <p>coracao.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('ajuda')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/ajuda.svg" alt="Ajuda">
+                    </div>
+                    <h4>Ajuda</h4>
+                    <p>ajuda.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('compartilhar')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/compartilhar.svg" alt="Compartilhar">
+                    </div>
+                    <h4>Compartilhar</h4>
+                    <p>compartilhar.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('download')">
+                    <div class="custom-icon custom-icon-xl">
+                        <img src="assets/icons/download.svg" alt="Download">
+                    </div>
+                    <h4>Download</h4>
+                    <p>download.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('busca')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/busca.svg" alt="Busca">
+                    </div>
+                    <h4>Busca</h4>
+                    <p>busca.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('check')">
+                    <div class="custom-icon custom-icon-xl">
+                        <img src="assets/icons/check.svg" alt="Check">
+                    </div>
+                    <h4>Check</h4>
+                    <p>check.svg</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- INFORMAÇÃO -->
+        <div class="catalog-section">
+            <h2>📊 Informação (5)</h2>
+            <div class="icons-grid">
+                <div class="icon-item" onclick="copyIconCode('calendario')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/calendario.svg" alt="Calendário">
+                    </div>
+                    <h4>Calendário</h4>
+                    <p>calendario.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('relogio')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/relogio.svg" alt="Relógio">
+                    </div>
+                    <h4>Relógio</h4>
+                    <p>relogio.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('documento')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/documento.svg" alt="Documento">
+                    </div>
+                    <h4>Documento</h4>
+                    <p>documento.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('imagem')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/imagem.svg" alt="Imagem">
+                    </div>
+                    <h4>Imagem</h4>
+                    <p>imagem.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('grafico')">
+                    <div class="custom-icon custom-icon-xl">
+                        <img src="assets/icons/grafico.svg" alt="Gráfico">
+                    </div>
+                    <h4>Gráfico</h4>
+                    <p>grafico.svg</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESSOAS -->
+        <div class="catalog-section">
+            <h2>👥 Pessoas (2)</h2>
+            <div class="icons-grid">
+                <div class="icon-item" onclick="copyIconCode('usuarios')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/usuarios.svg" alt="Usuários">
+                    </div>
+                    <h4>Usuários</h4>
+                    <p>usuarios.svg</p>
+                </div>
+                
+                <div class="icon-item" onclick="copyIconCode('trofeu')">
+                    <div class="custom-icon custom-icon-xl rotate-hover">
+                        <img src="assets/icons/trofeu.svg" alt="Troféu">
+                    </div>
+                    <h4>Troféu</h4>
+                    <p>trofeu.svg</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copy-notification" id="copyNotification">
+        ✅ Código copiado para a área de transferência!
+    </div>
+
+    <script src="assets/js/custom-icons.js"></script>
+    <script>
+        function copyIconCode(iconName) {
+            const code = `<div class="custom-icon custom-icon-md">
+    <img src="assets/icons/${iconName}.svg" alt="${iconName}">
+</div>`;
+            
+            navigator.clipboard.writeText(code).then(() => {
+                showNotification();
+            });
+        }
+        
+        function showNotification() {
+            const notification = document.getElementById('copyNotification');
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

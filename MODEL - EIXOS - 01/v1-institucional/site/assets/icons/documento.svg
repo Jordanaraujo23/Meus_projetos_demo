@@ -1,0 +1,8 @@
+<!-- Ícone: Documento - Identidade Visual -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <path d="M30 20 L60 20 L75 35 L75 80 L30 80 Z" stroke="#005B89" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M60 20 L60 35 L75 35" stroke="#F7AA2C" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="40" y1="50" x2="65" y2="50" stroke="#3D6446" stroke-width="3" stroke-linecap="round"/>
+  <line x1="40" y1="60" x2="65" y2="60" stroke="#E42836" stroke-width="3" stroke-linecap="round"/>
+  <line x1="40" y1="70" x2="55" y2="70" stroke="#005B89" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,35 @@
+<!-- Ícone: Educação/Livro - Identidade Visual -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Capa esquerda -->
+  <path d="M25 25 L25 75 L50 75 L50 25 Z" 
+        stroke="#F7AA2C" 
+        stroke-width="5" 
+        fill="none" 
+        stroke-linejoin="round"
+        stroke-linecap="round"/>
+  <!-- Capa direita -->
+  <path d="M50 25 L50 75 L75 75 L75 25 Z" 
+        stroke="#E42836" 
+        stroke-width="5" 
+        fill="none" 
+        stroke-linejoin="round"
+        stroke-linecap="round"/>
+  <!-- Topo -->
+  <path d="M25 25 L37.5 20 L62.5 20 L75 25" 
+        stroke="#3D6446" 
+        stroke-width="5" 
+        fill="none" 
+        stroke-linejoin="round"
+        stroke-linecap="round"/>
+  <!-- Base -->
+  <path d="M25 75 L37.5 80 L62.5 80 L75 75" 
+        stroke="#005B89" 
+        stroke-width="5" 
+        fill="none" 
+        stroke-linejoin="round"
+        stroke-linecap="round"/>
+  <!-- Pontos de destaque -->
+  <circle cx="25" cy="25" r="4" fill="#3D6446"/>
+  <circle cx="75" cy="25" r="4" fill="#3D6446"/>
+  <circle cx="50" cy="80" r="4" fill="#005B89"/>
+</svg>

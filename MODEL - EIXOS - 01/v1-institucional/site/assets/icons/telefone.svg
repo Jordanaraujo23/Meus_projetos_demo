@@ -1,0 +1,9 @@
+<!-- Ícone: Telefone - Identidade Visual -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <path d="M35 22 L35 78 Q35 82, 39 82" stroke="#3D6446" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M65 22 L65 78 Q65 82, 61 82" stroke="#005B89" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M35 22 Q35 18, 39 18 L61 18 Q65 18, 65 22" stroke="#E42836" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <line x1="39" y1="82" x2="61" y2="82" stroke="#F7AA2C" stroke-width="5" stroke-linecap="round"/>
+  <line x1="40" y1="28" x2="60" y2="28" stroke="#005B89" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="50" cy="72" r="4" fill="#E42836"/>
+</svg>

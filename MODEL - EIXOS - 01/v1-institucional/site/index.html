@@ -18,16 +18,18 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/home-premium.css" />
   <link rel="stylesheet" href="assets/css/theme-test.css" id="theme-test" />
+  <link rel="stylesheet" href="assets/css/custom-icons.css" />
+  <link rel="stylesheet" href="assets/css/photo-bubbles.css" />
 </head>
 
 <body>
   <!-- Header -->
   <header class="header">
     <div class="container">
-      <a href="index.html" class="header-seal-logo">
-        <span class="logo-menu-label">MENU</span>
-        <img src="assets/img/instituto-eixos-logo.png" alt="Selo Instituto Eixos">
+      <a href="index.html" class="logo-lateral">
+        <img src="assets/img/LOGOTIPO HORIZONTAL EIXOS-01.png" alt="Instituto Eixos" style="height: 200px; width: auto;">
       </a>
 
       <a href="editais.html" class="mobile-quick-link">
@@ -62,30 +64,56 @@
   <!-- Hero Slider Section -->
   <section class="hero-slider">
     <div class="hero-slide-bg" style="background-image: url('assets/img/Street_Billboard_Mockup_1.png')"></div>
+
     <div class="container">
-      <div class="hero-content reveal" style="text-align: center; margin: 0 auto; max-width: 1200px;">
-        <h1 class="hero-title" style="font-size: 3.5rem; text-transform: uppercase;">
-          EIXOS QUE CONECTAM, AÇÕES QUE TRANSFORMAM
+      <div class="hero-content reveal">
+        <h1 class="hero-title">
+          Eixos que <br><span>Conectam</span>
         </h1>
-        <p style="font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.9">
-          Compromisso com o desenvolvimento humano e social em todo o Brasil.
+        <p class="hero-subtitle">
+          Compromisso com o desenvolvimento humano e social em todo o Brasil. Atuamos como pontes para um futuro mais
+          justo e igualitário.
         </p>
-        <div class="d-flex gap-1 reveal delay-200"
-          style="justify-content: center; align-items: center; flex-direction: row;">
-          <a href="quem-somos.html" class="btn btn-primary" style="padding: 1rem 2.5rem; font-size: 1rem;">SAIBA
-            MAIS</a>
-          <a href="projetos.html" class="btn btn-outline btn-white-outline"
-            style="padding: 1rem 2.5rem; font-size: 1rem;">VER PROJETOS</a>
+        <div class="hero-actions reveal delay-200">
+          <a href="quem-somos.html" class="btn btn-primary">SAIBA MAIS</a>
+          <a href="projetos.html" class="btn btn-outline btn-white-outline">VER PROJETOS</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Quem Somos (Alternating 1) -->
-  <section class="split-section bg-light">
-    <div class="container">
+  <section class="split-section bg-light" style="position: relative; overflow: hidden;">
+    <!-- Organic Curves Background -->
+    <svg class="animated-lines-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.35;" viewBox="0 0 1000 600" preserveAspectRatio="none">
+      <!-- Red Curves -->
+      <path d="M-50,100 Q200,50 400,150 T850,200 L900,180 Q700,120 500,180 T50,120 Z" 
+            fill="none" stroke="#E42836" stroke-width="18" stroke-linecap="round" class="curve-animate curve-1"/>
+      <path d="M-50,450 Q150,400 350,480 T750,420 L800,440" 
+            fill="none" stroke="#E42836" stroke-width="15" stroke-linecap="round" class="curve-animate curve-2"/>
+      
+      <!-- Yellow Curves -->
+      <path d="M1050,80 Q800,120 600,80 T200,150 L150,130 Q350,90 550,120 T950,90 Z" 
+            fill="none" stroke="#F7AA2C" stroke-width="20" stroke-linecap="round" class="curve-animate curve-3"/>
+      <path d="M1050,350 Q850,320 650,380 T250,340 L200,360" 
+            fill="none" stroke="#F7AA2C" stroke-width="16" stroke-linecap="round" class="curve-animate curve-4"/>
+      
+      <!-- Green Curves -->
+      <path d="M-50,250 Q200,280 400,220 T850,280 L900,260 Q700,220 500,260 T50,240 Z" 
+            fill="none" stroke="#3D6446" stroke-width="17" stroke-linecap="round" class="curve-animate curve-5"/>
+      <path d="M1050,500 Q800,480 600,520 T200,480 L150,500" 
+            fill="none" stroke="#3D6446" stroke-width="14" stroke-linecap="round" class="curve-animate curve-6"/>
+      
+      <!-- Blue Curves -->
+      <path d="M-50,20 Q250,60 450,20 T900,80 L950,60" 
+            fill="none" stroke="#005B89" stroke-width="19" stroke-linecap="round" class="curve-animate curve-7"/>
+      <path d="M1050,550 Q750,520 550,560 T150,540 L100,560" 
+            fill="none" stroke="#005B89" stroke-width="16" stroke-linecap="round" class="curve-animate curve-8"/>
+    </svg>
+    
+    <div class="container" style="position: relative; z-index: 1;">
       <div class="split-grid">
-        <div class="split-text reveal">
+        <div class="split-text reveal" style="background: rgba(255,255,255,0.85); padding: 2.5rem; border-radius: 16px; backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
           <span class="tag tag-primary">Institucional</span>
           <h2 class="reveal-text"><span>Quem Somos</span></h2>
           <p>
@@ -118,10 +146,37 @@
   </section>
 
   <!-- O Que Fazemos (Alternating 2 - Reverse) -->
-  <section class="split-section bg-white">
-    <div class="container">
+  <section class="split-section bg-white" style="position: relative; overflow: hidden;">
+    <!-- Organic Curves Background -->
+    <svg class="animated-lines-bg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.3;" viewBox="0 0 1000 600" preserveAspectRatio="none">
+      <!-- Blue Curves -->
+      <path d="M-50,80 Q250,120 450,80 T900,140 L950,120" 
+            fill="none" stroke="#005B89" stroke-width="19" stroke-linecap="round" class="curve-animate curve-9"/>
+      <path d="M1050,480 Q750,450 550,500 T150,460 L100,480" 
+            fill="none" stroke="#005B89" stroke-width="17" stroke-linecap="round" class="curve-animate curve-10"/>
+      
+      <!-- Green Curves -->
+      <path d="M1050,180 Q800,220 600,180 T200,240 L150,220 Q350,180 550,210 T950,180 Z" 
+            fill="none" stroke="#3D6446" stroke-width="16" stroke-linecap="round" class="curve-animate curve-11"/>
+      <path d="M-50,380 Q200,350 400,400 T850,360 L900,380" 
+            fill="none" stroke="#3D6446" stroke-width="15" stroke-linecap="round" class="curve-animate curve-12"/>
+      
+      <!-- Yellow Curves -->
+      <path d="M-50,140 Q200,180 400,140 T850,200 L900,180 Q700,140 500,180 T50,160 Z" 
+            fill="none" stroke="#F7AA2C" stroke-width="20" stroke-linecap="round" class="curve-animate curve-13"/>
+      <path d="M1050,420 Q850,390 650,440 T250,400 L200,420" 
+            fill="none" stroke="#F7AA2C" stroke-width="18" stroke-linecap="round" class="curve-animate curve-14"/>
+      
+      <!-- Red Curves -->
+      <path d="M1050,280 Q800,320 600,280 T200,340 L150,320" 
+            fill="none" stroke="#E42836" stroke-width="17" stroke-linecap="round" class="curve-animate curve-15"/>
+      <path d="M-50,540 Q200,510 400,550 T850,520 L900,540" 
+            fill="none" stroke="#E42836" stroke-width="14" stroke-linecap="round" class="curve-animate curve-16"/>
+    </svg>
+    
+    <div class="container" style="position: relative; z-index: 1;">
       <div class="split-grid reverse">
-        <div class="split-text reveal">
+        <div class="split-text reveal" style="background: rgba(255,255,255,0.9); padding: 2.5rem; border-radius: 16px; backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
           <span class="tag tag-green">Atuação</span>
           <h2 class="reveal-text"><span>O Que Fazemos</span></h2>
           <p>
@@ -143,125 +198,341 @@
     </div>
   </section>
 
-  <!-- Nosso Impacto (Alternating 3) -->
-  <section class="split-section bg-light stats-section">
+  <!-- Premium Statistics Hero Section -->
+  <section class="stats-hero-section">
     <div class="container">
-      <div class="split-grid">
-        <div class="split-text">
-          <span class="tag tag-red">Impacto Social</span>
-          <h2 class="reveal-text"><span>Nosso Impacto</span></h2>
-          <p>
-            Priorizamos o atendimento a comunidades com maiores índices de
-            vulnerabilidade social, focando em crianças, jovens, idosos e
-            famílias em situação de extrema pobreza.
-          </p>
-          <div class="stats-grid-modern"
-            style="margin-top: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+      <div class="text-center" style="margin-bottom: 4rem;">
+        <span class="tag" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2);">Impacto Social</span>
+        <h2 class="section-title center" style="color: white; margin-top: 1.5rem;">Transformando Vidas em Números</h2>
+        <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 600px; margin: 1rem auto 0;">
+          Cada número representa uma história de transformação e esperança.
+        </p>
+      </div>
 
-            <!-- Stat 1 -->
-            <div class="stat-card reveal delay-100"
-              style="text-align: center; padding: 1.5rem; background: var(--surface); border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
-              <div style="font-size: 2.5rem; color: var(--accent-green); margin-bottom: 0.5rem;">
-                <i class="fas fa-users"></i>
-              </div>
-              <strong
-                style="font-size: 2rem; display: block; line-height: 1; color: var(--secondary); margin-bottom: 0.25rem;">+<span
-                  class="number" data-target="2500">0</span></strong>
-              <span style="font-size: 0.9rem; color: var(--text-light); font-weight: 500;">Famílias Atendidas</span>
-            </div>
-
-            <!-- Stat 2 -->
-            <div class="stat-card reveal delay-200"
-              style="text-align: center; padding: 1.5rem; background: var(--surface); border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
-              <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem;">
-                <i class="fas fa-project-diagram"></i>
-              </div>
-              <strong
-                style="font-size: 2rem; display: block; line-height: 1; color: var(--secondary); margin-bottom: 0.25rem;"><span
-                  class="number" data-target="20">0</span></strong>
-              <span style="font-size: 0.9rem; color: var(--text-light); font-weight: 500;">Projetos Realizados</span>
-            </div>
-
-            <!-- Stat 3 -->
-            <div class="stat-card reveal delay-300"
-              style="text-align: center; padding: 1.5rem; background: var(--surface); border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
-              <div style="font-size: 2.5rem; color: var(--accent-red); margin-bottom: 0.5rem;">
-                <i class="fas fa-map-marked-alt"></i>
-              </div>
-              <strong
-                style="font-size: 2rem; display: block; line-height: 1; color: var(--secondary); margin-bottom: 0.25rem;">BR</strong>
-              <span style="font-size: 0.9rem; color: var(--text-light); font-weight: 500;">Atuação Nacional</span>
-            </div>
-
+      <div class="stats-hero-grid">
+        <!-- Stat 1: Families -->
+        <div class="stat-card-premium reveal delay-100">
+          <div class="custom-icon custom-icon-2xl" style="margin: 0 auto 1.5rem; filter: drop-shadow(0 8px 20px rgba(255,255,255,0.2));">
+            <img src="assets/icons/usuarios.svg" alt="Famílias">
           </div>
+          <div class="stat-number" data-target="2500">0</div>
+          <div class="stat-label">Famílias Atendidas</div>
         </div>
-        <div class="split-image">
-          <img src="assets/img/quem-somos-r1nd93a231j678w13jhp92onbbjg4k3aktxfpo7pow.webp" alt="Nosso Impacto"
-            style="height: 400px; width: 100%; object-fit: cover" loading="lazy" />
+
+        <!-- Stat 2: Projects -->
+        <div class="stat-card-premium reveal delay-200">
+          <div class="custom-icon custom-icon-2xl" style="margin: 0 auto 1.5rem; filter: drop-shadow(0 8px 20px rgba(255,255,255,0.2));">
+            <img src="assets/icons/grafico.svg" alt="Projetos">
+          </div>
+          <div class="stat-number" data-target="20">0</div>
+          <div class="stat-label">Projetos Realizados</div>
+        </div>
+
+        <!-- Stat 3: Volunteers -->
+        <div class="stat-card-premium reveal delay-300">
+          <div class="custom-icon custom-icon-2xl" style="margin: 0 auto 1.5rem; filter: drop-shadow(0 8px 20px rgba(255,255,255,0.2));">
+            <img src="assets/icons/ajuda.svg" alt="Voluntários">
+          </div>
+          <div class="stat-number" data-target="150">0</div>
+          <div class="stat-label">Voluntários Ativos</div>
+        </div>
+
+        <!-- Stat 4: Coverage -->
+        <div class="stat-card-premium reveal delay-400">
+          <div class="custom-icon custom-icon-2xl" style="margin: 0 auto 1.5rem; filter: drop-shadow(0 8px 20px rgba(255,255,255,0.2));">
+            <img src="assets/icons/localizacao.svg" alt="Localização">
+          </div>
+          <div class="stat-number" data-target="27">0</div>
+          <div class="stat-label">Estados Alcançados</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Areas of Activity Icons (Added in V1 later steps) -->
-  <section style="padding: 6rem 0; background: var(--surface)">
-    <div class="container">
-      <div class="text-center" style="margin-bottom: 4rem">
-        <h2 class="section-title center reveal-text"><span>Nossos Pilares</span></h2>
-        <p>Atuamos em frentes essenciais para o desenvolvimento humano.</p>
+  <section class="pattern-dots" style="padding: 8rem 0; background: var(--background); position: relative; overflow: hidden;">
+    <!-- Animated Icons Spiral Background -->
+    <svg class="spiral-bg" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%; z-index: 0; pointer-events: none;" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <!-- Definição dos Caminhos das Espirais -->
+            <!-- Espiral 1: Saúde (Vermelho) -->
+            <path id="path-saude" d="M500,500 m0,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0 a100,100 0 1,1 200,0 a100,100 0 1,1 -200,0 a200,200 0 1,1 400,0 a200,200 0 1,1 -400,0 a300,300 0 1,1 600,0"/>
+
+            <!-- Espiral 2: Educação (Amarelo) -->
+            <path id="path-educacao" d="M500,500 m0,0 a75,75 0 1,0 -150,0 a75,75 0 1,0 150,0 a150,150 0 1,0 -300,0 a150,150 0 1,0 300,0 a250,250 0 1,0 -500,0 a250,250 0 1,0 500,0"/>
+
+            <!-- Espiral 3: Cultura (Azul) -->
+            <path id="path-cultura" d="M500,500 m0,0 a180,180 0 1,0 -360,0 a180,180 0 1,0 360,0 a280,280 0 1,0 -560,0 a280,280 0 1,0 560,0 a400,400 0 1,0 -800,0"/>
+
+            <!-- Espiral 4: Sustentabilidade (Verde) -->
+            <path id="path-sustentabilidade" d="M500,500 m0,0 a120,120 0 1,1 240,0 a120,120 0 1,1 -240,0 a220,220 0 1,1 440,0 a220,220 0 1,1 -440,0 a320,320 0 1,1 640,0"/>
+        </defs>
+
+        <!-- Grupo Saúde -->
+        <g opacity="0.5">
+            <!-- 8 Ícones com intervalo de 2.5s (Duração 20s) -->
+            <image href="assets/img/saude.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="20s" repeatCount="indefinite" rotate="auto"><mpath href="#path-saude"/></animateMotion>
+            </image>
+            <image href="assets/img/saude.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="20s" begin="2.5s" repeatCount="indefinite" rotate="auto"><mpath href="#path-saude"/></animateMotion>
+            </image>
+            <image href="assets/img/saude.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="20s" begin="5s" repeatCount="indefinite" rotate="auto"><mpath href="#path-saude"/></animateMotion>
+            </image>
+            <image href="assets/img/saude.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="20s" begin="7.5s" repeatCount="indefinite" rotate="auto"><mpath href="#path-saude"/></animateMotion>
+            </image>
+            <image href="assets/img/saude.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="20s" begin="10s" repeatCount="indefinite" rotate="auto"><mpath href="#path-saude"/></animateMotion>
+            </image>
+            <image href="assets/img/saude.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="20s" begin="12.5s" repeatCount="indefinite" rotate="auto"><mpath href="#path-saude"/></animateMotion>
+            </image>
+            <image href="assets/img/saude.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="20s" begin="15s" repeatCount="indefinite" rotate="auto"><mpath href="#path-saude"/></animateMotion>
+            </image>
+            <image href="assets/img/saude.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="20s" begin="17.5s" repeatCount="indefinite" rotate="auto"><mpath href="#path-saude"/></animateMotion>
+            </image>
+        </g>
+
+        <!-- Grupo Educação -->
+        <g opacity="0.5">
+            <!-- 8 Ícones com intervalo de ~3s (Duração 25s) -->
+            <image href="assets/img/educacao.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="25s" repeatCount="indefinite" rotate="auto"><mpath href="#path-educacao"/></animateMotion>
+            </image>
+             <image href="assets/img/educacao.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="25s" begin="3s" repeatCount="indefinite" rotate="auto"><mpath href="#path-educacao"/></animateMotion>
+            </image>
+             <image href="assets/img/educacao.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="25s" begin="6s" repeatCount="indefinite" rotate="auto"><mpath href="#path-educacao"/></animateMotion>
+            </image>
+            <image href="assets/img/educacao.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="25s" begin="9s" repeatCount="indefinite" rotate="auto"><mpath href="#path-educacao"/></animateMotion>
+            </image>
+            <image href="assets/img/educacao.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="25s" begin="12s" repeatCount="indefinite" rotate="auto"><mpath href="#path-educacao"/></animateMotion>
+            </image>
+            <image href="assets/img/educacao.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="25s" begin="15s" repeatCount="indefinite" rotate="auto"><mpath href="#path-educacao"/></animateMotion>
+            </image>
+            <image href="assets/img/educacao.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="25s" begin="18s" repeatCount="indefinite" rotate="auto"><mpath href="#path-educacao"/></animateMotion>
+            </image>
+            <image href="assets/img/educacao.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="25s" begin="21s" repeatCount="indefinite" rotate="auto"><mpath href="#path-educacao"/></animateMotion>
+            </image>
+        </g>
+
+        <!-- Grupo Cultura -->
+        <g opacity="0.5">
+            <!-- 8 Ícones com intervalo de 3.75s (Duração 30s) -->
+            <image href="assets/img/cultura.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="30s" repeatCount="indefinite" rotate="auto"><mpath href="#path-cultura"/></animateMotion>
+            </image>
+            <image href="assets/img/cultura.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="30s" begin="3.75s" repeatCount="indefinite" rotate="auto"><mpath href="#path-cultura"/></animateMotion>
+            </image>
+            <image href="assets/img/cultura.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="30s" begin="7.5s" repeatCount="indefinite" rotate="auto"><mpath href="#path-cultura"/></animateMotion>
+            </image>
+            <image href="assets/img/cultura.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="30s" begin="11.25s" repeatCount="indefinite" rotate="auto"><mpath href="#path-cultura"/></animateMotion>
+            </image>
+            <image href="assets/img/cultura.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="30s" begin="15s" repeatCount="indefinite" rotate="auto"><mpath href="#path-cultura"/></animateMotion>
+            </image>
+            <image href="assets/img/cultura.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="30s" begin="18.75s" repeatCount="indefinite" rotate="auto"><mpath href="#path-cultura"/></animateMotion>
+            </image>
+            <image href="assets/img/cultura.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="30s" begin="22.5s" repeatCount="indefinite" rotate="auto"><mpath href="#path-cultura"/></animateMotion>
+            </image>
+            <image href="assets/img/cultura.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="30s" begin="26.25s" repeatCount="indefinite" rotate="auto"><mpath href="#path-cultura"/></animateMotion>
+            </image>
+        </g>
+
+        <!-- Grupo Sustentabilidade -->
+        <g opacity="0.5">
+             <!-- 8 Ícones com intervalo de 2.75s (Duração 22s) -->
+             <image href="assets/img/sustentabilidade.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="22s" repeatCount="indefinite" rotate="auto"><mpath href="#path-sustentabilidade"/></animateMotion>
+            </image>
+            <image href="assets/img/sustentabilidade.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="22s" begin="2.75s" repeatCount="indefinite" rotate="auto"><mpath href="#path-sustentabilidade"/></animateMotion>
+            </image>
+            <image href="assets/img/sustentabilidade.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="22s" begin="5.5s" repeatCount="indefinite" rotate="auto"><mpath href="#path-sustentabilidade"/></animateMotion>
+            </image>
+             <image href="assets/img/sustentabilidade.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="22s" begin="8.25s" repeatCount="indefinite" rotate="auto"><mpath href="#path-sustentabilidade"/></animateMotion>
+            </image>
+             <image href="assets/img/sustentabilidade.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="22s" begin="11s" repeatCount="indefinite" rotate="auto"><mpath href="#path-sustentabilidade"/></animateMotion>
+            </image>
+            <image href="assets/img/sustentabilidade.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="22s" begin="13.75s" repeatCount="indefinite" rotate="auto"><mpath href="#path-sustentabilidade"/></animateMotion>
+            </image>
+            <image href="assets/img/sustentabilidade.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="22s" begin="16.5s" repeatCount="indefinite" rotate="auto"><mpath href="#path-sustentabilidade"/></animateMotion>
+            </image>
+            <image href="assets/img/sustentabilidade.png" width="30" height="30" x="-15" y="-15">
+                <animateMotion dur="22s" begin="19.25s" repeatCount="indefinite" rotate="auto"><mpath href="#path-sustentabilidade"/></animateMotion>
+            </image>
+        </g>
+    </svg>
+
+    <div class="container" style="position: relative; z-index: 1;">
+      <div class="text-center" style="margin-bottom: 5rem">
+        <span class="tag tag-primary">Áreas de Atuação</span>
+        <h2 class="section-title center reveal-text" style="margin-top: 1.5rem;"><span>Nossos Pilares</span></h2>
+        <p style="max-width: 600px; margin: 1rem auto 0; font-size: 1.1rem; color: var(--text-light);">
+          Transformamos vidas através de ações integradas em frentes essenciais para o desenvolvimento humano.
+        </p>
       </div>
 
-      <div class="pillars-grid">
-        <div class="pillar-card reveal delay-100">
-          <i class="fas fa-heartbeat icon-animate-heart" style="color: var(--accent-red);"></i>
+      <div class="pillars-grid-premium">
+        <!-- Pillar 1: Health -->
+        <div class="pillar-card-3d reveal delay-100">
+          <div class="custom-icon custom-icon-2xl" style="margin: 0 auto 1.5rem;">
+            <img src="assets/img/saude.png" alt="Saúde">
+          </div>
           <h3>Saúde</h3>
           <p>
-            Atendimentos básicos e mutirões completos para a comunidade.
+            Atendimentos médicos básicos, mutirões de saúde e programas de prevenção para garantir qualidade de vida às comunidades.
           </p>
+          <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #f1f5f9;">
+            <small style="color: var(--accent-red); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+              <i class="fas fa-check-circle"></i> Ativo
+            </small>
+          </div>
         </div>
-        <div class="pillar-card reveal delay-200">
-          <i class="fas fa-book-open icon-animate-book" style="color: var(--primary);"></i>
+
+        <!-- Pillar 2: Education -->
+        <div class="pillar-card-3d reveal delay-200">
+          <div class="custom-icon custom-icon-2xl" style="margin: 0 auto 1.5rem;">
+            <img src="assets/img/educacao.png" alt="Educação">
+          </div>
           <h3>Educação</h3>
           <p>
-            Cursos e capacitação profissional para transformar futuros.
+            Cursos profissionalizantes, capacitação e programas educacionais que abrem portas para um futuro melhor.
           </p>
+          <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #f1f5f9;">
+            <small style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+              <i class="fas fa-check-circle"></i> Ativo
+            </small>
+          </div>
         </div>
-        <div class="pillar-card reveal delay-300">
-          <i class="fas fa-paint-brush icon-animate-brush" style="color: var(--accent-purple);"></i>
+
+        <!-- Pillar 3: Culture -->
+        <div class="pillar-card-3d reveal delay-300">
+          <div class="custom-icon custom-icon-2xl" style="margin: 0 auto 1.5rem;">
+            <img src="assets/img/cultura.png" alt="Cultura">
+          </div>
           <h3>Cultura</h3>
           <p>
-            Valorização da arte local e resgate de tradições.
+            Valorização da arte local, oficinas culturais e resgate de tradições que fortalecem a identidade comunitária.
           </p>
+          <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #f1f5f9;">
+            <small style="color: var(--accent-purple); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+              <i class="fas fa-check-circle"></i> Ativo
+            </small>
+          </div>
         </div>
-        <div class="pillar-card reveal delay-400">
-          <i class="fas fa-running icon-animate-run" style="color: var(--accent-green);"></i>
+
+        <!-- Pillar 4: Sports -->
+        <div class="pillar-card-3d reveal delay-400">
+          <div class="custom-icon custom-icon-2xl" style="margin: 0 auto 1.5rem;">
+            <img src="assets/img/sustentabilidade.png" alt="Sustentabilidade">
+          </div>
           <h3>Esporte</h3>
           <p>
-            Inclusão e cidadania através da prática esportiva.
+            Inclusão social e cidadania através da prática esportiva, promovendo saúde física e mental.
           </p>
+          <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #f1f5f9;">
+            <small style="color: var(--accent-green); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
+              <i class="fas fa-check-circle"></i> Ativo
+            </small>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Latest News Grid (Added in V1 later steps) -->
-  <section style="padding: 6rem 0; background: var(--background)">
-    <div class="container">
-      <div class="text-center" style="margin-bottom: 4rem">
-        <h2 class="section-title center">Últimas Notícias</h2>
-        <p>Acompanhe o que acontece no Instituto.</p>
+  <!-- Recent News List -->
+  <section style="padding: 6rem 0; background: white;">
+    <div class="container" style="max-width: 900px;">
+      <div style="margin-bottom: 3rem;">
+        <h2 style="font-size: 2rem; font-weight: 700; color: var(--secondary); margin-bottom: 1rem;">Notícias Recentes</h2>
+        <div style="width: 60px; height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent-green)); border-radius: 2px;"></div>
       </div>
 
-      <div class="news-grid reveal" style="
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-          ">
-        <p class="text-center w-100 py-5 text-muted">Carregando últimas notícias...</p>
+      <div style="display: flex; flex-direction: column; gap: 2rem;">
+        <!-- News Item 1 -->
+        <div class="news-item-compact reveal" style="display: flex; gap: 1.5rem; padding-bottom: 2rem; border-bottom: 1px solid #e2e8f0;">
+          <img src="assets/img/projeto-brasilia-2025-1.webp" alt="Brasília 2025" 
+               style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+          <div style="flex: 1;">
+            <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--secondary); margin-bottom: 0.5rem; line-height: 1.4;">
+              Brasília 2025 Atinge Marca de 2.500 Famílias Atendidas
+            </h3>
+            <p style="color: var(--text-light); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="far fa-calendar" style="color: var(--primary);"></i>
+              24 de janeiro de 2026
+            </p>
+          </div>
+        </div>
+
+        <!-- News Item 2 -->
+        <div class="news-item-compact reveal delay-100" style="display: flex; gap: 1.5rem; padding-bottom: 2rem; border-bottom: 1px solid #e2e8f0;">
+          <img src="assets/img/projeto-brasilia-2025-1.webp" alt="Mutirão Saúde" 
+               style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+          <div style="flex: 1;">
+            <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--secondary); margin-bottom: 0.5rem; line-height: 1.4;">
+              Mutirão da Saúde Realiza 1.200 Atendimentos
+            </h3>
+            <p style="color: var(--text-light); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="far fa-calendar" style="color: var(--primary);"></i>
+              19 de janeiro de 2026
+            </p>
+          </div>
+        </div>
+
+        <!-- News Item 3 -->
+        <div class="news-item-compact reveal delay-200" style="display: flex; gap: 1.5rem; padding-bottom: 2rem; border-bottom: 1px solid #e2e8f0;">
+          <img src="assets/img/projeto-brasilia-2025-1.webp" alt="Certificação" 
+               style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+          <div style="flex: 1;">
+            <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--secondary); margin-bottom: 0.5rem; line-height: 1.4;">
+              Instituto Eixos Recebe Certificação de Transparência
+            </h3>
+            <p style="color: var(--text-light); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="far fa-calendar" style="color: var(--primary);"></i>
+              14 de janeiro de 2026
+            </p>
+          </div>
+        </div>
+
+        <!-- News Item 4 -->
+        <div class="news-item-compact reveal delay-300" style="display: flex; gap: 1.5rem;">
+          <img src="assets/img/projeto-brasilia-2025-1.webp" alt="Futuro Brilhante" 
+               style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; flex-shrink: 0;">
+          <div style="flex: 1;">
+            <h3 style="font-size: 1.1rem; font-weight: 600; color: var(--secondary); margin-bottom: 0.5rem; line-height: 1.4;">
+              Futuro Brilhante Forma 350 Alunos em Cursos Profissionalizantes
+            </h3>
+            <p style="color: var(--text-light); font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="far fa-calendar" style="color: var(--primary);"></i>
+              09 de janeiro de 2026
+            </p>
+          </div>
+        </div>
       </div>
 
-      <!-- Fixed "View All" Button -->
-      <div class="text-center reveal delay-200" style="margin-top: 3rem;">
+      <!-- View All Button -->
+      <div class="text-center reveal delay-400" style="margin-top: 3rem;">
         <a href="noticias.html" class="btn btn-outline" style="padding: 1rem 2.5rem;">
           Ver Todas as Notícias <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
         </a>
@@ -269,65 +540,94 @@
     </div>
   </section>
 
-  <!-- Testimonials (New) -->
-  <section class="testimonials-section reveal" style="padding: 6rem 0; background-color: var(--surface);">
+  <!-- Premium Testimonials Carousel -->
+  <section class="testimonials-section" style="padding: 8rem 0; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);">
     <div class="container">
       <div class="text-center" style="margin-bottom: 4rem;">
-        <h2 class="section-title center">Vozes da Transformação</h2>
-        <p>Histórias de quem constrói e de quem vive o impacto do Instituto Eixos.</p>
+        <span class="tag tag-green">Depoimentos</span>
+        <h2 class="section-title center" style="margin-top: 1.5rem;">Vozes da Transformação</h2>
+        <p style="max-width: 700px; margin: 1rem auto 0; font-size: 1.1rem; color: var(--text-light);">
+          Histórias reais de quem constrói e de quem vive o impacto do Instituto Eixos.
+        </p>
       </div>
 
-      <div class="page-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <!-- Testimonial 1 -->
-        <div
-          style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); position: relative;">
-          <i class="fas fa-quote-left"
-            style="font-size: 1.5rem; color: var(--primary); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
-          <p style="margin-top: 1.5rem; font-style: italic; color: var(--text-main);">"O curso de informática básica
-            abriu portas que eu nem sabia que existiam. Hoje estou empregado e posso ajudar minha família."</p>
-          <div
-            style="display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; border-top: 1px solid #e2e8f0; padding-top: 1rem;">
-            <div style="width: 40px; height: 40px; background: #cbd5e1; border-radius: 50%;"></div>
-            <div>
-              <strong style="display: block; font-size: 0.95rem;">Carlos Mendes</strong>
-              <small style="color: var(--text-light);">Ex-aluno</small>
+      <div class="testimonials-carousel-wrapper">
+        <div class="testimonials-carousel">
+          <div class="testimonials-track">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-slide">
+              <i class="fas fa-quote-left testimonial-quote-icon"></i>
+              <p class="testimonial-text">
+                "O curso de informática básica abriu portas que eu nem sabia que existiam. Hoje estou empregado e posso ajudar minha família. O Instituto Eixos mudou completamente a trajetória da minha vida."
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar">CM</div>
+                <div class="testimonial-info">
+                  <h4>Carlos Mendes</h4>
+                  <p>Ex-aluno do Programa de Capacitação</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-slide">
+              <i class="fas fa-quote-left testimonial-quote-icon"></i>
+              <p class="testimonial-text">
+                "Ser voluntária na distribuição de alimentos renova minhas energias. Ver o sorriso de gratidão das famílias não tem preço. É uma experiência transformadora para todos os envolvidos."
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--accent-green), var(--primary));">FL</div>
+                <div class="testimonial-info">
+                  <h4>Fernanda Lima</h4>
+                  <p>Voluntária há 2 anos</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-slide">
+              <i class="fas fa-quote-left testimonial-quote-icon"></i>
+              <p class="testimonial-text">
+                "O atendimento oftalmológico salvou a visão da minha mãe. Somos eternamente gratos ao Instituto Eixos. Sem esse apoio, não teríamos condições de pagar o tratamento."
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--accent-red), var(--accent-purple));">MJ</div>
+                <div class="testimonial-info">
+                  <h4>Maria José</h4>
+                  <p>Beneficiária do Programa de Saúde</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-slide">
+              <i class="fas fa-quote-left testimonial-quote-icon"></i>
+              <p class="testimonial-text">
+                "As oficinas de arte mudaram a vida dos jovens da nossa comunidade. Eles descobriram talentos e agora têm perspectivas de futuro. É inspirador ver essa transformação."
+              </p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar" style="background: linear-gradient(135deg, var(--accent-purple), var(--primary));">RP</div>
+                <div class="testimonial-info">
+                  <h4>Roberto Pires</h4>
+                  <p>Líder Comunitário</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Testimonial 2 -->
-        <div
-          style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); position: relative;">
-          <i class="fas fa-quote-left"
-            style="font-size: 1.5rem; color: var(--accent-green); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
-          <p style="margin-top: 1.5rem; font-style: italic; color: var(--text-main);">"Ser voluntária na distribuição de
-            alimentos renova minhas energias. Ver o sorriso de gratidão das famílias não tem preço."</p>
-          <div
-            style="display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; border-top: 1px solid #e2e8f0; padding-top: 1rem;">
-            <div style="width: 40px; height: 40px; background: #cbd5e1; border-radius: 50%;"></div>
-            <div>
-              <strong style="display: block; font-size: 0.95rem;">Fernanda Lima</strong>
-              <small style="color: var(--text-light);">Voluntária</small>
-            </div>
-          </div>
+        <!-- Carousel Controls -->
+        <div class="carousel-controls">
+          <button class="carousel-btn carousel-prev" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn carousel-next" aria-label="Próximo">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
 
-        <!-- Testimonial 3 -->
-        <div
-          style="background: white; padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); position: relative;">
-          <i class="fas fa-quote-left"
-            style="font-size: 1.5rem; color: var(--accent-red); opacity: 0.3; position: absolute; top: 1.5rem; left: 1.5rem;"></i>
-          <p style="margin-top: 1.5rem; font-style: italic; color: var(--text-main);">"O atendimento oftalmológico
-            salvou a visão da minha mãe. Somos eternamente gratos ao Instituto Eixos."</p>
-          <div
-            style="display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; border-top: 1px solid #e2e8f0; padding-top: 1rem;">
-            <div style="width: 40px; height: 40px; background: #cbd5e1; border-radius: 50%;"></div>
-            <div>
-              <strong style="display: block; font-size: 0.95rem;">Maria José</strong>
-              <small style="color: var(--text-light);">Beneficiária</small>
-            </div>
-          </div>
-        </div>
+        <!-- Carousel Dots -->
+        <div class="carousel-dots"></div>
       </div>
     </div>
   </section>
@@ -363,16 +663,30 @@
     </div>
   </section>
 
-  <!-- Newsletter / Contact Bar -->
-  <section class="newsletter-bar">
+  <!-- Premium Newsletter Section -->
+  <section class="newsletter-premium">
     <div class="container">
-      <h2>Fique por dentro</h2>
-      <p>Cadastre-se para receber novidades e relatórios de impacto.</p>
-      <form class="newsletter-form-inline">
-        <input type="text" placeholder="Seu nome" required />
-        <input type="email" placeholder="Seu e-mail" required />
-        <button type="submit">Cadastrar</button>
-      </form>
+      <div class="newsletter-content">
+        <div class="newsletter-icon">
+          <i class="fas fa-envelope-open-text"></i>
+        </div>
+        <h2>Fique por Dentro</h2>
+        <p>
+          Cadastre-se para receber novidades, relatórios de impacto e histórias inspiradoras diretamente no seu e-mail.
+        </p>
+        <form class="newsletter-form-premium">
+          <input type="text" class="newsletter-input" placeholder="Seu nome" required />
+          <input type="email" class="newsletter-input" placeholder="Seu melhor e-mail" required />
+          <button type="submit" class="newsletter-submit">
+            <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+            INSCREVER
+          </button>
+        </form>
+        <p style="font-size: 0.85rem; margin-top: 1.5rem; opacity: 0.7;">
+          <i class="fas fa-lock" style="margin-right: 4px;"></i>
+          Seus dados estão seguros. Não compartilhamos com terceiros.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -425,6 +739,8 @@
   <script type="module" src="assets/js/site-common.js"></script>
   <script src="assets/js/home.js"></script>
   <script type="module" src="assets/js/index-page.js"></script>
+  <script src="assets/js/home-premium.js"></script>
+  <script type="module" src="assets/js/photo-bubbles.js"></script>
 </body>
 
 </html>

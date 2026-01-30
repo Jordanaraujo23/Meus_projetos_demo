@@ -1,0 +1,9 @@
+<!-- Ícone: Gráfico - Identidade Visual -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <rect x="25" y="55" width="14" height="25" rx="3" stroke="#3D6446" stroke-width="5" fill="none"/>
+  <rect x="43" y="40" width="14" height="40" rx="3" stroke="#F7AA2C" stroke-width="5" fill="none"/>
+  <rect x="61" y="25" width="14" height="55" rx="3" stroke="#E42836" stroke-width="5" fill="none"/>
+  <circle cx="32" cy="55" r="3" fill="#3D6446"/>
+  <circle cx="50" cy="40" r="3" fill="#F7AA2C"/>
+  <circle cx="68" cy="25" r="3" fill="#E42836"/>
+</svg>
